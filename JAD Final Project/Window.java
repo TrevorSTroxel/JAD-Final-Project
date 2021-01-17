@@ -7,10 +7,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Window extends JFrame implements ActionListener {
@@ -79,19 +86,38 @@ public class Window extends JFrame implements ActionListener {
     public void Help() {
         JTextField Instructions = new JTextField(); // this will be used to explain to the user how to do certain
                                                     // commands
-        Instructions.setColumns(999); // setting this to a high number for testing purposes
+        Instructions.setEditable(false); // this just insures that nobody can edit the text while it is being
+        // displayed
         Instructions.setSize(100, 100);
-        Path fileName = Path.of("Instructions.txt");
+        Path fileName = Path.of("JAD Final Project/help.txt"); // this grabs the file path of the text doc and shows the
+                                                               // content it has
+
+        String Content = ""; // this is just to initialize a generic string
+        List<String> HelpList = new ArrayList<String>(); // this will be used to store all the text file information
+                                                         // neatly so that it is not just one long string
+
+        // for some reason the program want me to to surround this with try and catch
+        // clauses. look more into this later
+        Scanner test;
+        try {
+            test = new Scanner(new File("JAD Final Project/help.txt"));
+            while (test.hasNextLine()) {
+                HelpList.add(test.nextLine());
+            }
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        }
+
         // The program was upset if we did not surround this line with try and catch
         // statements for some reason, look more into this later
         try {
-            String Content = Files.readString(fileName); // this grabs all the content of the the text file and puts it
-                                                         // into a string
+
+            Content = Files.readString(fileName); // this grabs all the content of the text file and puts it into a
+                                                  // string
             Instructions.setText(Content); // this makes it so that the text field contaions everything in the text file
-            Instructions.setEditable(false); // this just insures that nobody can edit the text while it is being
-                                             // displayed
+
             MainPanel.add(Instructions);
-        } catch (IOException e) { //this is here so that the program is happy and so that  we can use readString()
+        } catch (IOException e) { // this is here so that the program is happy and so that we can use readString()
             e.printStackTrace();
         }
     }
