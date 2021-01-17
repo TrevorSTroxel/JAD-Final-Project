@@ -1,10 +1,12 @@
 
 // Creation file: contains method necessary to create instnaces for the program
 import java.io.File;
-import java.nio.file.FileAlreadyExistsException;
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 public class Create {
 	/**
 	 * @param location
@@ -48,15 +50,15 @@ public class Create {
 	// CREATE A FILE
 	// Function Input: string | Function Output:a file in chosen directory
 	// ) ( ) ( ) ( ) (
-	public void create_file(String file_name, String file_directory) 
-	{
-		try
-		{
+	public void create_file(String file_name, String file_directory) {
+		try {
 			File new_file = new File(file_directory);
-			new_file.getParentFile().mkdirs(); 
+			new_file.getParentFile().mkdirs();
 			new_file.createNewFile();
-		}catch (FileAlreadyExistsException e) 
-		{
+		} catch (FileAlreadyExistsException e) { // this is to prevet the program from making a file that already exists
+		} catch (IOException e) { // this is meant to make sure that the commands are being interperted correctly
+			//
+			e.printStackTrace();
 		}
 	}
 }
