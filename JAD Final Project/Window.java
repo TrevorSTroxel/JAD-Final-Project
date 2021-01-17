@@ -3,22 +3,18 @@
  * @author Trevor Troxel & Abed Abualkheir
  * @version 1.0
  */
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-// import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-// import java.util.List;
-import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-// import java.io.IOException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Window extends JFrame implements ActionListener {
 
@@ -88,54 +84,26 @@ public class Window extends JFrame implements ActionListener {
                                                     // window for instructions
 
         JPanel HelpPanel = new JPanel(); // this will add content to the new window that was made
+        JTextArea Instructions = new JTextArea(20, 20); // this will be used to display all the content of the text file
 
-        JTextField Instructions = new JTextField(); // this will be used to explain to the user how to do certain
-                                                    // commands
-
-        Instructions.setEditable(false); // this just insures that nobody can edit the text while it is being
-        // displayed
-        Instructions.setSize(100, 100);
-        Path fileName = Path.of("JAD Final Project/help.txt"); // this grabs the file path of the text doc and shows the
-                                                               // content it has
-
-        String Content = ""; // this is just to initialize a generic string
-        ArrayList<String> HelpList = new ArrayList<String>(); // this will be used to store all the text file
-                                                              // information
-        // neatly so that it is not just one long string
-
-        // for some reason the program want me to to surround this with try and catch
-        // clauses. look more into this later
-        Scanner test;
+        // reference: https://kodejava.org/how-do-i-read-text-file-into-jtextarea/
         try {
-            test = new Scanner(new File("JAD Final Project/help.txt"));
-            while (test.hasNextLine()) {
-                HelpList.add(test.nextLine());
-            }
-        } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
+            // Read some text from the resource file to display in
+            // the JTextArea.
+            Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        // Instructions.setText(HelpList);
 
-        // The program was upset if we did not surround this line with try and catch
-        // statements for some reason, look more into this later
-        // try {
+        Instructions.setEditable(false); // the user can't edit the text
+        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
+        Instructions.setFont(f); // sets the style of the text
 
-        // Content = Files.readString(fileName); // this grabs all the content of the
-        // text file and puts it into a
-        // // string
-        // Instructions.setText(Content); // this makes it so that the text field
-        // contaions everything in the text file
-
-        // MainPanel.add(Instructions);
-        // } catch (IOException e) { // this is here so that the program is happy and so
-        // that we can use readString()
-        // e.printStackTrace();
-        // }
-
+        HelpPanel.add(Instructions);
         HelpPanel.setEnabled(true);
 
         HelpWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        HelpWindow.setSize(500, 500);
+        HelpWindow.setSize(700, 700);
         HelpWindow.add(HelpPanel);
         HelpWindow.setVisible(true);
     }
