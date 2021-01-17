@@ -21,11 +21,17 @@ public class Window extends JFrame implements ActionListener {
     Create creation = new Create(); // this is used for
 
     JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
+
     JPanel TextInput = new JPanel(); // this will hold the text input the user will do to call the different classes
+
     JTextField userInput = new JTextField(); // this will be where the user types what they want to do
-    JTextField Instructions = new JTextField();
-    JButton Enter = new JButton("Enter"); // this will be used for determining what file to go to and what method to
-                                          // call
+    JTextField Instructions = new JTextField(); // this will be used to explain to the user how to do certain commands
+
+    JButton Enter = new JButton("Enter"); // this is mostly used to seperate out what button is being pressed on the
+                                          // main menu
+    JButton Tutorial = new JButton("Click me if you want an explinations on some things"); // this will be used to help
+                                                                                           // explain to people how to
+                                                                                           // do things
     String[] WordChoice;
 
     // we created this method to call so that if we want to add more we can just add
