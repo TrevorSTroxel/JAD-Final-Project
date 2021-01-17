@@ -21,6 +21,11 @@ public class Create {
 
 	public void Creation(String methodCall, String CompleteString) {
 		WordSplit = CompleteString.split(" "); // this will split up the string every time there is a space
+		// depending on what the user decides to make, it will call different methods
+		// WordSplit[1] = file : create_file
+		// WordSplit[1] = class : creatr_class
+		// WordSplit[1] = method : create_method
+
 		create_file(WordSplit[1]);
 	}
 

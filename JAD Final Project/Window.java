@@ -23,6 +23,7 @@ public class Window extends JFrame implements ActionListener {
     JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
     JPanel TextInput = new JPanel(); // this will hold the text input the user will do to call the different classes
     JTextField userInput = new JTextField(); // this will be where the user types what they want to do
+    JTextField Instructions = new JTextField();
     JButton Enter = new JButton("Enter"); // this will be used for determining what file to go to and what method to
                                           // call
     String[] WordChoice;
@@ -40,7 +41,8 @@ public class Window extends JFrame implements ActionListener {
      */
     private void addContents() {
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        userInput.setColumns(16);
+        userInput.setColumns(50); // this changes the size of the text box. the larger the number the more spaces
+                                  // the user can see
         userInput.setSize(100, 100);
         userInput.setEditable(true); // this makes it so that the user can edit what they put in the text field
 
@@ -65,10 +67,11 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String INPUT = userInput.getText();
+        INPUT.toLowerCase();
         WordChoice = INPUT.split(" "); // this will split up the input that the user has made and from there the
                                        // program will go to the correct file to run the methods
         if (e.getSource() == Enter) {
-            if (WordChoice[0].equals("Create") || WordChoice[0].equals("create")) {
+            if (WordChoice[0].equals("create")) {
                 creation.Creation(WordChoice[1], INPUT);
             }
 
