@@ -5,10 +5,10 @@
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.nio.file.Files;
+// import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
+// import java.util.List;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+// import java.io.IOException;
 
 public class Window extends JFrame implements ActionListener {
 
@@ -57,7 +57,7 @@ public class Window extends JFrame implements ActionListener {
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JTextFeild settings
-        userInput.setColumns(50); // this changes the size of the text box. the larger the number the more spaces
+        userInput.setColumns(25); // this changes the size of the text box. the larger the number the more spaces
                                   // the user can see
         userInput.setSize(100, 100);
         userInput.setEditable(true); // this makes it so that the user can edit what they put in the text field
@@ -84,8 +84,14 @@ public class Window extends JFrame implements ActionListener {
      * and they will get a pop up telling how to do things
      */
     public void Help() {
+        JFrame HelpWindow = new JFrame("Tutorial"); // this will pop up once the user click the button to see another
+                                                    // window for instructions
+
+        JPanel HelpPanel = new JPanel(); // this will add content to the new window that was made
+
         JTextField Instructions = new JTextField(); // this will be used to explain to the user how to do certain
                                                     // commands
+
         Instructions.setEditable(false); // this just insures that nobody can edit the text while it is being
         // displayed
         Instructions.setSize(100, 100);
@@ -93,8 +99,9 @@ public class Window extends JFrame implements ActionListener {
                                                                // content it has
 
         String Content = ""; // this is just to initialize a generic string
-        List<String> HelpList = new ArrayList<String>(); // this will be used to store all the text file information
-                                                         // neatly so that it is not just one long string
+        ArrayList<String> HelpList = new ArrayList<String>(); // this will be used to store all the text file
+                                                              // information
+        // neatly so that it is not just one long string
 
         // for some reason the program want me to to surround this with try and catch
         // clauses. look more into this later
@@ -107,19 +114,30 @@ public class Window extends JFrame implements ActionListener {
         } catch (FileNotFoundException e1) {
             e1.printStackTrace();
         }
+        // Instructions.setText(HelpList);
 
         // The program was upset if we did not surround this line with try and catch
         // statements for some reason, look more into this later
-        try {
+        // try {
 
-            Content = Files.readString(fileName); // this grabs all the content of the text file and puts it into a
-                                                  // string
-            Instructions.setText(Content); // this makes it so that the text field contaions everything in the text file
+        // Content = Files.readString(fileName); // this grabs all the content of the
+        // text file and puts it into a
+        // // string
+        // Instructions.setText(Content); // this makes it so that the text field
+        // contaions everything in the text file
 
-            MainPanel.add(Instructions);
-        } catch (IOException e) { // this is here so that the program is happy and so that we can use readString()
-            e.printStackTrace();
-        }
+        // MainPanel.add(Instructions);
+        // } catch (IOException e) { // this is here so that the program is happy and so
+        // that we can use readString()
+        // e.printStackTrace();
+        // }
+
+        HelpPanel.setEnabled(true);
+
+        HelpWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        HelpWindow.setSize(500, 500);
+        HelpWindow.add(HelpPanel);
+        HelpWindow.setVisible(true);
     }
 
     /**
