@@ -5,11 +5,13 @@
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.nio.file.Files;
+import java.nio.file.Path;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.io.IOException;
 
 public class Window extends JFrame implements ActionListener {
 
@@ -78,7 +80,20 @@ public class Window extends JFrame implements ActionListener {
         JTextField Instructions = new JTextField(); // this will be used to explain to the user how to do certain
                                                     // commands
         Instructions.setColumns(999); // setting this to a high number for testing purposes
-
+        Instructions.setSize(100, 100);
+        Path fileName = Path.of("Instructions.txt");
+        // The program was upset if we did not surround this line with try and catch
+        // statements for some reason, look more into this later
+        try {
+            String Content = Files.readString(fileName); // this grabs all the content of the the text file and puts it
+                                                         // into a string
+            Instructions.setText(Content); // this makes it so that the text field contaions everything in the text file
+            Instructions.setEditable(false); // this just insures that nobody can edit the text while it is being
+                                             // displayed
+            MainPanel.add(Instructions);
+        } catch (IOException e) { //this is here so that the program is happy and so that  we can use readString()
+            e.printStackTrace();
+        }
     }
 
     /**
