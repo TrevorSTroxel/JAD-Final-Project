@@ -1,3 +1,4 @@
+
 /**
  * @author Trevor Troxel & Abed Abualkheir
  * @version 1.0
@@ -17,7 +18,7 @@ public class Window extends JFrame implements ActionListener {
      */
     private static final long serialVersionUID = 1L;
 
-    Create creation = new Create();
+    Create creation = new Create(); // this is used for
 
     JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
     JPanel TextInput = new JPanel(); // this will hold the text input the user will do to call the different classes
@@ -30,18 +31,26 @@ public class Window extends JFrame implements ActionListener {
     // it here rather than adding on to methods that already have a lot of stuff in
     // them
     public void WindowCreation() {
+        MainWindow.setSize(500, 500);
         addContents();
     }
 
     /**
-     * @
-     * This will add most of the content to the main window function
+     * @ This will add most of the content to the main window function
      */
     private void addContents() {
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        TextInput.add(Enter);
+        userInput.setColumns(16);
+        userInput.setSize(100, 100);
         userInput.setEditable(true); // this makes it so that the user can edit what they put in the text field
+
+        Enter.addActionListener(this);
+
+        TextInput.add(userInput);
+        TextInput.add(Enter);
+        TextInput.setSize(100, 100);
         TextInput.setEnabled(true);
+
         MainWindow.add(TextInput);
         MainWindow.setVisible(true);
 
@@ -58,8 +67,11 @@ public class Window extends JFrame implements ActionListener {
         String INPUT = userInput.getText();
         WordChoice = INPUT.split(" "); // this will split up the input that the user has made and from there the
                                        // program will go to the correct file to run the methods
-        if (e.getSource() == Enter && WordChoice[0] == "Create" || WordChoice[0] == "create") {
-            creation.Creation(WordChoice[1], INPUT);
+        if (e.getSource() == Enter) {
+            if (WordChoice[0] == "Create" || WordChoice[0] == "create") {
+                creation.Creation(WordChoice[1], INPUT);
+            }
+
         }
 
     }

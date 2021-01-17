@@ -50,7 +50,7 @@ public class Create {
 	// CREATE A FILE
 	// Function Input: string | Function Output:a file in chosen directory
 	// ) ( ) ( ) ( ) (
-	public void create_file(String file_name, String file_directory) {
+	public void create_file(String file_directory) {
 		try {
 			File new_file = new File(file_directory);
 			new_file.getParentFile().mkdirs();
