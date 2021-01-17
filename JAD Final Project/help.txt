@@ -1,5 +1,5 @@
 These are some instructions and tips on how to use this program.
 Keep in mind that the order in which you put words are important, so keep that in mind!
 Here is an example of how to use this program:
-    Try typing this into the textbox: create file
+    Try typing this into the textbox: create file.
 If you type this is, you will then be asked to select a folder to make this file in.
