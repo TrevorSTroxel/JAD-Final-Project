@@ -46,7 +46,7 @@ class pop extends JFrame implements ActionListener {
   
         p1.add(b); 
         f.add(p1); 
-        f.show(); 
+        f.setVisible(true);
     } 
   
     // if the button is pressed 
