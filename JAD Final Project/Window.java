@@ -1,3 +1,7 @@
+/**
+ * @author Trevor Troxel & Abed Abualkheir
+ * @version 1.0
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -26,11 +30,11 @@ public class Window extends JFrame implements ActionListener {
     }
 
     /**
+     * @
      * This will add most of the content to the main window function
      */
     private void addContents() {
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         TextInput.add(Enter);
         userInput.setEditable(true); // this makes it so that the user can edit what they put in the text field
         TextInput.setEnabled(true);

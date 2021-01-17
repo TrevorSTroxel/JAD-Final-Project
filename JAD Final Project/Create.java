@@ -1,19 +1,24 @@
+
 // Creation file: contains method necessary to create instnaces for the program
-#import java.io.File;
-public class Create 
-{
+import java.io.File;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+public class Create {
 	/**
 	 * @param location
-	 * @return String
-	 * What this function will do is call the appropiate methods
-	 *                 that are needed depending on the input It will first look at
-	 *                 what the user want to do, then it will grab the whole string
-	 *                 input, split it up and then look at the naming convention and
-	 *                 other things like that
+	 * @return String What this function will do is call the appropiate methods that
+	 *         are needed depending on the input It will first look at what the user
+	 *         want to do, then it will grab the whole string input, split it up and
+	 *         then look at the naming convention and other things like that
 	 */
 
-	String[] WordSplit; //this a generic variable that will be called when we need to slit the users input
+	String[] WordSplit; // this a generic variable that will be called when we need to slit the users
+						// input
+
 	public void Creation(String methodCall, String CompleteString) {
+		WordSplit = CompleteString.split(" "); // this will split up the string every time there is a space
 
 	}
 
@@ -45,8 +50,13 @@ public class Create
 	// ) ( ) ( ) ( ) (
 	public void create_file(String file_name, String file_directory) 
 	{
-		File new_file = new File(file_directory);
-		new_file.getParentFile().mkdirs(); 
-		new_file.createNewFile();
+		try
+		{
+			File new_file = new File(file_directory);
+			new_file.getParentFile().mkdirs(); 
+			new_file.createNewFile();
+		}catch (FileAlreadyExistsException e) 
+		{
+		}
 	}
 }
