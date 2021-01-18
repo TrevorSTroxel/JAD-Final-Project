@@ -1,12 +1,24 @@
+
+/**
+ * @author Trevor Troxel & Abed Abualkheir
+ * @version 1.0
+ */
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Popup;
+import javax.swing.PopupFactory;
 
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
 public class Text_Field_Input {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JTextField Dir = new JTextField(25); // generic TextField for my methods to use
-    public static JTextField fileName = new JTextField(30); // will be used for the name of the file
+    public static JTextField Dir = new JTextField("Enter the name of your directory here: ", 25); // generic TextField
+                                                                                                  // for my methods to
+                                                                                                  // use
+    public static JTextField fileName = new JTextField("Enter what you want to name your file: ", 30); // will be used
+                                                                                                       // for the name
+                                                                                                       // of the file
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static String dir = new String(); // this is the directory that the user wants to create
     public static String name = new String(); // used for grabbing the name of the file you want to make
@@ -17,11 +29,23 @@ public class Text_Field_Input {
     public static JButton Enter2 = new JButton("Enter File Name");
     public static JButton Enter3 = new JButton("Create file in location");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static JLabel error = new JLabel("You mistyped something in the text area, try again.");
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static Popup P; // this creats the popup to be used if there is an error
+    public static PopupFactory popup = new PopupFactory(); // a popup to warn the user that there was an error
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void ERROR() {
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // this functions will be called if there is an error in the users input
+    public static void ERROR(JPanel JP) {
+        P = popup.getPopup(Window.MainWindow, JP, 200, 200); // this will have to be flexable depending on what
+                                                             // panel is currently open
     }
 
+    // this will be called if you want to create a file
     public static void addPanel2() {
         // Adds the buttons to the pannel
         Panel2.add(Enter1);

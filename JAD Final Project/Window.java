@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -145,11 +146,18 @@ public class Window extends JFrame implements ActionListener {
         }
         // add contigencies for if the user does not enter something correct
         else if (e.getSource() == Text_Field_Input.Enter1) {
-            DIR = Text_Field_Input.Dir.getText();// this takes the name of the file directory that the user inputs
+            WordChoice = Text_Field_Input.Dir.getText().split(" "); // this will breake up the string to be read easier
+            DIR = WordChoice[1];// this takes the name of the file directory that the user inputs
+            File file = new File(DIR);
+            if (!file.isDirectory()) {
+                Text_Field_Input.ERROR(Text_Field_Input.Panel2);
+            }
         }
 
         else if (e.getSource() == Text_Field_Input.Enter2) {
-            NAME = Text_Field_Input.fileName.getText(); // this gets the user file name and type of file they create
+            WordChoice = Text_Field_Input.fileName.getText().split(" "); // this will breake up the string to be read
+                                                                         // easier
+            NAME = WordChoice[1];// this takes the name of the file directory that the user inputs
         }
 
         else if (e.getSource() == Text_Field_Input.Enter3) {
