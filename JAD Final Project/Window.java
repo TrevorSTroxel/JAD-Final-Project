@@ -123,11 +123,10 @@ public class Window extends JFrame implements ActionListener {
                                        // program will go to the correct file to run the methods
         if (e.getSource() == Enter) {
             if (WordChoice[0].equals("create")) {
-                creation.Creation(WordChoice[1], INPUT);
+                creation.Creation(INPUT);
             }
         } else if (e.getSource() == Tutorial) {
             Help();
-
         }
 
     }
