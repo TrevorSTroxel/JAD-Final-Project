@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Window extends JFrame implements ActionListener {
+    public static Window addContent = new Window(); // this is to add the text field to the
 
     /**
      * this line is meant to keep VSCode happy
@@ -25,9 +26,9 @@ public class Window extends JFrame implements ActionListener {
 
     Create creation = new Create(); // this is used for
 
-    JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
+    static JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
 
-    JPanel MainPanel = new JPanel(); // this will hold the text input the user will do to call the different classes
+    static JPanel MainPanel = new JPanel(); // this will hold the text input the user will do to call the different classes
 
     JTextField userInput = new JTextField(); // this will be where the user types what they want to do
 
@@ -50,6 +51,9 @@ public class Window extends JFrame implements ActionListener {
      * This will add most of the content to the main window function
      */
     private void addContents() {
+
+        MainPanel.add(Text_Field_Input.Dir);
+
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JTextFeild settings
@@ -68,6 +72,7 @@ public class Window extends JFrame implements ActionListener {
         MainPanel.add(Tutorial);
         MainPanel.setSize(100, 100);
         MainPanel.setEnabled(true);
+
 
         // Window add ons
         MainWindow.add(MainPanel);

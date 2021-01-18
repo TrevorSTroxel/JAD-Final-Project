@@ -26,6 +26,7 @@ public class Create {
 			newInput.Dir.setVisible(false);
 			String name = newInput.NameFile();
 			newInput.fileName.setVisible(false);
+			Window.MainPanel.setVisible(true);
 			create_file(dir, name);
 		} else if (WordSplit[1].equals("class")) {
 
@@ -62,7 +63,7 @@ public class Create {
 	// ) ( ) ( ) ( ) (
 	public void create_file(String file_directory, String file_name) {
 		try {
-			File new_file = new File(file_directory);
+			File new_file = new File(file_directory + "\\" + file_name);
 			new_file.getParentFile().mkdirs();
 			new_file.createNewFile();
 		} catch (FileAlreadyExistsException e) { // this is to prevet the program from making a file that already exists
