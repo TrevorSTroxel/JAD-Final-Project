@@ -22,12 +22,10 @@ public class Create {
 		// depending on what the user decides to make, it will call different methods
 		// WordSplit[1] = file : create_file
 		if (WordSplit[1].equals("file")) {
-			String dir = newInput.FileLocation();
-			newInput.Dir.setVisible(false);
-			String name = newInput.NameFile();
-			newInput.fileName.setVisible(false);
-			Window.MainPanel.setVisible(true);
-			create_file(dir, name);
+			Window.Panel1.setVisible(false);
+			//String dir = newInput.FileLocation();
+			//String name = newInput.NameFile();
+			//create_file(dir, name);
 		} else if (WordSplit[1].equals("class")) {
 
 		} else if (WordSplit[1].equals("method")) {
@@ -61,7 +59,7 @@ public class Create {
 	// CREATE A FILE
 	// Function Input: string | Function Output:a file in chosen directory
 	// ) ( ) ( ) ( ) (
-	public void create_file(String file_directory, String file_name) {
+	public static void create_file(String file_directory, String file_name) {
 		try {
 			File new_file = new File(file_directory + "\\" + file_name);
 			new_file.getParentFile().mkdirs();

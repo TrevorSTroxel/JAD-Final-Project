@@ -1,44 +1,54 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
-public class Text_Field_Input {
-
-    public static JTextField Dir = new JTextField("Put the File Directory here: ", 25); // generic TextField for my
-                                                                                        // methods
+public class Text_Field_Input implements ActionListener {
+    public static JTextField Dir = new JTextField(25); // generic TextField for my
+                                                       // methods
     // to use
-    public static JTextField fileName = new JTextField("What do you want to name your file: ", 30); // will be used for
-                                                                                                    // the name of
+    public static JTextField fileName = new JTextField(30); // will be used for
+                                                            // the name of
     // the file
-    String dir = new String(); // this is the directory that the user wants to create
-    String name = new String(); // used for grabbing the name of the file you want to make
+    public static String dir = new String(); // this is the directory that the user wants to create
+    public static String name = new String(); // used for grabbing the name of the file you want to make
 
-    JPanel InputPanel = new JPanel();
+    public static JPanel Panel2 = new JPanel();
 
-    public String FileLocation() {
-        Window.MainPanel.setVisible(false);
-        InputPanel.setVisible(true);
-        InputPanel.add(Dir);
+    public static JButton Enter1 = new JButton("Enter Directory");
+    public static JButton Enter2 = new JButton("Enter File Name");
+    public static JButton Enter3 = new JButton("Create file in location");
+
+    public static void addPanel2() {
+        Panel2.add(Enter1);
+        Panel2.add(Dir);
+        Panel2.add(Enter2);
+        Panel2.add(fileName);
+        Panel2.add(Enter3);
 
         Dir.setVisible(true);
         Dir.setEditable(true);
 
-        Window.MainWindow.add(InputPanel);
+        Panel2.setVisible(true);
 
-        dir = Dir.getText();
-        return dir;
-    }
+        Window.MainWindow.add(Panel2);
 
-    public String NameFile() {
-        InputPanel.setVisible(true);
-        InputPanel.add(fileName);
         fileName.setVisible(true);
         fileName.setEditable(true);
 
-        Window.MainWindow.add(InputPanel);
+        Panel2.setVisible(true);
 
-        name = fileName.getText();
-        return name;
+        Window.MainWindow.add(Panel2);
+
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 
     /**
