@@ -147,17 +147,19 @@ public class Window extends JFrame implements ActionListener {
         // add contigencies for if the user does not enter something correct
         else if (e.getSource() == Text_Field_Input.Enter1) {
             WordChoice = Text_Field_Input.Dir.getText().split(" "); // this will breake up the string to be read easier
-            DIR = WordChoice[1];// this takes the name of the file directory that the user inputs
+            DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
             File file = new File(DIR);
             if (!file.isDirectory()) {
-                Text_Field_Input.ERROR(Text_Field_Input.Panel2);
+                // Text_Field_Input.ERROR(Text_Field_Input.Panel2); //come backk to this later
+                // as this is not working proporly
+                System.out.println("There was an error in your text, try again");
             }
         }
 
         else if (e.getSource() == Text_Field_Input.Enter2) {
             WordChoice = Text_Field_Input.fileName.getText().split(" "); // this will breake up the string to be read
                                                                          // easier
-            NAME = WordChoice[1];// this takes the name of the file directory that the user inputs
+            NAME = WordChoice[8];// this takes the name of the file directory that the user inputs
         }
 
         else if (e.getSource() == Text_Field_Input.Enter3) {

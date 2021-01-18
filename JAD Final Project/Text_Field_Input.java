@@ -6,9 +6,8 @@
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.Popup;
-import javax.swing.PopupFactory;
 
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
 public class Text_Field_Input {
@@ -29,10 +28,9 @@ public class Text_Field_Input {
     public static JButton Enter2 = new JButton("Enter File Name");
     public static JButton Enter3 = new JButton("Create file in location");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JLabel error = new JLabel("You mistyped something in the text area, try again.");
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static Popup P; // this creats the popup to be used if there is an error
-    public static PopupFactory popup = new PopupFactory(); // a popup to warn the user that there was an error
+    public static JTextArea errorTextArea = new JTextArea(20, 20); // this will display an error message
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,8 +39,10 @@ public class Text_Field_Input {
 
     // this functions will be called if there is an error in the users input
     public static void ERROR(JPanel JP) {
-        P = popup.getPopup(Window.MainWindow, JP, 200, 200); // this will have to be flexable depending on what
-                                                             // panel is currently open
+        errorTextArea.setEditable(false);
+        errorTextArea.setText("You mistyped something in the text area, try again.");
+        errorTextArea.setVisible(true);
+        Panel2.add(errorTextArea);
     }
 
     // this will be called if you want to create a file
