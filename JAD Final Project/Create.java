@@ -15,23 +15,22 @@ public class Create {
 
 	String[] WordSplit; // this a generic variable that will be called when we need to slit the users
 						// input
-	Text_Field_Input newInput = new Text_Field_Input();
+	// public void Creation(String CompleteString) {
+	// WordSplit = CompleteString.split(" "); // this will split up the string every
+	// time there is a space
+	// // depending on what the user decides to make, it will call different methods
+	// // WordSplit[1] = file : create_file
+	// if (WordSplit[1].equals("file")) {
+	// Window.Panel1.setVisible(false);
+	// //String dir = newInput.FileLocation();
+	// //String name = newInput.NameFile();
+	// //create_file(dir, name);
+	// } else if (WordSplit[1].equals("class")) {
 
-	public void Creation(String CompleteString) {
-		WordSplit = CompleteString.split(" "); // this will split up the string every time there is a space
-		// depending on what the user decides to make, it will call different methods
-		// WordSplit[1] = file : create_file
-		if (WordSplit[1].equals("file")) {
-			Window.Panel1.setVisible(false);
-			//String dir = newInput.FileLocation();
-			//String name = newInput.NameFile();
-			//create_file(dir, name);
-		} else if (WordSplit[1].equals("class")) {
+	// } else if (WordSplit[1].equals("method")) {
 
-		} else if (WordSplit[1].equals("method")) {
-
-		}
-	}
+	// }
+	// }
 
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
 	// Class constructor

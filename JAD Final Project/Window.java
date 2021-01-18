@@ -133,31 +133,29 @@ public class Window extends JFrame implements ActionListener {
                              // single argument to deal with
         WordChoice = INPUT.split(" "); // this will split up the input that the user has made and from there the
                                        // program will go to the correct file to run the methods
-        if (e.getSource() == Enter && WordChoice[1].equals("file")) 
-        {
-            Panel1.setVisible(false);
-            Text_Field_Input.addPanel2();
+        if (e.getSource() == Enter && WordChoice[1].equals("file")) {
+            Panel1.setVisible(false); // this brings up the new panel for the user to see and hides the first panel
+            Text_Field_Input.addPanel2(); // calls the method to set up the second panel
+            // we needed to add action functionality to our buttons and this was the only
+            // way we could set this up
             Text_Field_Input.Enter1.addActionListener(this);
             Text_Field_Input.Enter2.addActionListener(this);
             Text_Field_Input.Enter3.addActionListener(this);
             Text_Field_Input.Panel2.setVisible(true);
-        } 
-        else if (e.getSource() == Text_Field_Input.Enter1) 
-        {
-            DIR = Text_Field_Input.Dir.getText();
+        }
+        // add contigencies for if the user does not enter something correct
+        else if (e.getSource() == Text_Field_Input.Enter1) {
+            DIR = Text_Field_Input.Dir.getText();// this takes the name of the file directory that the user inputs
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter2) 
-        {
-            NAME = Text_Field_Input.fileName.getText();
+        else if (e.getSource() == Text_Field_Input.Enter2) {
+            NAME = Text_Field_Input.fileName.getText(); // this gets the user file name and type of file they create
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter3) 
-        {
-            Create.create_file(DIR, NAME);
-        } 
-        else if (e.getSource() == Tutorial) 
-        {
+        else if (e.getSource() == Text_Field_Input.Enter3) {
+            Create.create_file(DIR, NAME); // this calls the method after both variables are set and then creats a new
+                                           // file in a folder location
+        } else if (e.getSource() == Tutorial) {
             Help();
         }
 
