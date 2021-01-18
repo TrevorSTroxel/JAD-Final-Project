@@ -2,7 +2,7 @@ import javax.swing.JTextField;
 
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
 public class Text_Field_Input {
-    Window addContent = new Window(); // this is to add the text field to the main window for the user
+
     JTextField Dir = new JTextField("Put the File Directory here: ", 25); // generic TextField for my methods
                                                                           // to use
     JTextField fileName = new JTextField("What do you want to name your file: ", 30); // will be used for the name of
@@ -11,17 +11,21 @@ public class Text_Field_Input {
     String name = new String(); // used for grabbing the name of the file you want to make
 
     public String FileLocation() {
+        Window addContent = new Window(); // this is to add the text field to the main window for the user
+        addContent.MainWindow.add(Dir);
         Dir.setVisible(true);
         Dir.setEditable(true);
-        addContent.MainWindow.add(Dir);
+
         dir = Dir.getText();
         return dir;
     }
 
     public String NameFile() {
+        Window addContent = new Window(); // this is to add the text field to the main window for the user
+        addContent.MainWindow.add(fileName);
         fileName.setVisible(true);
         fileName.setEditable(true);
-        addContent.MainWindow.add(fileName);
+
         name = fileName.getText();
         return name;
     }
