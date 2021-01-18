@@ -36,7 +36,7 @@ public class Window extends JFrame implements ActionListener {
     JButton Tutorial = new JButton("Click me if you want an explinations on some things"); // this will be used to help
                                                                                            // explain to people how to
                                                                                            // do things
-    String[] WordChoice;
+    String[] WordChoice; // this is a generic String array to be used later
 
     // we created this method to call so that if we want to add more we can just add
     // it here rather than adding on to methods that already have a lot of stuff in
@@ -47,7 +47,7 @@ public class Window extends JFrame implements ActionListener {
     }
 
     /**
-     * @ This will add most of the content to the main window function
+     * This will add most of the content to the main window function
      */
     private void addContents() {
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,7 +58,7 @@ public class Window extends JFrame implements ActionListener {
         userInput.setSize(100, 100);
         userInput.setEditable(true); // this makes it so that the user can edit what they put in the text field
 
-        // Action Listener enabler
+        // ActionListener enabler
         Enter.addActionListener(this);
         Tutorial.addActionListener(this);
 
