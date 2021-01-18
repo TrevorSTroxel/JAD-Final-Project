@@ -2,4 +2,9 @@ These are some instructions and tips on how to use this program.
 Keep in mind that the order in which you put words are important, so keep that in mind!
 Here is an example of how to use this program:
     Try typing this into the textbox: create file.
-If you type this is, you will then be asked to select a folder to make this file in.
+This command will create a file in a folder that you will choose.
+Here are some Keywords to try with this program:
+    1. create : this will generate new things for the user
+        A. file : this will create a file inside the selected folder
+        B. class : this will create a class inside a selected file
+        C. method : this will create a method inside the seleced folder
