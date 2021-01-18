@@ -2,10 +2,7 @@
 // Creation file: contains method necessary to create instnaces for the program
 import java.io.File;
 import java.io.IOException;
-// import java.nio.file.Files;
 import java.nio.file.FileAlreadyExistsException;
-// import java.nio.file.Path;
-// import java.nio.file.Paths;
 
 public class Create {
 	/**
@@ -18,15 +15,23 @@ public class Create {
 
 	String[] WordSplit; // this a generic variable that will be called when we need to slit the users
 						// input
+	Text_Field_Input newInput = new Text_Field_Input();
 
-	public void Creation(String methodCall, String CompleteString) {
+	public void Creation(String CompleteString) {
 		WordSplit = CompleteString.split(" "); // this will split up the string every time there is a space
 		// depending on what the user decides to make, it will call different methods
 		// WordSplit[1] = file : create_file
-		// WordSplit[1] = class : creatr_class
-		// WordSplit[1] = method : create_method
+		if (WordSplit[1].equals("file")) {
+			String dir = newInput.FileLocation();
+			newInput.Dir.setVisible(false);
+			String name = newInput.NameFile();
+			newInput.fileName.setVisible(false);
+			create_file(dir, name);
+		} else if (WordSplit[1].equals("class")) {
 
-		create_file(WordSplit[1]);
+		} else if (WordSplit[1].equals("method")) {
+
+		}
 	}
 
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
@@ -55,7 +60,7 @@ public class Create {
 	// CREATE A FILE
 	// Function Input: string | Function Output:a file in chosen directory
 	// ) ( ) ( ) ( ) (
-	public void create_file(String file_directory) {
+	public void create_file(String file_directory, String file_name) {
 		try {
 			File new_file = new File(file_directory);
 			new_file.getParentFile().mkdirs();
