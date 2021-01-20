@@ -1,7 +1,8 @@
-
+//resources "https://www.w3schools.com/java/java_files_create.asp" reference to create and write to files
 // Creation file: contains method necessary to create instnaces for the program
 import java.io.File;
 import java.io.IOException;
+import java.io.FileWriter;   // Import the FileWriter class
 import java.nio.file.FileAlreadyExistsException;
 
 public class Create {
@@ -40,19 +41,44 @@ public class Create {
 	// Function Input: string: name of class | Function Output:a class in string
 	// form
 	// ) ( ) ( ) ( ) (
-	public String creatr_class(String class_name) {
-		return String.format("public class %s{}", class_name);
+	public static void creatr_class(String file_path, String class_name) 
+	{
+		try 
+		{
+			FileWriter myWriter = new FileWriter(file_path);
+			myWriter.write(String.format("public class %s{}", class_name));
+			myWriter.close();
+			System.out.println("Successfully wrote to the file.");
+		  	} 
+			catch (IOException e) 
+			{
+				System.out.println("An error occurred.");
+				e.printStackTrace();
+			}
 	}
 
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
 	// Method contructor
 	// CREATE A METHOD
-	// Function Input: string: a return type and a name for the method | Function
+	// Function Input: string: a return type and a name for the method | Function,
+	// and the file path they want to get
 	// Output:a method in string form
 	// ) ( ) ( ) ( ) (
-	public String create_method(String return_type, String method_name) {
+	public void create_method(String File_Directory, String return_type, String method_name) {
 
-		return String.format("public %s %s(){}", return_type, method_name);
+		try 
+		{
+			FileWriter myWriter = new FileWriter(File_Directory);
+			myWriter.write(String.format("public %s %s(){}", return_type, method_name));
+			myWriter.close();
+			System.out.println("Successfully wrote to the file.");
+		  	} 
+			catch (IOException e) 
+			{
+				System.out.println("An error occurred.");
+				e.printStackTrace();
+			}
+		
 	}
 
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
