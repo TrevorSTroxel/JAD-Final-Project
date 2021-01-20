@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
 public class Text_Field_Input {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JTextField Dir = new JTextField("Enter the name of your directory here: ", 25); // generic TextField
+    public static JTextField Dir = new JTextField("Enter the name of your directory here: ", 30); // generic TextField
                                                                                                   // for my methods to
                                                                                                   // use
     public static JTextField fileName = new JTextField("Enter what you want to name your file: ", 30); // will be used
@@ -22,9 +22,11 @@ public class Text_Field_Input {
                                                                                               // location
     public static JTextField className = new JTextField("Enter what you want to name your class: ", 30); // grabs the
                                                                                                          // name for the
-                                                                                                         // class
+    public static JTextField Panel4_File_Path = new JTextField("Enter the complete file path: ", 30); // 5
+    public static JTextField Panel4_Return_Type = new JTextField("Enter what data type the method should return: ", 30);// 9
+    public static JTextField Panel4_Method_Name = new JTextField("Enter the name of your method: ", 30);// 6
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    // We kept our naming convention simple to help avoid confusion on what they do
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
     public static JPanel Panel3 = new JPanel(); // this panel will be used to create methods inside the desired file
@@ -33,22 +35,25 @@ public class Text_Field_Input {
     public static JButton Enter1 = new JButton("Enter Directory");
     public static JButton Enter2 = new JButton("Enter File Name");
     public static JButton Enter3 = new JButton("Create file in location"); // calls our create file method
- //////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JButton Enter4 = new JButton("Enter File Directory"); // this will be used to grab the file loction
                                                                         // where they want to make a method
     public static JButton Enter5 = new JButton("Enter Name of class"); // lets the user name the class they want to
                                                                        // create
     public static JButton Enter6 = new JButton("Create class");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JButton Enter7 = new JButton()
+    public static JButton Enter7 = new JButton("Enter File Directory");
+    public static JButton Enter8 = new JButton("Enter Return Type");
+    public static JButton Enter9 = new JButton("Enter Method Name");
+    public static JButton Enter10 = new JButton("Create Method");
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JTextArea errorTextArea = new JTextArea(20, 20); // this will display an error message
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // this functions will be called if there is an error in the users input
@@ -105,7 +110,29 @@ public class Text_Field_Input {
     }
 
     public static void addPanel4() {
+        // adds buttons
+        Panel4.add(Enter7);
+        Panel4.add(Enter8);
+        Panel4.add(Enter9);
+        Panel4.add(Enter10);
 
+        // adds text fields
+        Panel4.add(Panel4_File_Path);
+        Panel4.add(Panel4_Method_Name);
+        Panel4.add(Panel4_Return_Type);
+
+        // enables things
+        Text_Box_Settings(Panel4_File_Path);
+        Text_Box_Settings(Panel4_Method_Name);
+        Text_Box_Settings(Panel4_Return_Type);
+
+        Panel4.setVisible(true);
+        Window.MainWindow.add(Panel4);
+    }
+
+    public static void Text_Box_Settings(JTextField JTF) {
+        JTF.setVisible(true);
+        JTF.setEditable(true);
     }
 
     /**

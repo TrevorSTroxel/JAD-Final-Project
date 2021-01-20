@@ -39,14 +39,20 @@ public class Window extends JFrame implements ActionListener {
 
     JButton Enter = new JButton("Enter"); // this is mostly used to seperate out what button is being pressed on the
                                           // main menu
-    JButton Tutorial = new JButton("Click me if you want an explinations on how to use this program"); // tutorial
-                                                                                                       // button
+    JButton Tutorial = new JButton("Help"); // tutorial button
+
     String[] WordChoice; // this is a generic String array to be used later
     String NAME = new String();
     String DIR = new String();
 
     String FILEPATH = new String();
     String CLASSNAME = new String();
+
+    // Trying to have variables with better names, so it is better programing habits
+    // and easier to read in code form;
+    String Panel4_File_Dir = new String();
+    String Panel4_Return_Type = new String();
+    String Panel4_Mathed_Name = new String();
 
     // we created this method to call so that if we want to add more we can just add
     // it here rather than adding on to methods that already have a lot of stuff in
@@ -154,7 +160,13 @@ public class Window extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("method")) {
-
+            Panel1.setVisible(false);
+            Text_Field_Input.addPanel4();
+            Text_Field_Input.Enter7.addActionListener(this);
+            Text_Field_Input.Enter8.addActionListener(this);
+            Text_Field_Input.Enter9.addActionListener(this);
+            Text_Field_Input.Enter10.addActionListener(this);
+            Text_Field_Input.Panel4.setVisible(true);
         }
 
         /////////////////////////////////////////////////////////////////////////////////////
@@ -200,6 +212,33 @@ public class Window extends JFrame implements ActionListener {
         else if (e.getSource() == Text_Field_Input.Enter6) {
             Create.creatr_class(FILEPATH, CLASSNAME);
         }
+
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        else if (e.getSource() == Text_Field_Input.Enter7) {
+            WordChoice = Text_Field_Input.Panel4_File_Path.getText().split(" ");
+
+            Panel4_File_Dir = WordChoice[5];
+
+        }
+
+        else if (e.getSource() == Text_Field_Input.Enter8) {
+            WordChoice = Text_Field_Input.Panel4_Return_Type.getText().split(" ");
+
+            Panel4_Return_Type = WordChoice[8];
+        }
+
+        else if (e.getSource() == Text_Field_Input.Enter9) {
+            WordChoice = Text_Field_Input.Panel4_Method_Name.getText().split(" ");
+
+            Panel4_Mathed_Name = WordChoice[6];
+        }
+
+        else if (e.getSource() == Text_Field_Input.Enter10) {
+            Create.create_method(Panel4_File_Dir, Panel4_Return_Type, Panel4_Mathed_Name);
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////
 
         else if (e.getSource() == Tutorial) {
             Help();
