@@ -144,36 +144,36 @@ public class Window extends JFrame implements ActionListener {
             Text_Field_Input.addPanel2(); // calls the method to set up the second panel
             // we needed to add action functionality to our buttons and this was the only
             // way we could set this up
-            Text_Field_Input.Enter1.addActionListener(this);
-            Text_Field_Input.Enter2.addActionListener(this);
-            Text_Field_Input.Enter3.addActionListener(this);
+            Text_Field_Input.P2_Enter_Get_Dir.addActionListener(this);
+            Text_Field_Input.P2_Enter_Get_File_Name.addActionListener(this);
+            Text_Field_Input.P2_Enter_Call_Method.addActionListener(this);
             Text_Field_Input.Panel2.setVisible(true);
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("class")) {
             Panel1.setVisible(false);
             Text_Field_Input.addPanel3();
-            Text_Field_Input.Enter4.addActionListener(this);
-            Text_Field_Input.Enter5.addActionListener(this);
-            Text_Field_Input.Enter6.addActionListener(this);
+            Text_Field_Input.P3_Enter_Get_Dir.addActionListener(this);
+            Text_Field_Input.P3_Enter_Get_Class_Name.addActionListener(this);
+            Text_Field_Input.P3_Enter_Call_Method.addActionListener(this);
             Text_Field_Input.Panel3.setVisible(true);
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("method")) {
             Panel1.setVisible(false);
             Text_Field_Input.addPanel4();
-            Text_Field_Input.Enter7.addActionListener(this);
-            Text_Field_Input.Enter8.addActionListener(this);
-            Text_Field_Input.Enter9.addActionListener(this);
-            Text_Field_Input.Enter10.addActionListener(this);
+            Text_Field_Input.P4_Enter_File_Dir.addActionListener(this);
+            Text_Field_Input.P4_Enter_Return_Type.addActionListener(this);
+            Text_Field_Input.P4_Enter_Method_Name.addActionListener(this);
+            Text_Field_Input.P4_Enter_Call_Method.addActionListener(this);
             Text_Field_Input.Panel4.setVisible(true);
         }
 
         /////////////////////////////////////////////////////////////////////////////////////
         // This is where our program will calculate certain users input
         // add contigencies for if the user does not enter something correct
-        else if (e.getSource() == Text_Field_Input.Enter1) {
-            WordChoice = Text_Field_Input.Dir.getText().split(" "); // this will breake up the string to be read easier
+        else if (e.getSource() == Text_Field_Input.P2_Enter_Get_Dir) {
+            WordChoice = Text_Field_Input.P2_Dir_Text_Field.getText().split(" "); // this will breake up the string to be read easier
             DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
             File file = new File(DIR);
             if (!file.isDirectory()) {
@@ -183,13 +183,13 @@ public class Window extends JFrame implements ActionListener {
             }
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter2) {
-            WordChoice = Text_Field_Input.fileName.getText().split(" "); // this will breake up the string to be read
+        else if (e.getSource() == Text_Field_Input.P2_Enter_Get_File_Name) {
+            WordChoice = Text_Field_Input.P2_File_Name.getText().split(" "); // this will breake up the string to be read
                                                                          // easier
             NAME = WordChoice[8];// this takes the name of the file directory that the user inputs
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter3) {
+        else if (e.getSource() == Text_Field_Input.P2_Enter_Call_Method) {
             Create.create_file(DIR, NAME); // this calls the method after both variables are set and then creats a new
                                            // file in a folder location
 
@@ -197,44 +197,44 @@ public class Window extends JFrame implements ActionListener {
 
         /////////////////////////////////////////////////////////////////////////////////////
 
-        else if (e.getSource() == Text_Field_Input.Enter4) {
-            WordChoice = Text_Field_Input.filePath.getText().split(" ");
+        else if (e.getSource() == Text_Field_Input.P3_Enter_Get_Dir) {
+            WordChoice = Text_Field_Input.P3_File_Path.getText().split(" ");
 
             FILEPATH = WordChoice[5];
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter5) {
-            WordChoice = Text_Field_Input.className.getText().split(" ");
+        else if (e.getSource() == Text_Field_Input.P3_Enter_Get_Class_Name) {
+            WordChoice = Text_Field_Input.P3_Class_Name.getText().split(" ");
 
             CLASSNAME = WordChoice[8];
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter6) {
+        else if (e.getSource() == Text_Field_Input.P3_Enter_Call_Method) {
             Create.creatr_class(FILEPATH, CLASSNAME);
         }
 
         /////////////////////////////////////////////////////////////////////////////////////
 
-        else if (e.getSource() == Text_Field_Input.Enter7) {
-            WordChoice = Text_Field_Input.Panel4_File_Path.getText().split(" ");
+        else if (e.getSource() == Text_Field_Input.P4_Enter_File_Dir) {
+            WordChoice = Text_Field_Input.P4_File_Path.getText().split(" ");
 
             Panel4_File_Dir = WordChoice[5];
 
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter8) {
-            WordChoice = Text_Field_Input.Panel4_Return_Type.getText().split(" ");
+        else if (e.getSource() == Text_Field_Input.P4_Enter_Return_Type) {
+            WordChoice = Text_Field_Input.P4_Return_Type.getText().split(" ");
 
             Panel4_Return_Type = WordChoice[8];
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter9) {
-            WordChoice = Text_Field_Input.Panel4_Method_Name.getText().split(" ");
+        else if (e.getSource() == Text_Field_Input.P4_Enter_Method_Name) {
+            WordChoice = Text_Field_Input.P4_Method_Name.getText().split(" ");
 
             Panel4_Mathed_Name = WordChoice[6];
         }
 
-        else if (e.getSource() == Text_Field_Input.Enter10) {
+        else if (e.getSource() == Text_Field_Input.P4_Enter_Call_Method) {
             Create.create_method(Panel4_File_Dir, Panel4_Return_Type, Panel4_Mathed_Name);
         }
 
