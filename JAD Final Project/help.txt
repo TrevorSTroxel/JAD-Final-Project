@@ -6,12 +6,28 @@ This command will create a file in a folder that you will choose.
 Here are some Keywords to try with this program:
     1. create : this will generate new things for the user
         A. file : this will create a file inside the selected folder
+
         B. class : this will create a class inside a selected file
+
         C. method : this will create a method inside the seleced folder
 IMPORTANT TERMINOLOGY
 Directory: Your computer puts files and other things in what are called paths 
            so that your computer can have better organization.
-           Every folder on your computer has a unique path,
+           Every folder/file on your computer has a unique path,
            which are know as Directories. If you created a folder
            called test on desktop, the directory would be called:
-           C:\Users\<your_user_name>\Desktop\test.
+           C:\Users\<your_user_name>\Desktop\test. In other words,
+           directories are how your computer knows where stuff is.
+IMPORTANT NOTES
+* Spelling errors: Typos can wreck this program. so be very cautious of typos. 
+
+* Complete File path: When asked for a "Complete file path" that means that the
+    program is asking for all the information possible about where the file is.
+    That is so the program knows exactly where to find/create your file.
+    It is the entire sequence of files/ drives that you go through, to get to
+    get the desired destination.
+    Example for a complete path : C:\Users\<your_user_name>\Desktop\test.
+
+
+    
+    
