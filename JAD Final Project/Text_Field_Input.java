@@ -78,7 +78,7 @@ public class Text_Field_Input {
 
         // makes it so we can see the new panel and adds it to the main window
         Panel2.setVisible(true);
-        Window.MainWindow.add(Panel2);
+        PrimaryWindow.MainWindow.add(Panel2);
 
     }
 
@@ -99,7 +99,7 @@ public class Text_Field_Input {
         P3_Class_Name.setEditable(true);
 
         Panel3.setVisible(true);
-        Window.MainWindow.add(Panel3);
+        PrimaryWindow.MainWindow.add(Panel3);
     }
 
     // Allows the user to make a class inside the file they made
@@ -121,7 +121,7 @@ public class Text_Field_Input {
         Text_Box_Settings(P4_Return_Type);
 
         Panel4.setVisible(true);
-        Window.MainWindow.add(Panel4);
+        PrimaryWindow.MainWindow.add(Panel4);
     }
 
     public static void Text_Box_Settings(JTextField JTF) {
