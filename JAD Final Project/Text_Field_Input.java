@@ -84,12 +84,11 @@ public class Text_Field_Input {
 
     // this will open up the file the user has selected and add a method to that
     // file
-    public static void addPanel3() { // adds buttons
+    public static void addPanel3() {
         Panel3.add(P3_Enter_Get_Dir);
         Panel3.add(P3_Enter_Get_Class_Name);
         Panel3.add(P3_Enter_Call_Method);
 
-        // addes text feilds
         Panel3.add(P3_File_Path);
         Panel3.add(P3_Class_Name);
 
@@ -103,6 +102,7 @@ public class Text_Field_Input {
         Window.MainWindow.add(Panel3);
     }
 
+    // Allows the user to make a class inside the file they made
     public static void addPanel4() {
         // adds buttons
         Panel4.add(P4_Enter_File_Dir);

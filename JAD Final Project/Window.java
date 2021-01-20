@@ -130,6 +130,9 @@ public class Window extends JFrame implements ActionListener {
      * @param e
      * @apiNote this will look at the first word that the user has writen and the
      *          program will go to the correct methods as needed
+     * @apiNote Look into finding better ways of having this be layed out. Possible
+     *          call another window to handle all these inputs so that it looks much
+     *          cleaner
      */
 
     @Override
@@ -173,7 +176,8 @@ public class Window extends JFrame implements ActionListener {
         // This is where our program will calculate certain users input
         // add contigencies for if the user does not enter something correct
         else if (e.getSource() == Text_Field_Input.P2_Enter_Get_Dir) {
-            WordChoice = Text_Field_Input.P2_Dir_Text_Field.getText().split(" "); // this will breake up the string to be read easier
+            WordChoice = Text_Field_Input.P2_Dir_Text_Field.getText().split(" "); // this will breake up the string to
+                                                                                  // be read easier
             DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
             File file = new File(DIR);
             if (!file.isDirectory()) {
@@ -184,8 +188,9 @@ public class Window extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == Text_Field_Input.P2_Enter_Get_File_Name) {
-            WordChoice = Text_Field_Input.P2_File_Name.getText().split(" "); // this will breake up the string to be read
-                                                                         // easier
+            WordChoice = Text_Field_Input.P2_File_Name.getText().split(" "); // this will breake up the string to be
+                                                                             // read
+            // easier
             NAME = WordChoice[8];// this takes the name of the file directory that the user inputs
         }
 
