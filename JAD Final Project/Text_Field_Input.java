@@ -18,15 +18,29 @@ public class Text_Field_Input {
     public static JTextField fileName = new JTextField("Enter what you want to name your file: ", 30); // will be used
                                                                                                        // for the name
                                                                                                        // of the file
+    public static JTextField filePath = new JTextField("Enter the complete file path: ", 30); // grabs the files
+                                                                                              // location
+    public static JTextField className = new JTextField("Enter what you want to name your class: ", 30); // grabs the
+                                                                                                         // name for the
+                                                                                                         // class
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static String dir = new String(); // this is the directory that the user wants to create
-    public static String name = new String(); // used for grabbing the name of the file you want to make
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JPanel Panel2 = new JPanel();
+    public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
+    public static JPanel Panel3 = new JPanel(); // this panel will be used to create methods inside the desired file
+    public static JPanel Panel4 = new JPanel(); // this will be used to create methods in files
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JButton Enter1 = new JButton("Enter Directory");
     public static JButton Enter2 = new JButton("Enter File Name");
-    public static JButton Enter3 = new JButton("Create file in location");
+    public static JButton Enter3 = new JButton("Create file in location"); // calls our create file method
+ //////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static JButton Enter4 = new JButton("Enter File Directory"); // this will be used to grab the file loction
+                                                                        // where they want to make a method
+    public static JButton Enter5 = new JButton("Enter Name of class"); // lets the user name the class they want to
+                                                                       // create
+    public static JButton Enter6 = new JButton("Create class");
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static JButton Enter7 = new JButton()
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,8 +83,33 @@ public class Text_Field_Input {
 
     }
 
+    // this will open up the file the user has selected and add a method to that
+    // file
+    public static void addPanel3() { // adds buttons
+        Panel3.add(Enter4);
+        Panel3.add(Enter5);
+        Panel3.add(Enter6);
+
+        // addes text feilds
+        Panel3.add(filePath);
+        Panel3.add(className);
+
+        // enables things
+        filePath.setVisible(true);
+        filePath.setEditable(true);
+        className.setVisible(true);
+        className.setEditable(true);
+
+        Panel3.setVisible(true);
+        Window.MainWindow.add(Panel3);
+    }
+
+    public static void addPanel4() {
+
+    }
+
     /**
-     * have the text area appear fdor the input and then dissapear after the user
+     * have the text area appear for the input and then dissapear after the user
      * gave their input
      */
 
