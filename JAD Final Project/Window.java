@@ -45,6 +45,9 @@ public class Window extends JFrame implements ActionListener {
     String NAME = new String();
     String DIR = new String();
 
+    String FILEPATH = new String();
+    String CLASSNAME = new String();
+
     // we created this method to call so that if we want to add more we can just add
     // it here rather than adding on to methods that already have a lot of stuff in
     // them
@@ -124,8 +127,7 @@ public class Window extends JFrame implements ActionListener {
      */
 
     @Override
-    public void actionPerformed(ActionEvent e) 
-    {
+    public void actionPerformed(ActionEvent e) {
         String INPUT = userInput.getText();
         INPUT.toLowerCase(); // this is mostly just convience for the programmers so we can just have a
                              // single argument to deal with
@@ -141,13 +143,29 @@ public class Window extends JFrame implements ActionListener {
             Text_Field_Input.Enter3.addActionListener(this);
             Text_Field_Input.Panel2.setVisible(true);
         }
+
+        else if (e.getSource() == Enter && WordChoice[1].equals("class")) {
+            Panel1.setVisible(false);
+            Text_Field_Input.addPanel3();
+            Text_Field_Input.Enter4.addActionListener(this);
+            Text_Field_Input.Enter5.addActionListener(this);
+            Text_Field_Input.Enter6.addActionListener(this);
+            Text_Field_Input.Panel3.setVisible(true);
+        }
+
+        else if (e.getSource() == Enter && WordChoice[1].equals("method")) {
+
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////
+        // This is where our program will calculate certain users input
         // add contigencies for if the user does not enter something correct
         else if (e.getSource() == Text_Field_Input.Enter1) {
             WordChoice = Text_Field_Input.Dir.getText().split(" "); // this will breake up the string to be read easier
             DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
             File file = new File(DIR);
             if (!file.isDirectory()) {
-                // Text_Field_Input.ERROR(Text_Field_Input.Panel2); //come backk to this later
+                // Text_Field_Input.ERROR(Text_Field_Input.Panel2); //come back to this later
                 // as this is not working proporly
                 System.out.println("There was an error in your text, try again");
             }
@@ -162,7 +180,28 @@ public class Window extends JFrame implements ActionListener {
         else if (e.getSource() == Text_Field_Input.Enter3) {
             Create.create_file(DIR, NAME); // this calls the method after both variables are set and then creats a new
                                            // file in a folder location
-        } else if (e.getSource() == Tutorial) {
+
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        else if (e.getSource() == Text_Field_Input.Enter4) {
+            WordChoice = Text_Field_Input.filePath.getText().split(" ");
+
+            FILEPATH = WordChoice[5];
+        }
+
+        else if (e.getSource() == Text_Field_Input.Enter5) {
+            WordChoice = Text_Field_Input.className.getText().split(" ");
+
+            CLASSNAME = WordChoice[8];
+        }
+
+        else if (e.getSource() == Text_Field_Input.Enter6) {
+            Create.creatr_class(FILEPATH, CLASSNAME);
+        }
+
+        else if (e.getSource() == Tutorial) {
             Help();
         }
 
