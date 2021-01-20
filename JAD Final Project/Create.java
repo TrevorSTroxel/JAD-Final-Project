@@ -16,7 +16,7 @@ public class Create {
 
 	String[] WordSplit; // this a generic variable that will be called when we need to slit the users
 						// input
-
+	/*
 	// Leaving this in here until we know for sure we do not need this
 	// public void Creation(String CompleteString) {
 	// WordSplit = CompleteString.split(" "); // this will split up the string every
@@ -34,7 +34,7 @@ public class Create {
 
 	// }
 	// }
-
+	*/
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
 	// Class constructor
 	// CREATE A CLASS
@@ -64,7 +64,8 @@ public class Create {
 	// and the file path they want to get
 	// Output:a method in string form
 	// ) ( ) ( ) ( ) (
-	public void create_method(String File_Directory, String return_type, String method_name) {
+	public static void create_method(String File_Directory, String return_type, String method_name) 
+	{
 
 		try 
 		{
