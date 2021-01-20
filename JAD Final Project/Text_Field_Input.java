@@ -4,7 +4,7 @@
  * @version 1.0
  */
 import javax.swing.JButton;
-import javax.swing.JLabel;
+// import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;

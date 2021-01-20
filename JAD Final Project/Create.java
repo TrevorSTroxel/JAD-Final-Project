@@ -15,6 +15,8 @@ public class Create {
 
 	String[] WordSplit; // this a generic variable that will be called when we need to slit the users
 						// input
+
+	// Leaving this in here until we know for sure we do not need this
 	// public void Creation(String CompleteString) {
 	// WordSplit = CompleteString.split(" "); // this will split up the string every
 	// time there is a space
@@ -65,7 +67,8 @@ public class Create {
 			new_file.createNewFile();
 		} catch (FileAlreadyExistsException e) { // this is to prevet the program from making a file that already exists
 		} catch (IOException e) { // this is meant to make sure that the commands are being interperted correctly
-			//
+			System.out
+					.println("There was an error when creating your new file, try making sure you have correct inputs");
 			e.printStackTrace();
 		}
 	}

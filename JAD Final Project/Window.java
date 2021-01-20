@@ -39,9 +39,8 @@ public class Window extends JFrame implements ActionListener {
 
     JButton Enter = new JButton("Enter"); // this is mostly used to seperate out what button is being pressed on the
                                           // main menu
-    JButton Tutorial = new JButton("Click me if you want an explinations on some things"); // this will be used to help
-                                                                                           // explain to people how to
-                                                                                           // do things
+    JButton Tutorial = new JButton("Click me if you want an explinations on how to use this program"); // tutorial
+                                                                                                       // button
     String[] WordChoice; // this is a generic String array to be used later
     String NAME = new String();
     String DIR = new String();
@@ -59,9 +58,6 @@ public class Window extends JFrame implements ActionListener {
      * This will add most of the content to the main window function
      */
     private void addContents() {
-        // create a new panel. name it panel2. add the second text field to it. add
-        // panel2 to mainwindow. set panel2 to false/true.
-        // Panel1.add(Text_Field_Input.Dir);
 
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -128,7 +124,8 @@ public class Window extends JFrame implements ActionListener {
      */
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) 
+    {
         String INPUT = userInput.getText();
         INPUT.toLowerCase(); // this is mostly just convience for the programmers so we can just have a
                              // single argument to deal with
