@@ -4,7 +4,7 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
+// import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.FileWriter; // Import the FileWriter class
@@ -103,20 +103,19 @@ public class Create {
 			BufferedReader FileReader = new BufferedReader(ir);
 			String line = FileReader.readLine();
 			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
-			while (line != null) // this makes sure that the program does not read beyond the
+			while (line != "}" || line != null) // this makes sure that the program does not read beyond the
 			{
-				if (line.contains(Method_Name)) // this means that the program has found the method name
+				String prevLine = line;
+				if (prevLine.contains(Method_Name)) // this means that the program has found the method name
 				{
-					// do{
+					line = FileReader.readLine();
 					if (line.isBlank() == true) {
-						content.write(Contents_To_Add);
+						content.write(String.format(Contents_To_Add));
+						content.close();
 					}
-					// } while(line.contains("}"));
-
 				}
+				FileReader.close();
 			}
-			content.close();
-			FileReader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
