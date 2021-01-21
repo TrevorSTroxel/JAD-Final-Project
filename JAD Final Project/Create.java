@@ -96,13 +96,12 @@ public class Create {
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
 		File dir = new File(File_Dir);// this will open up the file directory that the user has chosen
 		try {
-			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
 			// Reference: Pete Tuckers JAD slides practices
 			FileInputStream is = new FileInputStream(dir);
 			InputStreamReader ir = new InputStreamReader(is);
 			BufferedReader FileReader = new BufferedReader(ir);
 			String line = FileReader.readLine();
-
+			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
 			if (line != "}" || line != null) // this makes sure that the program does not read beyond the
 			{
 				String prevLine = line;
@@ -110,7 +109,7 @@ public class Create {
 				{
 					line = FileReader.readLine();
 					if (line.isBlank()) {
-						content.write(Contents_To_Add);
+						content.write(String.format(Contents_To_Add));
 					}
 				} else {
 					line = FileReader.readLine();
