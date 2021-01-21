@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -29,6 +28,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
     Create creation = new Create(); // this is an object that is used for calling the a methods to sort out what the
                                     // user wants to do
     Text_Field_Input newInput = new Text_Field_Input();
+    SecondayWindows NewWindows = new SecondayWindows();
 
     static JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
 
@@ -42,24 +42,9 @@ public class PrimaryWindow extends JFrame implements ActionListener {
     JButton Tutorial = new JButton("Help"); // tutorial button
 
     String[] WordChoice; // this is a generic String array to be used later
-    String NAME = new String();
-    String DIR = new String();
 
-    String FILEPATH = new String();
-    String CLASSNAME = new String();
-
-    // Trying to have variables with better names, so it is better programing habits
-    // and easier to read in code form;
-    String Panel4_File_Dir = new String();
-    String Panel4_Return_Type = new String();
-    String Panel4_Mathed_Name = new String();
-
-    // we created this method to call so that if we want to add more we can just add
-    // it here rather than adding on to methods that already have a lot of stuff in
-    // them
     public void WindowCreation() {
         MainWindow.setSize(500, 500);
-
         addContents();
     }
 
@@ -151,6 +136,8 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             Text_Field_Input.P2_Enter_Get_File_Name.addActionListener(this);
             Text_Field_Input.P2_Enter_Call_Method.addActionListener(this);
             Text_Field_Input.Panel2.setVisible(true);
+
+            // add action to open up new window from new file
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("class")) {
@@ -172,81 +159,13 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             Text_Field_Input.Panel4.setVisible(true);
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////
-        // This is where our program will calculate certain users input
-        // add contigencies for if the user does not enter something correct
-        else if (e.getSource() == Text_Field_Input.P2_Enter_Get_Dir) {
-            WordChoice = Text_Field_Input.P2_Dir_Text_Field.getText().split(" "); // this will breake up the string to
-                                                                                  // be read easier
-            DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
-            File file = new File(DIR);
-            if (!file.isDirectory()) {
-                // Text_Field_Input.ERROR(Text_Field_Input.Panel2); //come back to this later
-                // as this is not working proporly
-                System.out.println("There was an error in your text, try again");
-            }
-        }
-
-        else if (e.getSource() == Text_Field_Input.P2_Enter_Get_File_Name) {
-            WordChoice = Text_Field_Input.P2_File_Name.getText().split(" "); // this will breake up the string to be
-                                                                             // read
-            // easier
-            NAME = WordChoice[8];// this takes the name of the file directory that the user inputs
-        }
-
-        else if (e.getSource() == Text_Field_Input.P2_Enter_Call_Method) {
-            Create.create_file(DIR, NAME); // this calls the method after both variables are set and then creats a new
-                                           // file in a folder location
-
-        }
-
-        /////////////////////////////////////////////////////////////////////////////////////
-
-        else if (e.getSource() == Text_Field_Input.P3_Enter_Get_Dir) {
-            WordChoice = Text_Field_Input.P3_File_Path.getText().split(" ");
-
-            FILEPATH = WordChoice[5];
-        }
-
-        else if (e.getSource() == Text_Field_Input.P3_Enter_Get_Class_Name) {
-            WordChoice = Text_Field_Input.P3_Class_Name.getText().split(" ");
-
-            CLASSNAME = WordChoice[8];
-        }
-
-        else if (e.getSource() == Text_Field_Input.P3_Enter_Call_Method) {
-            Create.creatr_class(FILEPATH, CLASSNAME);
-        }
-
-        /////////////////////////////////////////////////////////////////////////////////////
-
-        else if (e.getSource() == Text_Field_Input.P4_Enter_File_Dir) {
-            WordChoice = Text_Field_Input.P4_File_Path.getText().split(" ");
-
-            Panel4_File_Dir = WordChoice[5];
-
-        }
-
-        else if (e.getSource() == Text_Field_Input.P4_Enter_Return_Type) {
-            WordChoice = Text_Field_Input.P4_Return_Type.getText().split(" ");
-
-            Panel4_Return_Type = WordChoice[8];
-        }
-
-        else if (e.getSource() == Text_Field_Input.P4_Enter_Method_Name) {
-            WordChoice = Text_Field_Input.P4_Method_Name.getText().split(" ");
-
-            Panel4_Mathed_Name = WordChoice[6];
-        }
-
-        else if (e.getSource() == Text_Field_Input.P4_Enter_Call_Method) {
-            Create.create_method(Panel4_File_Dir, Panel4_Return_Type, Panel4_Mathed_Name);
-        }
-
-        /////////////////////////////////////////////////////////////////////////////////////
-
         else if (e.getSource() == Tutorial) {
             Help();
+        }
+
+        else {
+            //we moved a lot of actions to a different file so that it would be more organized
+            NewWindows.actionPerformed(e);
         }
 
     }
