@@ -33,12 +33,12 @@ public class SecondayWindows extends JFrame implements ActionListener {
      */
     public static void SecondSetUp() {
         SecondWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        SecondWindow.setSize(500, 500);
         SecondWindow.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        SecondSetUp();
 
         /////////////////////////////////////////////////////////////////////////////////////
         // This is where our program will calculate certain users input

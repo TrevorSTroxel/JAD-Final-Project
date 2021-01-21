@@ -78,8 +78,8 @@ public class Text_Field_Input {
 
         // makes it so we can see the new panel and adds it to the main window
         Panel2.setVisible(true);
+        SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel2);
-
     }
 
     // this will open up the file the user has selected and add a method to that
@@ -99,6 +99,7 @@ public class Text_Field_Input {
         P3_Class_Name.setEditable(true);
 
         Panel3.setVisible(true);
+        SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel3);
     }
 
@@ -121,6 +122,7 @@ public class Text_Field_Input {
         Text_Box_Settings(P4_Return_Type);
 
         Panel4.setVisible(true);
+        SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel4);
     }
 
