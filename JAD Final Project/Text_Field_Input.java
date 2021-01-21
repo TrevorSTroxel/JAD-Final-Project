@@ -131,9 +131,4 @@ public class Text_Field_Input {
         JTF.setEditable(true);
     }
 
-    /**
-     * have the text area appear for the input and then dissapear after the user
-     * gave their input
-     */
-
 }
