@@ -4,12 +4,16 @@
  * @version 1.0
  */
 import javax.swing.JButton;
-// import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
+/**
+ * This file is mostly used for helping use methods to create different windows
+ * and to help store a large amount of different variables for us to use. Our
+ * naming conventions are based around what panel the variables belong to
+ */
 public class Text_Field_Input {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
