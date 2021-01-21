@@ -154,13 +154,20 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             Text_Field_Input.Panel4.setVisible(true);
         }
 
+        else if (e.getSource() == Enter && WordChoice[1].equals("content")) {
+            Text_Field_Input.addPanel5();
+            Text_Field_Input.P5_Enter_File_Dir.addActionListener(this);
+            Text_Field_Input.P5_Enter_Method_Name.addActionListener(this);
+            Text_Field_Input.P5_Enter_Contents.addActionListener(this);
+            Text_Field_Input.P5_Enter_Call_Method.addActionListener(this);
+            Text_Field_Input.Panel5.setVisible(true);
+        }
+
         else if (e.getSource() == Tutorial) {
             Help();
         }
 
         else {
-            // we moved a lot of actions to a different file so that it would be more
-            // organized
             NewWindows.actionPerformed(e);
         }
 
