@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileWriter; // Import the FileWriter class
 import java.nio.file.FileAlreadyExistsException;
+import java.util.Scanner;
 
 public class Create {
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
@@ -79,6 +80,8 @@ public class Create {
 	}
 
 	/**
+	 * Method right now is WIP
+	 * 
 	 * @param Method_Name
 	 * @param File_dir
 	 * @param Contents_To_Add This method will search through the given file the
@@ -91,7 +94,7 @@ public class Create {
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
 		File dir = new File(File_Dir);// this will open up the file directory that the user has chosen
-
+		// Scanner scanner = new Scanner(File_Dir);
 		try {
 			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
 			BufferedReader FileReader = new BufferedReader(new FileReader(dir));
@@ -101,7 +104,12 @@ public class Create {
 			{
 				if (line.contains(Method_Name)) // this means that the program has found the method name
 				{
-					// this should now go to the next empty line and add contents
+					// do{
+					if (line.isBlank() == true) {
+						content.write(Contents_To_Add);
+					}
+					// } while(line.contains("}"));
+
 				}
 			}
 			content.close();
