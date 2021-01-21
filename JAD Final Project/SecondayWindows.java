@@ -1,4 +1,6 @@
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -23,9 +25,20 @@ public class SecondayWindows extends JFrame implements ActionListener {
     String Panel4_Return_Type = new String();
     String Panel4_Mathed_Name = new String();
 
+    /**
+     * This will take in different settings and features from various windows so
+     * that the user can have multiple windows open to use
+     * 
+     * @param settings
+     */
+    public static void SecondSetUp() {
+        SecondWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        SecondWindow.setVisible(true);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        SecondSetUp();
 
         /////////////////////////////////////////////////////////////////////////////////////
         // This is where our program will calculate certain users input
@@ -50,8 +63,9 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == Text_Field_Input.P2_Enter_Call_Method) {
-            Create.create_file(Panel2_DIR, Panel2_NAME); // this calls the method after both variables are set and then creats a new
-                                           // file in a folder location
+            Create.create_file(Panel2_DIR, Panel2_NAME); // this calls the method after both variables are set and then
+                                                         // creats a new
+            // file in a folder location
 
         }
 
