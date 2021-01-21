@@ -12,24 +12,33 @@ import javax.swing.JTextField;
 /**
  * This file is mostly used for helping use methods to create different windows
  * and to help store a large amount of different variables for us to use. Our
- * naming conventions are based around what panel the variables belong to
+ * naming conventions are based around what panel the variables belong to.
+ * Example: P2_Dir_Text_Fiedl belongs to panel2, as indicated by the P2 in
+ * fromnt of the variable name may want to consider moving all these variables,
+ * as this file is becoming very large would also make sence for mor
+ * organization, talk to partner later about this
  */
 public class Text_Field_Input {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
     public static JPanel Panel3 = new JPanel(); // this panel will be used to create methods inside the desired file
     public static JPanel Panel4 = new JPanel(); // this will be used to create methods in files
+    public static JPanel Panel5 = new JPanel(); // this will be used to add content to panels
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // generic TextField for my methods to use
     public static JTextField P2_Dir_Text_Field = new JTextField("Enter the name of your directory here: ", 30);
-    // will be used for the name of the file
     public static JTextField P2_File_Name = new JTextField("Enter what you want to name your file: ", 30);
-    // grabs the files location
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JTextField P3_File_Path = new JTextField("Enter the complete file path: ", 30);
     public static JTextField P3_Class_Name = new JTextField("Enter what you want to name your class: ", 30);
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JTextField P4_File_Path = new JTextField("Enter the complete file path: ", 30);
     public static JTextField P4_Return_Type = new JTextField("Enter what data type the method should return: ", 30);
     public static JTextField P4_Method_Name = new JTextField("Enter the name of your method: ", 30);
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static JTextField P5_File_Dir = new JTextField("Enter the complete file path: ", 30); // 5
+    public static JTextField P5_Method_Name = new JTextField("Enter the name of your method: ", 30);// 6
+    public static JTextField P5_Contents_To_Add = new JTextField("Enter what you want to add to the method: ", 30); // 9
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // We kept our naming convention simple to help avoid confusion on what they do
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,7 +57,7 @@ public class Text_Field_Input {
     public static JButton P4_Enter_Method_Name = new JButton("Enter Method Name");
     public static JButton P4_Enter_Call_Method = new JButton("Create Method");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    public static JButton P5_Enter_File_Dir = new JButton("Enter File Directory");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JTextArea errorTextArea = new JTextArea(20, 20); // this will display an error message
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +69,11 @@ public class Text_Field_Input {
         errorTextArea.setText("You mistyped something in the text area, try again.");
         errorTextArea.setVisible(true);
         Panel2.add(errorTextArea);
+    }
+
+    public static void Text_Box_Settings(JTextField JTF) {
+        JTF.setVisible(true);
+        JTF.setEditable(true);
     }
 
     // this will be called if you want to create a file
@@ -130,9 +144,9 @@ public class Text_Field_Input {
         SecondayWindows.SecondWindow.add(Panel4);
     }
 
-    public static void Text_Box_Settings(JTextField JTF) {
-        JTF.setVisible(true);
-        JTF.setEditable(true);
+    // allows the user to add contents to methods they have created
+    public static void addPanel5() {
+
     }
 
 }
