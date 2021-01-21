@@ -135,8 +135,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             Text_Field_Input.P2_Enter_Get_File_Name.addActionListener(this);
             Text_Field_Input.P2_Enter_Call_Method.addActionListener(this);
             Text_Field_Input.Panel2.setVisible(true);
-
-            // add action to open up new window from new file
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("class")) {
