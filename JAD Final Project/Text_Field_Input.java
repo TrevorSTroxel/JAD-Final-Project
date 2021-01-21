@@ -14,7 +14,7 @@ import javax.swing.JTextField;
  * and to help store a large amount of different variables for us to use. Our
  * naming conventions are based around what panel the variables belong to.
  * Example: P2_Dir_Text_Fiedl belongs to panel2, as indicated by the P2 in
- * fromnt of the variable name may want to consider moving all these variables,
+ * fromnt of the variable name. May want to consider moving all these variables,
  * as this file is becoming very large would also make sence for mor
  * organization, talk to partner later about this
  */
@@ -58,6 +58,9 @@ public class Text_Field_Input {
     public static JButton P4_Enter_Call_Method = new JButton("Create Method");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JButton P5_Enter_File_Dir = new JButton("Enter File Directory");
+    public static JButton P5_Enter_Method_Name = new JButton("Enter Method Name");
+    public static JButton P5_Enter_Contents = new JButton("Enter Contents");
+    public static JButton P5_Enter_Call_Method = new JButton("Add Contents To Methods");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JTextArea errorTextArea = new JTextArea(20, 20); // this will display an error message
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,6 +78,11 @@ public class Text_Field_Input {
         JTF.setVisible(true);
         JTF.setEditable(true);
     }
+
+    /**
+     * Look into better formatting. try grid layout and move around when things are
+     * added, as that determins where things are in a grid layout
+     */
 
     // this will be called if you want to create a file
     public static void addPanel2() {
@@ -146,7 +154,22 @@ public class Text_Field_Input {
 
     // allows the user to add contents to methods they have created
     public static void addPanel5() {
+        Panel5.add(P5_Enter_File_Dir);
+        Panel5.add(P5_Enter_Method_Name);
+        Panel5.add(P5_Enter_Contents);
+        Panel5.add(P5_Enter_Call_Method);
 
+        Panel5.add(P5_File_Dir);
+        Panel5.add(P5_Method_Name);
+        Panel5.add(P5_Contents_To_Add);
+
+        Text_Box_Settings(P5_File_Dir);
+        Text_Box_Settings(P5_Method_Name);
+        Text_Box_Settings(P5_Contents_To_Add);
+
+        Panel5.setVisible(true);
+        SecondayWindows.SecondSetUp();
+        SecondayWindows.SecondWindow.add(Panel5);
     }
 
 }
