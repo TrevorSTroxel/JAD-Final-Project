@@ -102,6 +102,7 @@ public class Create {
 			BufferedReader FileReader = new BufferedReader(ir);
 			String line = FileReader.readLine();
 			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
+
 			if (line != "}" || line != null) // this makes sure that the program does not read beyond the
 			{
 				String prevLine = line;
