@@ -3,8 +3,10 @@
 // Creation file: contains method necessary to create instnaces for the program
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.FileWriter; // Import the FileWriter class
 import java.nio.file.FileAlreadyExistsException;
 
@@ -95,11 +97,13 @@ public class Create {
 		File dir = new File(File_Dir);// this will open up the file directory that the user has chosen
 		// Scanner scanner = new Scanner(File_Dir);
 		try {
+			// Reference: Pete Tuckers JAD slides practices
+			FileInputStream is = new FileInputStream(dir);
+			InputStreamReader ir = new InputStreamReader(is);
+			BufferedReader FileReader = new BufferedReader(ir);
+			String line = FileReader.readLine();
 			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
-			BufferedReader FileReader = new BufferedReader(new FileReader(dir));
-			String line = "";
-			while ((line = FileReader.readLine()) != null) // this makes sure that the program does not read beyond the
-															// program
+			while (line != null) // this makes sure that the program does not read beyond the
 			{
 				if (line.contains(Method_Name)) // this means that the program has found the method name
 				{
