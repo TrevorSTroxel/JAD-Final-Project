@@ -7,7 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileWriter; // Import the FileWriter class
 import java.nio.file.FileAlreadyExistsException;
-import java.util.Scanner;
 
 public class Create {
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
