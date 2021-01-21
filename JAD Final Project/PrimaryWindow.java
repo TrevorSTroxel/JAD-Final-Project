@@ -128,7 +128,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         WordChoice = INPUT.split(" "); // this will split up the input that the user has made and from there the
                                        // program will go to the correct file to run the methods
         if (e.getSource() == Enter && WordChoice[1].equals("file")) {
-            Panel1.setVisible(false); // this brings up the new panel for the user to see and hides the first panel
             Text_Field_Input.addPanel2(); // calls the method to set up the second panel
             // we needed to add action functionality to our buttons and this was the only
             // way we could set this up
@@ -141,7 +140,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("class")) {
-            Panel1.setVisible(false);
             Text_Field_Input.addPanel3();
             Text_Field_Input.P3_Enter_Get_Dir.addActionListener(this);
             Text_Field_Input.P3_Enter_Get_Class_Name.addActionListener(this);
@@ -150,7 +148,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("method")) {
-            Panel1.setVisible(false);
             Text_Field_Input.addPanel4();
             Text_Field_Input.P4_Enter_File_Dir.addActionListener(this);
             Text_Field_Input.P4_Enter_Return_Type.addActionListener(this);
@@ -164,7 +161,8 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         }
 
         else {
-            //we moved a lot of actions to a different file so that it would be more organized
+            // we moved a lot of actions to a different file so that it would be more
+            // organized
             NewWindows.actionPerformed(e);
         }
 
