@@ -95,27 +95,29 @@ public class Create {
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
 		File dir = new File(File_Dir);// this will open up the file directory that the user has chosen
-		// Scanner scanner = new Scanner(File_Dir);
 		try {
+			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
 			// Reference: Pete Tuckers JAD slides practices
 			FileInputStream is = new FileInputStream(dir);
 			InputStreamReader ir = new InputStreamReader(is);
 			BufferedReader FileReader = new BufferedReader(ir);
 			String line = FileReader.readLine();
-			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
-			while (line != "}" || line != null) // this makes sure that the program does not read beyond the
+
+			if (line != "}" || line != null) // this makes sure that the program does not read beyond the
 			{
 				String prevLine = line;
 				if (prevLine.contains(Method_Name)) // this means that the program has found the method name
 				{
 					line = FileReader.readLine();
-					if (line.isBlank() == true) {
-						content.write(String.format(Contents_To_Add));
-						content.close();
+					if (line.isBlank()) {
+						content.write(Contents_To_Add);
 					}
+				} else {
+					line = FileReader.readLine();
 				}
-				FileReader.close();
 			}
+			FileReader.close();
+			content.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
