@@ -1,7 +1,10 @@
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.filechooser.FileSystemView;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 //this will be used for better organization purposes
 public class SecondayWindows extends JFrame implements ActionListener {
@@ -11,6 +14,8 @@ public class SecondayWindows extends JFrame implements ActionListener {
     static JFrame SecondWindow = new JFrame("Program execution");
 
     String[] WordChoice;
+    static JLabel l = new JLabel();
+
     String Panel2_NAME = new String();
     String Panel2_DIR = new String();
 
@@ -45,12 +50,15 @@ public class SecondayWindows extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == WindowVar.P2_Enter_Get_Dir) {
-            WordChoice = WindowVar.P2_Dir_Text_Field.getText().split(" ");
-            Panel2_DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
-            File file = new File(Panel2_DIR);
-            if (!file.isDirectory()) {
-                System.out.println("There was an error in your text, try again");
+            JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+            j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            int r = j.showOpenDialog(null);
+            if (r == JFileChooser.APPROVE_OPTION) {
+                // set the label to the path of the selected directory
+                l.setText(j.getSelectedFile().getAbsolutePath());
             }
+            WindowVar.P2_Dir_Text_Field.setText("Your directory is: " + l.getText());
+            Panel2_DIR = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P2_Enter_Get_File_Name) {
             WordChoice = WindowVar.P2_File_Name.getText().split(" ");
             Panel2_NAME = WordChoice[8]; // this takes the name of the file directory that the user inputs
@@ -59,8 +67,15 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P3_Enter_Get_Dir) {
-            WordChoice = WindowVar.P3_File_Path.getText().split(" ");
-            Panel3_FILEPATH = WordChoice[5];
+            JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+            j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            int r = j.showOpenDialog(null);
+            if (r == JFileChooser.APPROVE_OPTION) {
+                // set the label to the path of the selected directory
+                l.setText(j.getSelectedFile().getAbsolutePath());
+            }
+            WindowVar.P2_File_Name.setText("Your directory is: " + l.getText());
+            Panel3_FILEPATH = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P3_Enter_Get_Class_Name) {
             WordChoice = WindowVar.P3_Class_Name.getText().split(" ");
             Panel3_CLASSNAME = WordChoice[8];
@@ -69,8 +84,15 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P4_Enter_File_Dir) {
-            WordChoice = WindowVar.P4_File_Path.getText().split(" ");
-            Panel4_File_Dir = WordChoice[5];
+            JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+            j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            int r = j.showOpenDialog(null);
+            if (r == JFileChooser.APPROVE_OPTION) {
+                // set the label to the path of the selected directory
+                l.setText(j.getSelectedFile().getAbsolutePath());
+            }
+            WindowVar.P4_File_Path.setText("Your directory is: " + l.getText());
+            Panel4_File_Dir = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P4_Enter_Return_Type) {
             WordChoice = WindowVar.P4_Return_Type.getText().split(" ");
             Panel4_Return_Type = WordChoice[8];
@@ -82,8 +104,15 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P5_Enter_File_Dir) {
-            WordChoice = WindowVar.P5_File_Dir.getText().split(" ");
-            Panel5_FileDir = WordChoice[5];
+            JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+            j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            int r = j.showOpenDialog(null);
+            if (r == JFileChooser.APPROVE_OPTION) {
+                // set the label to the path of the selected directory
+                l.setText(j.getSelectedFile().getAbsolutePath());
+            }
+            WindowVar.P2_Dir_Text_Field.setText("Your directory is: " + l.getText());
+            Panel5_FileDir = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P5_Enter_Method_Name) {
             WordChoice = WindowVar.P5_Method_Name.getText().split(" ");
             Panel5_MethodName = WordChoice[6];
