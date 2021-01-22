@@ -17,6 +17,14 @@ public class Text_Field_Input {
         WindowVar.Panel2.add(WindowVar.errorTextArea);
     }
 
+    /**
+     * Look into JFileChooser for when people have to select a file directory. This
+     * will be more useful and more helpful then manually getting the address
+     * resource: https://www.geeksforgeeks.org/java-swing-jfilechooser/ look inside
+     * of testingcode to get a better idea of what I am thinking about
+     * 
+     * @param JTF
+     */
     public static void Text_Box_Settings(JTextField JTF) {
         JTF.setVisible(true);
         JTF.setEditable(true);
