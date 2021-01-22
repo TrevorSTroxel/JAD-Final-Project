@@ -17,6 +17,23 @@ import java.util.List;
 
 public class Create {
 	/**
+	 * @param file_directory
+	 * @param file_name
+	 */
+	public static void create_file(String file_directory, String file_name) {
+		try {
+			File new_file = new File(file_directory + "\\" + file_name);
+			new_file.getParentFile().mkdirs();
+			new_file.createNewFile();
+		} catch (FileAlreadyExistsException e) { // this is to prevet the program from making a file that already exists
+		} catch (IOException e) { // this is meant to make sure that the commands are being interperted correctly
+			System.out
+					.println("There was an error when creating your new file, try making sure you have correct inputs");
+			e.printStackTrace();
+		}
+	}
+
+	/**
 	 * @param file_path
 	 * @param class_name
 	 */
@@ -42,30 +59,19 @@ public class Create {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
 			for (int i = 0; i < fileContents.size(); i++) {
-				if (fileContents.get(i).equals("")) {
-					fileContents.set(i, "public " + return_type + " " + method_name + "(){\n\n}");
+				String testing = fileContents.get(i);
+				if (testing.contains("class")) {
+					for (int j = i; j < fileContents.size(); j++) {
+						if (fileContents.get(j).equals("")) {
+							fileContents.set(j, "public " + return_type + " " + method_name + "(){\n\n}");
+						}
+					}
 				}
 			}
+			Files.write(Paths.get(File_Directory), fileContents, StandardCharsets.UTF_8);
 			System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * @param file_directory
-	 * @param file_name
-	 */
-	public static void create_file(String file_directory, String file_name) {
-		try {
-			File new_file = new File(file_directory + "\\" + file_name);
-			new_file.getParentFile().mkdirs();
-			new_file.createNewFile();
-		} catch (FileAlreadyExistsException e) { // this is to prevet the program from making a file that already exists
-		} catch (IOException e) { // this is meant to make sure that the commands are being interperted correctly
-			System.out
-					.println("There was an error when creating your new file, try making sure you have correct inputs");
 			e.printStackTrace();
 		}
 	}

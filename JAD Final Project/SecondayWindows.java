@@ -42,7 +42,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
      */
     public static void SecondSetUp() {
         ContentWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ContentWindow.setSize(500, 500);
+        ContentWindow.setSize(700, 700);
         ContentWindow.setLocation(PrimaryWindow.MainWindow.getX() + PrimaryWindow.MainWindow.getWidth(),
                 PrimaryWindow.MainWindow.getY());
         ContentWindow.setVisible(true);
