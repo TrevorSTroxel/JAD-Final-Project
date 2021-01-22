@@ -42,7 +42,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
      * operational for the user to use
      */
     public static void SecondSetUp() {
-        ContentWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ContentWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         ContentWindow.setSize(700, 700);
         ContentWindow.setLocationRelativeTo(null); // this will make the wondow spawn in the middle of the screen
         ContentWindow.setVisible(true);

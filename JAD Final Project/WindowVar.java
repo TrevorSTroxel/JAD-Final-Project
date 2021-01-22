@@ -1,4 +1,5 @@
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -16,6 +17,20 @@ import javax.swing.JTextField;
  */
 
 public class WindowVar {
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    // moved these over here from the first file
+    // I wanted to almost all variables inside here for better organizatio
+    public static JFrame MainWindow = new JFrame("Jave Program Creation");// main window
+    public static JPanel Panel1 = new JPanel(); // Starting panel for people to see
+    public static JTextField P1_Text_Field = new JTextField(); // Users first choice into what to do
+    public static JButton Enter = new JButton("Enter"); // for confermation and selection process
+    public static JButton Tutorial = new JButton("Help"); // tutorial button
+    public static String[] WordChoice; // generic string array
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    // These varables are special, they get their own space
+    public static JFrame HelpWindow = new JFrame("Tutorial");
+    public static JPanel HelpPanel = new JPanel();
+    public static JTextArea Instructions = new JTextArea(20, 20);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
     public static JPanel Panel3 = new JPanel(); // this panel will be used to create methods inside the desired file
