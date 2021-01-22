@@ -44,12 +44,18 @@ public class SecondayWindows extends JFrame implements ActionListener {
     public static void SecondSetUp() {
         ContentWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ContentWindow.setSize(700, 700);
-        ContentWindow.setLocationRelativeTo(null);
+        ContentWindow.setLocationRelativeTo(null); // this will make the wondow spawn in the middle of the screen
         ContentWindow.setVisible(true);
     }
 
-    // we ended up having to use HTML code to break up our sentences as the text was
-    // to large to fit inside the button
+    /**
+     * What these methods do is to help lessen the amount of code we have to use and
+     * also help give the user better feed back after doing something
+     * 
+     * we ended up having to use HTML code to break up our sentences as the text was
+     * to large to fit inside the button
+     */
+
     public static void DirButton(JButton JB) {
         JB.setText("<html> You have chosen your directory.<br/>Click again to change directories</html>");
     }

@@ -42,8 +42,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
      * This will add most of the content to the main window function
      */
     private void addContents() {
-
-        MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MainWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         // JTextFeild settings
         P1_Text_Field.setColumns(25); // sets how long the text box is
@@ -107,7 +106,9 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         String INPUT = P1_Text_Field.getText();
         INPUT.toLowerCase(); // we do this for easier argument sake
         WordChoice = INPUT.split(" "); // will help decide where the program needs to go
-        if (e.getSource() == Enter && WordChoice[1].equals("file")) {
+        if (e.getSource() == Enter && WordChoice[0].equals("close") || WordChoice[0].equals("end")) {
+            System.exit(0);
+        } else if (e.getSource() == Enter && WordChoice[1].equals("file")) {
             SecondayWindows.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel2();
             WindowVar.P2_File_Path_Button.addActionListener(this);
