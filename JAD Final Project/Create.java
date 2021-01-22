@@ -1,5 +1,6 @@
 
 //resources "https://www.w3schools.com/java/java_files_create.asp" reference to create and write to files
+//reference: https://stackoverflow.com/questions/37276996/java-add-text-to-a-specific-line-in-a-file
 // Creation file: contains method necessary to create instnaces for the program
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +9,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.FileWriter; // Import the FileWriter class
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Create {
 	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
@@ -92,32 +99,24 @@ public class Create {
 	 *                        After this the program will insert contents they want
 	 *                        to add to the method they have called Reference:
 	 *                        https://www.coderslexicon.com/search-a-text-file-in-java/
+	 *                        consider putting content of file into arraylist and
+	 *                        then add it because you need to manipulate data, not
+	 *                        the actual file itself actually look into java output
+	 *                        stream to file. will be useful
+	 * @throws IOException
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
-		File dir = new File(File_Dir);// this will open up the file directory that the user has chosen
 		try {
-			// Reference: Pete Tuckers JAD slides practices
-			FileInputStream is = new FileInputStream(dir);
-			InputStreamReader ir = new InputStreamReader(is);
-			BufferedReader FileReader = new BufferedReader(ir);
-			String line = FileReader.readLine();
-			FileWriter content = new FileWriter(File_Dir);// this will enable us to write content to the file
+			List<String> fileContents = new ArrayList<>(
+					Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
 
-			if (line != "}" || line != null) // this makes sure that the program does not read beyond the
-			{
-				String prevLine = line;
-				if (prevLine.contains(Method_Name)) // this means that the program has found the method name
-				{
-					line = FileReader.readLine();
-					if (line.isBlank()) {
-						content.write(String.format(Contents_To_Add));
-					}
-				} else {
-					line = FileReader.readLine();
+			for (int i = 0; i < fileContents.size(); i++) {
+				if (fileContents.get(i).equals("")) {
+					fileContents.set(i, Contents_To_Add);
+					break;
 				}
 			}
-			FileReader.close();
-			content.close();
+			Files.write(Paths.get(File_Dir), fileContents, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
