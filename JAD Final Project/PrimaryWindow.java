@@ -3,18 +3,18 @@
  * @author Trevor Troxel & Abed Abualkheir
  * @version 1.0
  */
-import java.awt.*;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class PrimaryWindow extends JFrame implements ActionListener {
     private static final long serialVersionUID = 1L;
