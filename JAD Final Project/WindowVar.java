@@ -37,9 +37,7 @@ public class WindowVar {
     public static JButton P2_Enter_Get_File_Name = new JButton("Enter File Name");
     public static JButton P2_Enter_Call_Method = new JButton("Create file in location"); // calls our create file method
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    // this will be used to grab the file loction where they want to make a method
     public static JButton P3_Enter_Get_Dir = new JButton("Enter File Directory");
-    // lets the user name the class they want to create
     public static JButton P3_Enter_Get_Class_Name = new JButton("Enter Name of class");
     public static JButton P3_Enter_Call_Method = new JButton("Create class");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
