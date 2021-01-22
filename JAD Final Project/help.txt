@@ -1,18 +1,28 @@
 These are some instructions and tips on how to use this program.
+
 Keep in mind that the order in which you put words are important, so keep that in mind!
+
+The program is set up so that you can not close the program on accident.
+    If you wish to close the program, then type in : close or end to stop the program.
+
 Here is an example of how to use this program:
     Try typing this into the textbox: create file.
+
 This command will create a file in a folder that you will choose.
 Here are some Keywords to try with this program:
+
     1. create : this will generate new things for the user
         A. file : this will create a file inside the selected folder
 
         B. class : this will create a class inside a selected file
 
         C. method : this will create a method inside the seleced folder
+
     2. add : this will add things to your classes or methods
+
         A. content : add variables to your method to make it work
 IMPORTANT TERMINOLOGY
+
 Directory: Your computer puts files and other things in what are called paths 
            so that your computer can have better organization.
            Every folder/file on your computer has a unique path,
