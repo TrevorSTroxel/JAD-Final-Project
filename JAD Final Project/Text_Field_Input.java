@@ -38,16 +38,16 @@ public class Text_Field_Input {
         WindowVar.Panel2.setLayout(new GridLayout(3, 3));
 
         WindowVar.Panel2.add(WindowVar.P2_Enter_Get_Dir_Button);
-        WindowVar.Panel2.add(WindowVar.P2_Dir_Text_Label);
-        WindowVar.Panel2.add(WindowVar.P2_Dir_Text_Field);
+        WindowVar.Panel2.add(WindowVar.P2_File_Path_Label);
+        WindowVar.Panel2.add(WindowVar.P2_File_Path_Text_Field);
 
         WindowVar.Panel2.add(WindowVar.P2_Enter_Get_File_Name_Button);
-        WindowVar.Panel2.add(WindowVar.P2_File_Text_Label);
+        WindowVar.Panel2.add(WindowVar.P2_File_Name_Label);
         WindowVar.Panel2.add(WindowVar.P2_File_Name_Text_Field);
 
         WindowVar.Panel2.add(WindowVar.P2_Enter_Call_Method_Button);
 
-        Text_Box_Settings(WindowVar.P2_Dir_Text_Field);
+        Text_Box_Settings(WindowVar.P2_File_Path_Text_Field);
         Text_Box_Settings(WindowVar.P2_File_Name_Text_Field);
 
         WindowVar.Panel2.setVisible(true);
@@ -58,12 +58,14 @@ public class Text_Field_Input {
 
     // adds method to selected file
     public static void addPanel3() {
-        WindowVar.Panel3.setLayout(new GridLayout(3, 2));
+        WindowVar.Panel3.setLayout(new GridLayout(3, 3));
 
         WindowVar.Panel3.add(WindowVar.P3_Enter_Get_Dir_Button);
+        WindowVar.Panel3.add(WindowVar.P3_File_Path_Label);
         WindowVar.Panel3.add(WindowVar.P3_File_Path_Text_Field);
 
         WindowVar.Panel3.add(WindowVar.P3_Enter_Get_Class_Name_Button);
+        WindowVar.Panel3.add(WindowVar.P3_Class_Name_Label);
         WindowVar.Panel3.add(WindowVar.P3_Class_Name_Text_Field);
 
         WindowVar.Panel3.add(WindowVar.P3_Enter_Call_Method_Button);
@@ -79,14 +81,18 @@ public class Text_Field_Input {
 
     // Allows the user to make a class inside the file they made
     public static void addPanel4() {
-        WindowVar.Panel4.setLayout(new GridLayout(4, 2));
+        WindowVar.Panel4.setLayout(new GridLayout(4, 3));
+
         WindowVar.Panel4.add(WindowVar.P4_Enter_File_Dir_Button);
+        WindowVar.Panel4.add(WindowVar.P4_File_Path_Label);
         WindowVar.Panel4.add(WindowVar.P4_File_Path_Text_Field);
 
         WindowVar.Panel4.add(WindowVar.P4_Enter_Return_Type_Button);
+        WindowVar.Panel4.add(WindowVar.P4_Return_Type_Label);
         WindowVar.Panel4.add(WindowVar.P4_Return_Type_Text_Field);
 
         WindowVar.Panel4.add(WindowVar.P4_Enter_Method_Name_Button);
+        WindowVar.Panel4.add(WindowVar.P4_Method_Name_Label);
         WindowVar.Panel4.add(WindowVar.P4_Method_Name_Text_Field);
 
         WindowVar.Panel4.add(WindowVar.P4_Enter_Call_Method_Button);
@@ -105,7 +111,7 @@ public class Text_Field_Input {
     public static void addPanel5() {
         WindowVar.Panel5.setLayout(new GridLayout(4, 2));
         WindowVar.Panel5.add(WindowVar.P5_Enter_File_Dir_Button);
-        WindowVar.Panel5.add(WindowVar.P5_File_Dir_Text_Field);
+        WindowVar.Panel5.add(WindowVar.P5_File_Path_Text_Field);
 
         WindowVar.Panel5.add(WindowVar.P5_Enter_Method_Name_Button);
         WindowVar.Panel5.add(WindowVar.P5_Method_Name_Text_Field);
@@ -115,7 +121,7 @@ public class Text_Field_Input {
 
         WindowVar.Panel5.add(WindowVar.P5_Enter_Call_Method_Button);
 
-        Text_Box_Settings(WindowVar.P5_File_Dir_Text_Field);
+        Text_Box_Settings(WindowVar.P5_File_Path_Text_Field);
         Text_Box_Settings(WindowVar.P5_Method_Name_Text_Field);
         Text_Box_Settings(WindowVar.P5_Contents_To_Add_Text_Field);
 

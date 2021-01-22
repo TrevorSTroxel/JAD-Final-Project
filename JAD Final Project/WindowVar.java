@@ -22,26 +22,29 @@ public class WindowVar {
     public static JPanel Panel4 = new JPanel(); // this will be used to create methods in files
     public static JPanel Panel5 = new JPanel(); // this will be used to add content to panels
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JLabel P2_Dir_Text_Label = new JLabel("Click Button to select your directory.");
-    public static JLabel P2_File_Text_Label = new JLabel("Enter what you want to name your file: ");
-    public static JTextField P2_Dir_Text_Field = new JTextField(30);
+    public static JLabel P2_File_Path_Label = new JLabel("Click Button to select your directory.");
+    public static JLabel P2_File_Name_Label = new JLabel("Enter what you want to name your file: ");
+    public static JTextField P2_File_Path_Text_Field = new JTextField(30);
     public static JTextField P2_File_Name_Text_Field = new JTextField(30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JTextField P3_File_Path_Text_Field = new JTextField("Click Button to select your directory and file.",
-            30);
-    public static JTextField P3_Class_Name_Text_Field = new JTextField("Enter what you want to name your class: ", 30);
+    public static JLabel P3_File_Path_Label = new JLabel("Click Button to select your directory and file.");
+    public static JLabel P3_Class_Name_Label = new JLabel("Enter what you want to name your class: ");
+    public static JTextField P3_File_Path_Text_Field = new JTextField(30);
+    public static JTextField P3_Class_Name_Text_Field = new JTextField(30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JTextField P4_File_Path_Text_Field = new JTextField("Click Button to select your directory and file.",
-            30);
-    public static JTextField P4_Return_Type_Text_Field = new JTextField(
-            "Enter what data type the method should return: ", 30);
-    public static JTextField P4_Method_Name_Text_Field = new JTextField("Enter the name of your method: ", 30);
+    public static JLabel P4_File_Path_Label = new JLabel("Click Button to select your directory and file.");
+    public static JLabel P4_Return_Type_Label = new JLabel("Enter what data type the method should return: ");
+    public static JLabel P4_Method_Name_Label = new JLabel("Enter the name of your method: ");
+    public static JTextField P4_File_Path_Text_Field = new JTextField(30);
+    public static JTextField P4_Return_Type_Text_Field = new JTextField(30);
+    public static JTextField P4_Method_Name_Text_Field = new JTextField(30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JTextField P5_File_Dir_Text_Field = new JTextField("Click Button to select your directory and file.",
-            30);
-    public static JTextField P5_Method_Name_Text_Field = new JTextField("Enter the name of your method: ", 30);
-    public static JTextField P5_Contents_To_Add_Text_Field = new JTextField(
-            "Enter what you want to add to the method: ", 30);
+    public static JLabel P5_File_Path_Label = new JLabel("Click Button to select your directory and file.");
+    public static JLabel P5_Method_Name_Label = new JLabel("Enter the name of your method: ");
+    public static JLabel P5_Contents_To_Add_Label = new JLabel("Enter what you want to add to the method: ");
+    public static JTextField P5_File_Path_Text_Field = new JTextField(30);
+    public static JTextField P5_Method_Name_Text_Field = new JTextField(30);
+    public static JTextField P5_Contents_To_Add_Text_Field = new JTextField(30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // We kept our naming convention simple to help avoid confusion on what they do
     //////////////////////////////////////////////////////////////////////////////////////////////////////
