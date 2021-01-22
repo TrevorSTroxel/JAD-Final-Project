@@ -14,7 +14,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
-    static JFrame SecondWindow = new JFrame("Program execution");
+    static JFrame ContentWindow = new JFrame("Program execution");
 
     String[] WordChoice;
     static JLabel l = new JLabel();
@@ -43,11 +43,11 @@ public class SecondayWindows extends JFrame implements ActionListener {
      * operational for the user to use
      */
     public static void SecondSetUp() {
-        SecondWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        SecondWindow.setSize(500, 500);
-        SecondWindow.setLocation(PrimaryWindow.MainWindow.getX() + PrimaryWindow.MainWindow.getWidth(),
+        ContentWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ContentWindow.setSize(500, 500);
+        ContentWindow.setLocation(PrimaryWindow.MainWindow.getX() + PrimaryWindow.MainWindow.getWidth(),
                 PrimaryWindow.MainWindow.getY());
-        SecondWindow.setVisible(true);
+        ContentWindow.setVisible(true);
     }
 
     public static void DirButton(JButton JB) {
@@ -63,9 +63,19 @@ public class SecondayWindows extends JFrame implements ActionListener {
                 "You have added to your project. Check your folder to make sure. Click again to add more to your project");
     }
 
-    public static void FileSelect() {
+    public static void FolderSelect() {
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int r = j.showOpenDialog(null);
+        if (r == JFileChooser.APPROVE_OPTION) {
+            // set the label to the path of the selected directory
+            l.setText(j.getSelectedFile().getAbsolutePath());
+        }
+    }
+
+    public static void FileSelect() {
+        JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         int r = j.showOpenDialog(null);
         if (r == JFileChooser.APPROVE_OPTION) {
             // set the label to the path of the selected directory
@@ -76,7 +86,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == WindowVar.P2_Enter_Get_Dir) {
-            FileSelect();
+            FolderSelect();
             WindowVar.P2_Dir_Text_Field.setText("Your directory is: " + l.getText());
             DirButton(WindowVar.P2_Enter_Get_Dir);
             Panel2_DIR = l.getText();// this takes the name of the file directory that the user inputs
