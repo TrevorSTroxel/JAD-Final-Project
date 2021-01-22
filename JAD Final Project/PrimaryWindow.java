@@ -3,7 +3,7 @@
  * @author Trevor Troxel & Abed Abualkheir
  * @version 1.0
  */
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -45,6 +45,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
 
     public void WindowCreation() {
         MainWindow.setSize(500, 500);
+        MainWindow.setLayout(new GridLayout(3,2));
         MainWindow.setLocationRelativeTo(null);
         addContents();
     }
