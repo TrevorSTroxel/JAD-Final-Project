@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import java.awt.*;
 
 //this file will be used to have multiple JTextFields and JTextArea for the whole program to use
 /**
@@ -86,14 +87,16 @@ public class Text_Field_Input {
 
     // this will be called if you want to create a file
     public static void addPanel2() {
+        // changed when I add things so that the grid layout can pick up on that
+        Panel2.setLayout(new GridLayout(3, 2));
         // Adds the buttons to the pannel
         Panel2.add(P2_Enter_Get_Dir);
-        Panel2.add(P2_Enter_Get_File_Name);
-        Panel2.add(P2_Enter_Call_Method);
-
-        // adds the text fields to the new panel
         Panel2.add(P2_Dir_Text_Field);
+
+        Panel2.add(P2_Enter_Get_File_Name);
         Panel2.add(P2_File_Name);
+
+        Panel2.add(P2_Enter_Call_Method);
 
         // This enabes the user to see the text fields and to also be able to write in
         // the
@@ -104,6 +107,7 @@ public class Text_Field_Input {
 
         // makes it so we can see the new panel and adds it to the main window
         Panel2.setVisible(true);
+
         SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel2);
     }
@@ -111,12 +115,15 @@ public class Text_Field_Input {
     // this will open up the file the user has selected and add a method to that
     // file
     public static void addPanel3() {
-        Panel3.add(P3_Enter_Get_Dir);
-        Panel3.add(P3_Enter_Get_Class_Name);
-        Panel3.add(P3_Enter_Call_Method);
+        Panel3.setLayout(new GridLayout(3, 2));
 
+        Panel3.add(P3_Enter_Get_Dir);
         Panel3.add(P3_File_Path);
+
+        Panel3.add(P3_Enter_Get_Class_Name);
         Panel3.add(P3_Class_Name);
+
+        Panel3.add(P3_Enter_Call_Method);
 
         // enables things
         P3_File_Path.setVisible(true);
@@ -125,49 +132,55 @@ public class Text_Field_Input {
         P3_Class_Name.setEditable(true);
 
         Panel3.setVisible(true);
+
         SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel3);
     }
 
     // Allows the user to make a class inside the file they made
     public static void addPanel4() {
-        // adds buttons
+        Panel4.setLayout(new GridLayout(4, 2));
         Panel4.add(P4_Enter_File_Dir);
-        Panel4.add(P4_Enter_Return_Type);
-        Panel4.add(P4_Enter_Method_Name);
-        Panel4.add(P4_Enter_Call_Method);
-
-        // adds text fields
         Panel4.add(P4_File_Path);
-        Panel4.add(P4_Method_Name);
+
+        Panel4.add(P4_Enter_Return_Type);
         Panel4.add(P4_Return_Type);
 
-        // enables things
+        Panel4.add(P4_Enter_Method_Name);
+        Panel4.add(P4_Method_Name);
+
+        Panel4.add(P4_Enter_Call_Method);
+
         Text_Box_Settings(P4_File_Path);
         Text_Box_Settings(P4_Method_Name);
         Text_Box_Settings(P4_Return_Type);
 
         Panel4.setVisible(true);
+
         SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel4);
     }
 
     // allows the user to add contents to methods they have created
     public static void addPanel5() {
+        Panel5.setLayout(new GridLayout(3, 2));
         Panel5.add(P5_Enter_File_Dir);
-        Panel5.add(P5_Enter_Method_Name);
-        Panel5.add(P5_Enter_Contents);
-        Panel5.add(P5_Enter_Call_Method);
-
         Panel5.add(P5_File_Dir);
+
+        Panel5.add(P5_Enter_Method_Name);
         Panel5.add(P5_Method_Name);
+
+        Panel5.add(P5_Enter_Contents);
         Panel5.add(P5_Contents_To_Add);
+
+        Panel5.add(P5_Enter_Call_Method);
 
         Text_Box_Settings(P5_File_Dir);
         Text_Box_Settings(P5_Method_Name);
         Text_Box_Settings(P5_Contents_To_Add);
 
         Panel5.setVisible(true);
+
         SecondayWindows.SecondSetUp();
         SecondayWindows.SecondWindow.add(Panel5);
     }

@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -38,7 +37,6 @@ public class SecondayWindows extends JFrame implements ActionListener {
     public static void SecondSetUp() {
         SecondWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SecondWindow.setSize(500, 500);
-        SecondWindow.setLayout(new GridLayout(3, 2));
         SecondWindow.setLocation(PrimaryWindow.MainWindow.getX() + PrimaryWindow.MainWindow.getWidth(),
                 PrimaryWindow.MainWindow.getY());
         SecondWindow.setVisible(true);
