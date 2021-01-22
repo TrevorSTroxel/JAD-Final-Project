@@ -3,7 +3,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-
 /**
  * This is where we will move a lot of variables, as the file that holds all of
  * them right now is starting to become bloated. This should also help with
@@ -18,7 +17,6 @@ public class WindowVar {
     public static JPanel Panel4 = new JPanel(); // this will be used to create methods in files
     public static JPanel Panel5 = new JPanel(); // this will be used to add content to panels
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    // generic TextField for my methods to use
     public static JTextField P2_Dir_Text_Field = new JTextField("Enter the name of your directory here: ", 30);
     public static JTextField P2_File_Name = new JTextField("Enter what you want to name your file: ", 30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -10,11 +10,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
 
     static JFrame SecondWindow = new JFrame("Program execution");
 
-    /**
-     * Generic variables names Names are based on what they do and what panel they
-     * are ment for
-     */
-    String[] WordChoice; // this is a generic String array to be used later
+    String[] WordChoice;
     String Panel2_NAME = new String();
     String Panel2_DIR = new String();
 
@@ -44,12 +40,8 @@ public class SecondayWindows extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        /////////////////////////////////////////////////////////////////////////////////////
-        // This is where our program will calculate certain users input
-        // add contigencies for if the user does not enter something correct
         if (e.getSource() == WindowVar.P2_Enter_Get_Dir) {
-            WordChoice = WindowVar.P2_Dir_Text_Field.getText().split(" "); // this will breake up the string to
-                                                                                  // be read easier
+            WordChoice = WindowVar.P2_Dir_Text_Field.getText().split(" ");
             Panel2_DIR = WordChoice[7];// this takes the name of the file directory that the user inputs
             File file = new File(Panel2_DIR);
             if (!file.isDirectory()) {
@@ -57,24 +49,18 @@ public class SecondayWindows extends JFrame implements ActionListener {
             }
         } else if (e.getSource() == WindowVar.P2_Enter_Get_File_Name) {
             WordChoice = WindowVar.P2_File_Name.getText().split(" ");
-            Panel2_NAME = WordChoice[8];// this takes the name of the file directory that the user inputs
-        }
-
-        else if (e.getSource() == WindowVar.P2_Enter_Call_Method) {
+            Panel2_NAME = WordChoice[8]; // this takes the name of the file directory that the user inputs
+        } else if (e.getSource() == WindowVar.P2_Enter_Call_Method) {
             Create.create_file(Panel2_DIR, Panel2_NAME); // creates a new file in this location
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P3_Enter_Get_Dir) {
             WordChoice = WindowVar.P3_File_Path.getText().split(" ");
             Panel3_FILEPATH = WordChoice[5];
-        }
-
-        else if (e.getSource() == WindowVar.P3_Enter_Get_Class_Name) {
+        } else if (e.getSource() == WindowVar.P3_Enter_Get_Class_Name) {
             WordChoice = WindowVar.P3_Class_Name.getText().split(" ");
             Panel3_CLASSNAME = WordChoice[8];
-        }
-
-        else if (e.getSource() == WindowVar.P3_Enter_Call_Method) {
+        } else if (e.getSource() == WindowVar.P3_Enter_Call_Method) {
             Create.creatr_class(Panel3_FILEPATH, Panel3_CLASSNAME);
         }
         /////////////////////////////////////////////////////////////////////////////////////
@@ -102,9 +88,9 @@ public class SecondayWindows extends JFrame implements ActionListener {
             Panel5_Contents = WordChoice[9];
         } else if (e.getSource() == WindowVar.P5_Enter_Call_Method) {
             Create.Add_To_Method(Panel5_FileDir, Panel5_MethodName, Panel5_Contents);
+        } else {
+            System.out.println("Wrong command, try agian.");
         }
         /////////////////////////////////////////////////////////////////////////////////////
-
     }
-
 }

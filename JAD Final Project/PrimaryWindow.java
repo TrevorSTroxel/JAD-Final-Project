@@ -17,35 +17,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class PrimaryWindow extends JFrame implements ActionListener {
-    // public static Window addContent = new Window(); // this is to add the text
-    // field to the
-
-    /**
-     * this line is meant to keep VSCode happy
-     */
     private static final long serialVersionUID = 1L;
 
-    Create creation = new Create(); // this is an object that is used for calling the a methods to sort out what the
-                                    // user wants to do
-    Text_Field_Input newInput = new Text_Field_Input();
-    SecondayWindows NewWindows = new SecondayWindows();
+    SecondayWindows NewWindows = new SecondayWindows();// this is needed for calling the seconday window and all those
+                                                       // actions it preforms
 
     static JFrame MainWindow = new JFrame("Jave Program Creation"); // creates the main window for the user to see
 
-    public static JPanel Panel1 = new JPanel(); // this will hold the text input the user will do to call the different
-    // classes
+    public static JPanel Panel1 = new JPanel(); // Starting panel for people to see
 
-    JTextField userInput = new JTextField(); // this will be where the user types what they want to do
+    JTextField P1_Text_Field = new JTextField(); // Users first choice into what to do
 
-    JButton Enter = new JButton("Enter"); // this is mostly used to seperate out what button is being pressed on the
-                                          // main menu
+    JButton Enter = new JButton("Enter"); // for confermation and selection process
     JButton Tutorial = new JButton("Help"); // tutorial button
 
-    String[] WordChoice; // this is a generic String array to be used later
+    String[] WordChoice; // generic string array
 
     public void WindowCreation() {
         MainWindow.setSize(500, 500);
-        MainWindow.setLocationRelativeTo(null);
+        MainWindow.setLocationRelativeTo(null); // sets the window to the middle of the screen
         addContents();
     }
 
@@ -57,17 +47,16 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JTextFeild settings
-        userInput.setColumns(25); // this changes the size of the text box. the larger the number the more spaces
-                                  // the user can see
-        userInput.setSize(100, 100);
-        userInput.setEditable(true); // this makes it so that the user can edit what they put in the text field
+        P1_Text_Field.setColumns(25); // sets how long the text box is
+        P1_Text_Field.setSize(100, 100);// sets the size of the text box
+        P1_Text_Field.setEditable(true); // this makes it so that the user can edit what they put in the text field
 
         // ActionListener enabler
         Enter.addActionListener(this);
         Tutorial.addActionListener(this);
 
         // JPanel additions
-        Panel1.add(userInput); // adds the editable text feild to the panel
+        Panel1.add(P1_Text_Field);
         Panel1.add(Enter);
         Panel1.add(Tutorial);
         Panel1.setSize(100, 100);
@@ -77,7 +66,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         // Window add ons
         MainWindow.add(Panel1);
         MainWindow.setVisible(true);
-
     }
 
     /**
@@ -85,16 +73,13 @@ public class PrimaryWindow extends JFrame implements ActionListener {
      * and they will get a pop up telling how to do things
      */
     public void Help() {
-        JFrame HelpWindow = new JFrame("Tutorial"); // this will pop up once the user click the button to see another
-                                                    // window for instructions
-
-        JPanel HelpPanel = new JPanel(); // this will add content to the new window that was made
-        JTextArea Instructions = new JTextArea(20, 20); // this will be used to display all the content of the text file
+        JFrame HelpWindow = new JFrame("Tutorial");
+        JPanel HelpPanel = new JPanel();
+        JTextArea Instructions = new JTextArea(20, 20);
 
         // reference: https://kodejava.org/how-do-i-read-text-file-into-jtextarea/
+        // Read some text from the resource file to display in the JTextArea.
         try {
-            // Read some text from the resource file to display in
-            // the JTextArea.
             Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,7 +109,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String INPUT = userInput.getText();
+        String INPUT = P1_Text_Field.getText();
         INPUT.toLowerCase(); // this is mostly just convience for the programmers so we can just have a
                              // single argument to deal with
         WordChoice = INPUT.split(" "); // this will split up the input that the user has made and from there the
