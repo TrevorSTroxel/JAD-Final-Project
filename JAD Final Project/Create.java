@@ -1,6 +1,8 @@
 
 //resources "https://www.w3schools.com/java/java_files_create.asp" reference to create and write to files
 //reference: https://stackoverflow.com/questions/37276996/java-add-text-to-a-specific-line-in-a-file
+
+//REference: https://stackoverflow.com/questions/20039980/java-replace-line-in-text-file
 // Creation file: contains method necessary to create instnaces for the program
 import java.io.BufferedReader;
 import java.io.File;
@@ -115,12 +117,14 @@ public class Create {
 
 			for (int i = 0; i < fileContents.size(); i++) {
 				if (line.contains(Method_Name)) {
-					if (fileContents.get(i).equals("")) {
-						fileContents.set(i, Contents_To_Add);
-						break;
+					for (int j = i; j < fileContents.size(); j++) {
+						if (fileContents.get(i).equals("")) {
+							fileContents.set(i, Contents_To_Add);
+							break;
+						}
 					}
 				}
-
+				line = rdr.readLine();
 			}
 			rdr.close();
 			Files.write(Paths.get(File_Dir), fileContents, StandardCharsets.UTF_8);
