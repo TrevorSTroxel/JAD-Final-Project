@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.FileWriter; // Import the FileWriter class
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -30,34 +29,38 @@ public class Create {
 	 */
 	public static void creatr_class(String file_path, String class_name) {
 		try {
-			FileWriter myWriter = new FileWriter(file_path);
-			myWriter.write(String.format("public class %s{\n\n}", class_name));
-			myWriter.close();
-			System.out.println("Successfully wrote to the file.");
+			List<String> fileContents = new ArrayList<>(
+					Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
+
+			fileContents.add(0, "public class " + class_name + "(){\n\n}");
+			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
+
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
 	}
 
-	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
-	// Method contructor
-	// CREATE A METHOD
-	// Function Input: string: a return type and a name for the method | Function,
-	// and the file path they want to get
-	// Output:a method in string form
-	// ) ( ) ( ) ( ) (
 	/**
 	 * @param File_Directory
 	 * @param return_type
-	 * @param method_name
+	 * @param method_name    // ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( //
+	 *                       Method contructor // CREATE A METHOD // Function Input:
+	 *                       string: a return type and a name for the method |
+	 *                       Function, // and the file path they want to get //
+	 *                       Output:a method in string form // ) ( ) ( ) ( ) (
 	 */
 	public static void create_method(String File_Directory, String return_type, String method_name) {
-
 		try {
-			FileWriter myWriter = new FileWriter(File_Directory);
-			myWriter.write(String.format("public %s %s(){\n\n}", return_type, method_name));
-			myWriter.close();
+			List<String> fileContents = new ArrayList<>(
+					Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
+
+			for (int i = 0; i < fileContents.size(); i++) {
+				if (fileContents.get(i).equals("")) {
+					fileContents.set(i, "public " + return_type + " " + method_name + "(){\n\n}");
+				}
+			}
+
 			System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
@@ -112,19 +115,26 @@ public class Create {
 			InputStreamReader ir = new InputStreamReader(is);
 			BufferedReader rdr = new BufferedReader(ir);
 			String line = rdr.readLine();
+
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
 
 			for (int i = 0; i < fileContents.size(); i++) {
-				if (line.contains(Method_Name)) {
+
+				/**
+				 * Getting close! just need to make it so that it only goes in whan it matches
+				 * exactly EX: if i look for test and i have 2 methods called test and test2,
+				 * the program will try and put the content_to_add both in there
+				 */
+				if (line.contains(Method_Name + "()")) {
 					for (int j = i; j < fileContents.size(); j++) {
-						if (fileContents.get(i).equals("")) {
-							fileContents.set(i, Contents_To_Add);
+						if (fileContents.get(j).equals("")) {
+							fileContents.set(j, Contents_To_Add + "\n");
 							break;
 						}
 					}
 				}
-				line = rdr.readLine();
+				line = rdr.readLine(); // this helps with our iterations through the program
 			}
 			rdr.close();
 			Files.write(Paths.get(File_Dir), fileContents, StandardCharsets.UTF_8);
