@@ -71,7 +71,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         Panel1.add(Enter);
         Panel1.add(Tutorial);
         Panel1.setSize(100, 100);
-        Panel1.setLayout(new GridLayout(3,2));
+        Panel1.setLayout(new GridLayout(3, 1));
         Panel1.setEnabled(true);
 
         // Window add ons
