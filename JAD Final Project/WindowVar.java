@@ -48,24 +48,23 @@ public class WindowVar {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // We kept our naming convention simple to help avoid confusion on what they do
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JButton P2_Enter_Get_Dir_Button = new JButton("Click Button to select your directory.");
-    public static JButton P2_Enter_Get_File_Name_Button = new JButton("Enter File Name");
-    public static JButton P2_Enter_Call_Method_Button = new JButton("Create file in location"); // calls our create file
-                                                                                                // method
+    public static JButton P2_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P2_File_Name_Button = new JButton("Enter File Name");
+    public static JButton P2_Call_Method_Button = new JButton("Create file in location");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JButton P3_Enter_Get_Dir_Button = new JButton("Click Button to select your directory.");
-    public static JButton P3_Enter_Get_Class_Name_Button = new JButton("Enter Name of class");
-    public static JButton P3_Enter_Call_Method_Button = new JButton("Create class");
+    public static JButton P3_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P3_Class_Name_Button = new JButton("Enter Name of class");
+    public static JButton P3_Call_Method_Button = new JButton("Create class");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JButton P4_Enter_File_Dir_Button = new JButton("Click Button to select your directory.");
-    public static JButton P4_Enter_Return_Type_Button = new JButton("Enter Return Type.");
-    public static JButton P4_Enter_Method_Name_Button = new JButton("Enter Method Name.");
-    public static JButton P4_Enter_Call_Method_Button = new JButton("Create Method.");
+    public static JButton P4_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P4_Return_Type_Button = new JButton("Enter Return Type.");
+    public static JButton P4_Method_Name_Button = new JButton("Enter Method Name.");
+    public static JButton P4_Call_Method_Button = new JButton("Create Method.");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JButton P5_Enter_File_Dir_Button = new JButton("Click Button to select your directory.");
-    public static JButton P5_Enter_Method_Name_Button = new JButton("Enter Method Name.");
-    public static JButton P5_Enter_Contents_Button = new JButton("Enter Contents.");
-    public static JButton P5_Enter_Call_Method_Button = new JButton("Add Contents To Methods.");
+    public static JButton P5_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P5_Method_Name_Button = new JButton("Enter Method Name.");
+    public static JButton P5_Add_Contents_Button = new JButton("Enter Contents.");
+    public static JButton P5_Call_Method_Button = new JButton("Add Contents To Methods.");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JTextArea errorTextArea = new JTextArea(20, 20); // this will display an error message
     //////////////////////////////////////////////////////////////////////////////////////////////////////
