@@ -45,6 +45,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
 
     public void WindowCreation() {
         MainWindow.setSize(500, 500);
+        MainWindow.setLocationRelativeTo(null);
         addContents();
     }
 
