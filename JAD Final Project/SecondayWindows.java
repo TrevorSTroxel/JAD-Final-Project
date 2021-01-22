@@ -2,6 +2,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileSystemView;
 
 import java.awt.event.ActionEvent;
@@ -47,30 +48,34 @@ public class SecondayWindows extends JFrame implements ActionListener {
         ContentWindow.setVisible(true);
     }
 
+    // we ended up having to use HTML code to break up our sentences as the text was
+    // to large to fit inside the button
     public static void DirButton(JButton JB) {
-        JB.setText("You have chosen your directory.\n Click again to change directories");
+        JB.setText("<html> You have chosen your directory.<br/>Click again to change directories</html>");
     }
 
     public static void nm_Button(JButton _JB) {
-        _JB.setText("Name has been set.\n Change file name for new file and click again");
+        _JB.setText("<html>Name has been set.<br/>Change file name for new file and click again</html>");
     }
 
     public static void CreationButton(JButton __JB) {
         __JB.setText(
-                "You have added to your project.\n Check your folder to make sure.\n Click again to add more to your project");
+                "<html>You have added to your project.<br/>Check your folder to make sure.<br/>Click again to add more to your project</html>");
     }
 
-    public static void FolderSelect() {
+    // reference:
+    // https://docs.oracle.com/javase/7/docs/api/javax/swing/JFileChooser.html
+    public static void FolderSelect(JTextField JTF) {
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int r = j.showOpenDialog(null);
         if (r == JFileChooser.APPROVE_OPTION) {
-            // set the label to the path of the selected directory
             l.setText(j.getSelectedFile().getAbsolutePath());
         }
+        JTF.setText("Your directory is: " + l.getText());
     }
 
-    public static void FileSelect() {
+    public static void FileSelect(JTextField JTF) {
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         int r = j.showOpenDialog(null);
@@ -78,13 +83,13 @@ public class SecondayWindows extends JFrame implements ActionListener {
             // set the label to the path of the selected directory
             l.setText(j.getSelectedFile().getAbsolutePath());
         }
+        JTF.setText("Your directory is: " + l.getText());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == WindowVar.P2_File_Path_Button) {
-            FolderSelect();
-            WindowVar.P2_File_Path_Text_Field.setText("Your directory is: " + l.getText());
+            FolderSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P2_File_Path_Button);
             Panel2_DIR = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P2_File_Name_Button) {
@@ -97,8 +102,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P3_File_Path_Button) {
-            FileSelect();
-            WindowVar.P3_File_Path_Text_Field.setText("Your directory is: " + l.getText());
+            FileSelect(WindowVar.P3_File_Path_Text_Field);
             DirButton(WindowVar.P3_File_Path_Button);
             Panel3_FILEPATH = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P3_Class_Name_Button) {
@@ -111,8 +115,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P4_File_Path_Button) {
-            FileSelect();
-            WindowVar.P4_File_Path_Text_Field.setText("Your directory is: " + l.getText());
+            FileSelect(WindowVar.P4_File_Path_Text_Field);
             DirButton(WindowVar.P4_File_Path_Button);
             Panel4_File_Dir = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P4_Return_Type_Button) {
@@ -129,8 +132,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P5_File_Path_Button) {
-            FileSelect();
-            WindowVar.P2_File_Path_Text_Field.setText("Your directory is: " + l.getText());
+            FileSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P5_File_Path_Button);
             Panel5_FileDir = l.getText();// this takes the name of the file directory that the user inputs
         } else if (e.getSource() == WindowVar.P5_Method_Name_Button) {
