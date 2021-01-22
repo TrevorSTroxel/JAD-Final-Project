@@ -133,36 +133,36 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             Text_Field_Input.addPanel2(); // calls the method to set up the second panel
             // we needed to add action functionality to our buttons and this was the only
             // way we could set this up
-            Text_Field_Input.P2_Enter_Get_Dir.addActionListener(this);
-            Text_Field_Input.P2_Enter_Get_File_Name.addActionListener(this);
-            Text_Field_Input.P2_Enter_Call_Method.addActionListener(this);
-            Text_Field_Input.Panel2.setVisible(true);
+            WindowVar.P2_Enter_Get_Dir.addActionListener(this);
+            WindowVar.P2_Enter_Get_File_Name.addActionListener(this);
+            WindowVar.P2_Enter_Call_Method.addActionListener(this);
+            WindowVar.Panel2.setVisible(true);
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("class")) {
             Text_Field_Input.addPanel3();
-            Text_Field_Input.P3_Enter_Get_Dir.addActionListener(this);
-            Text_Field_Input.P3_Enter_Get_Class_Name.addActionListener(this);
-            Text_Field_Input.P3_Enter_Call_Method.addActionListener(this);
-            Text_Field_Input.Panel3.setVisible(true);
+            WindowVar.P3_Enter_Get_Dir.addActionListener(this);
+            WindowVar.P3_Enter_Get_Class_Name.addActionListener(this);
+            WindowVar.P3_Enter_Call_Method.addActionListener(this);
+            WindowVar.Panel3.setVisible(true);
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("method")) {
             Text_Field_Input.addPanel4();
-            Text_Field_Input.P4_Enter_File_Dir.addActionListener(this);
-            Text_Field_Input.P4_Enter_Return_Type.addActionListener(this);
-            Text_Field_Input.P4_Enter_Method_Name.addActionListener(this);
-            Text_Field_Input.P4_Enter_Call_Method.addActionListener(this);
-            Text_Field_Input.Panel4.setVisible(true);
+            WindowVar.P4_Enter_File_Dir.addActionListener(this);
+            WindowVar.P4_Enter_Return_Type.addActionListener(this);
+            WindowVar.P4_Enter_Method_Name.addActionListener(this);
+            WindowVar.P4_Enter_Call_Method.addActionListener(this);
+            WindowVar.Panel4.setVisible(true);
         }
 
         else if (e.getSource() == Enter && WordChoice[1].equals("content")) {
             Text_Field_Input.addPanel5();
-            Text_Field_Input.P5_Enter_File_Dir.addActionListener(this);
-            Text_Field_Input.P5_Enter_Method_Name.addActionListener(this);
-            Text_Field_Input.P5_Enter_Contents.addActionListener(this);
-            Text_Field_Input.P5_Enter_Call_Method.addActionListener(this);
-            Text_Field_Input.Panel5.setVisible(true);
+            WindowVar.P5_Enter_File_Dir.addActionListener(this);
+            WindowVar.P5_Enter_Method_Name.addActionListener(this);
+            WindowVar.P5_Enter_Contents.addActionListener(this);
+            WindowVar.P5_Enter_Call_Method.addActionListener(this);
+            WindowVar.Panel5.setVisible(true);
         }
 
         else if (e.getSource() == Tutorial) {
