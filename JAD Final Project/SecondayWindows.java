@@ -48,16 +48,16 @@ public class SecondayWindows extends JFrame implements ActionListener {
     }
 
     public static void DirButton(JButton JB) {
-        JB.setText("You have chosen your directory. Click again to change directories");
+        JB.setText("You have chosen your directory.\n Click again to change directories");
     }
 
     public static void nm_Button(JButton _JB) {
-        _JB.setText("Name has been set. Change file name for new file and click again");
+        _JB.setText("Name has been set.\n Change file name for new file and click again");
     }
 
     public static void CreationButton(JButton __JB) {
         __JB.setText(
-                "You have added to your project. Check your folder to make sure. Click again to add more to your project");
+                "You have added to your project.\n Check your folder to make sure.\n Click again to add more to your project");
     }
 
     public static void FolderSelect() {
