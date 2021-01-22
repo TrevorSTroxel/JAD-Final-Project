@@ -2,13 +2,11 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.filechooser.FileSystemView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-//TODO: feedback on buttons for creating methods/classes/files
 //this will be used for better organization purposes
 public class SecondayWindows extends JFrame implements ActionListener {
 

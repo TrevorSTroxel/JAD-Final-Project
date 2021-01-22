@@ -10,6 +10,8 @@ Here are some Keywords to try with this program:
         B. class : this will create a class inside a selected file
 
         C. method : this will create a method inside the seleced folder
+    2. add : this will add things to your classes or methods
+        A. content : add variables to your method to make it work
 IMPORTANT TERMINOLOGY
 Directory: Your computer puts files and other things in what are called paths 
            so that your computer can have better organization.
