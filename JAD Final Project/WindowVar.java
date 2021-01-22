@@ -4,10 +4,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
- * This is where we will move a lot of variables, as the file that holds all of
- * them right now is starting to become bloated. This should also help with
- * organization as now we will be able to put in any variables in here as we
- * want and have much better organization
+ * This file is where we will hold new variables we will need to deal with. The
+ * reason why we moved them here is that our other files were becoming to
+ * bloated and confusing. With this our coding shall look much nicer and much
+ * better to manage as we can now change any variable configuration here
  */
 
 public class WindowVar {

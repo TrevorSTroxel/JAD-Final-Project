@@ -2,7 +2,6 @@
 //reference: "https://www.w3schools.com/java/java_files_create.asp" reference to create and write to files
 //reference: https://stackoverflow.com/questions/37276996/java-add-text-to-a-specific-line-in-a-file
 //reference: https://stackoverflow.com/questions/20039980/java-replace-line-in-text-file
-// Creation file: contains method necessary to create instnaces for the program
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -11,6 +10,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * This file holds all of our methods that are called manipulating the file
+ */
 
 public class Create {
 	/**
@@ -21,10 +24,8 @@ public class Create {
 		try {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-
 			fileContents.add(0, "public class " + class_name + "(){\n\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
-
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
@@ -40,19 +41,16 @@ public class Create {
 		try {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
-
 			for (int i = 0; i < fileContents.size(); i++) {
 				if (fileContents.get(i).equals("")) {
 					fileContents.set(i, "public " + return_type + " " + method_name + "(){\n\n}");
 				}
 			}
-
 			System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
-
 	}
 
 	/**
@@ -78,12 +76,10 @@ public class Create {
 	 * @param Contents_To_Add
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
-		Method_Name = WordsOnly(Method_Name); // this is to scrub it the name of any special characters, this is just
-												// for programming sake
+		Method_Name = WordsOnly(Method_Name); // used for simplicity
 		try {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
-
 			for (int i = 0; i < fileContents.size(); i++) {
 				String test = fileContents.get(i); // this is used to help simplify our code
 				if (test.contains(Method_Name + "()")) {
@@ -101,14 +97,8 @@ public class Create {
 		}
 	}
 
-	/**
-	 * what this method need to do is to check and see if the users input has these
-	 * characters in it: () if the string does have this then this method shoud
-	 * remove them from the string and make it a new one reference:
-	 * https://www.javatpoint.com/how-to-remove-special-characters-from-string-in-java
-	 */
+	// Used for cleaning up words
 	public static String WordsOnly(String simple) {
-
 		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");
 		return Clean;
 	}

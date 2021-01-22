@@ -30,6 +30,10 @@ public class SecondayWindows extends JFrame implements ActionListener {
      * that the user can have multiple windows open to use This was also used to
      * help with with file bloating, as some of these files were becoming very large
      */
+    /**
+     * Consider having multiple windows set up so that they can be all up and
+     * operational for the user to use
+     */
     public static void SecondSetUp() {
         SecondWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SecondWindow.setSize(500, 500);
