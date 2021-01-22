@@ -1,14 +1,10 @@
 
-//resources "https://www.w3schools.com/java/java_files_create.asp" reference to create and write to files
+//reference: "https://www.w3schools.com/java/java_files_create.asp" reference to create and write to files
 //reference: https://stackoverflow.com/questions/37276996/java-add-text-to-a-specific-line-in-a-file
-
-//REference: https://stackoverflow.com/questions/20039980/java-replace-line-in-text-file
+//reference: https://stackoverflow.com/questions/20039980/java-replace-line-in-text-file
 // Creation file: contains method necessary to create instnaces for the program
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
@@ -44,11 +40,7 @@ public class Create {
 	/**
 	 * @param File_Directory
 	 * @param return_type
-	 * @param method_name    // ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( //
-	 *                       Method contructor // CREATE A METHOD // Function Input:
-	 *                       string: a return type and a name for the method |
-	 *                       Function, // and the file path they want to get //
-	 *                       Output:a method in string form // ) ( ) ( ) ( ) (
+	 * @param method_name
 	 */
 	public static void create_method(String File_Directory, String return_type, String method_name) {
 		try {
@@ -70,10 +62,6 @@ public class Create {
 	}
 
 	/**
-	 * // ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( // File contructor // CREATE A
-	 * FILE // Function Input: string | Function Output:a file in chosen directory
-	 * // ) ( ) ( ) ( ) (
-	 * 
 	 * @param file_directory
 	 * @param file_name
 	 */
@@ -91,42 +79,20 @@ public class Create {
 	}
 
 	/**
-	 * Method right now is WIP
-	 * 
 	 * @param Method_Name
 	 * @param File_dir
-	 * @param Contents_To_Add This method will search through the given file the
-	 *                        user has selected and look for the method the user has
-	 *                        asked for.
-	 * 
-	 *                        After this the program will insert contents they want
-	 *                        to add to the method they have called Reference:
-	 *                        https://www.coderslexicon.com/search-a-text-file-in-java/
-	 *                        consider putting content of file into arraylist and
-	 *                        then add it because you need to manipulate data, not
-	 *                        the actual file itself actually look into java output
-	 *                        stream to file. will be useful
-	 * @throws IOException
+	 * @param Contents_To_Add
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
-		File f = new File(File_Dir);
+		Method_Name = WordsOnly(Method_Name); // this is to scrub it the name of any special characters, this is just
+												// for programming sake
 		try {
-			FileInputStream is = new FileInputStream(f);
-			InputStreamReader ir = new InputStreamReader(is);
-			BufferedReader rdr = new BufferedReader(ir);
-			String line = rdr.readLine();
-
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
 
 			for (int i = 0; i < fileContents.size(); i++) {
-
-				/**
-				 * Getting close! just need to make it so that it only goes in whan it matches
-				 * exactly EX: if i look for test and i have 2 methods called test and test2,
-				 * the program will try and put the content_to_add both in there
-				 */
-				if (line.contains(Method_Name + "()")) {
+				String test = fileContents.get(i); // this is used to help simplify our code
+				if (test.contains(Method_Name + "()")) {
 					for (int j = i; j < fileContents.size(); j++) {
 						if (fileContents.get(j).equals("")) {
 							fileContents.set(j, Contents_To_Add + "\n");
@@ -134,13 +100,22 @@ public class Create {
 						}
 					}
 				}
-				line = rdr.readLine(); // this helps with our iterations through the program
 			}
-			rdr.close();
 			Files.write(Paths.get(File_Dir), fileContents, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
 
+	/**
+	 * what this method need to do is to check and see if the users input has these
+	 * characters in it: () if the string does have this then this method shoud
+	 * remove them from the string and make it a new one reference:
+	 * https://www.javatpoint.com/how-to-remove-special-characters-from-string-in-java
+	 */
+	public static String WordsOnly(String simple) {
+
+		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");
+		return Clean;
 	}
 }
