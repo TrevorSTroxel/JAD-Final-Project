@@ -109,7 +109,7 @@ public class Text_Field_Input {
 
     // allows the user to add contents to methods they have created
     public static void addPanel5() {
-        WindowVar.Panel5.setLayout(new GridLayout(4, 2));
+        WindowVar.Panel5.setLayout(new GridLayout(4, 3));
         WindowVar.Panel5.add(WindowVar.P5_File_Path_Button);
         WindowVar.Panel5.add(WindowVar.P5_File_Path_Label);
         WindowVar.Panel5.add(WindowVar.P5_File_Path_Text_Field);
