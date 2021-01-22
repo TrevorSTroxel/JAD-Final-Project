@@ -37,9 +37,9 @@ public class Text_Field_Input {
     public static JTextField P4_Return_Type = new JTextField("Enter what data type the method should return: ", 30);
     public static JTextField P4_Method_Name = new JTextField("Enter the name of your method: ", 30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static JTextField P5_File_Dir = new JTextField("Enter the complete file path: ", 30); // 5
-    public static JTextField P5_Method_Name = new JTextField("Enter the name of your method: ", 30);// 6
-    public static JTextField P5_Contents_To_Add = new JTextField("Enter what you want to add to the method: ", 30); // 9
+    public static JTextField P5_File_Dir = new JTextField("Enter the complete file path: ", 30);
+    public static JTextField P5_Method_Name = new JTextField("Enter the name of your method: ", 30);
+    public static JTextField P5_Contents_To_Add = new JTextField("Enter what you want to add to the method: ", 30);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // We kept our naming convention simple to help avoid confusion on what they do
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -163,7 +163,7 @@ public class Text_Field_Input {
 
     // allows the user to add contents to methods they have created
     public static void addPanel5() {
-        Panel5.setLayout(new GridLayout(3, 2));
+        Panel5.setLayout(new GridLayout(4, 2));
         Panel5.add(P5_Enter_File_Dir);
         Panel5.add(P5_File_Dir);
 

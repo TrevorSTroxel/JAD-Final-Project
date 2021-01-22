@@ -13,12 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Create {
-	// ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
-	// Class constructor
-	// CREATE A CLASS
-	// Function Input: string: name of class | Function Output:a class in string
-	// form
-	// ) ( ) ( ) ( ) (
 	/**
 	 * @param file_path
 	 * @param class_name
