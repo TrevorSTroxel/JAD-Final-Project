@@ -5,14 +5,12 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-// import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.FileWriter; // Import the FileWriter class
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,16 +104,25 @@ public class Create {
 	 * @throws IOException
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
+		File f = new File(File_Dir);
 		try {
+			FileInputStream is = new FileInputStream(f);
+			InputStreamReader ir = new InputStreamReader(is);
+			BufferedReader rdr = new BufferedReader(ir);
+			String line = rdr.readLine();
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
 
 			for (int i = 0; i < fileContents.size(); i++) {
-				if (fileContents.get(i).equals("")) {
-					fileContents.set(i, Contents_To_Add);
-					break;
+				if (line.contains(Method_Name)) {
+					if (fileContents.get(i).equals("")) {
+						fileContents.set(i, Contents_To_Add);
+						break;
+					}
 				}
+
 			}
+			rdr.close();
 			Files.write(Paths.get(File_Dir), fileContents, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
