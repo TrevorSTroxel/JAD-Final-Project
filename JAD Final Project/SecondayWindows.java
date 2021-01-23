@@ -17,10 +17,6 @@ public class SecondayWindows extends JFrame implements ActionListener {
      * that the user can have multiple windows open to use This was also used to
      * help with with file bloating, as some of these files were becoming very large
      */
-    /**
-     * Consider having multiple windows set up so that they can be all up and
-     * operational for the user to use
-     */
     public static void SecondSetUp() {
         WindowVar.Creation_Window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         WindowVar.Creation_Window.setSize(700, 700);
@@ -30,10 +26,10 @@ public class SecondayWindows extends JFrame implements ActionListener {
 
     /**
      * What these methods do is to help lessen the amount of code we have to use and
-     * also help give the user better feed back after doing something
+     * also help give the user better feed back after doing something.
      * 
-     * we ended up having to use HTML code to break up our sentences as the text was
-     * to large to fit inside the button
+     * We ended up having to use HTML code to break up our sentences as the text was
+     * to large to fit inside the button.
      */
 
     public static void DirButton(JButton JB) {
@@ -67,7 +63,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         if (r == JFileChooser.APPROVE_OPTION) {
             WindowVar.l.setText(j.getSelectedFile().getAbsolutePath());
         }
-        JTF.setText("<html>Your directory is: <br/></html>" + WindowVar.l.getText());
+        JTF.setText("Your directory is: " + WindowVar.l.getText());
     }
 
     /**
@@ -81,7 +77,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
             // set the label to the path of the selected directory
             WindowVar.l.setText(j.getSelectedFile().getAbsolutePath());
         }
-        JTF.setText("<html>Your directory is: <br/></html>" + WindowVar.l.getText());
+        JTF.setText("Your directory is: \n" + WindowVar.l.getText());
     }
 
     /**
@@ -97,9 +93,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         } else if (e.getSource() == WindowVar.P2_File_Name_Button) {
             WindowVar.Word_Split = WindowVar.P2_File_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P2_File_Name_Button);
-            WindowVar.P2_FILE_NAME = WindowVar.Word_Split[0]; // this takes the name of the file directory that the
-                                                               // user
-                                                               // inputs
+            WindowVar.P2_FILE_NAME = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P2_Call_Method_Button) {
             CreationButton(WindowVar.P2_Call_Method_Button);
             Create.create_file(WindowVar.P2_FILE_PATH, WindowVar.P2_FILE_NAME); // creates a new file in this location
@@ -108,8 +102,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         else if (e.getSource() == WindowVar.P3_File_Path_Button) {
             FileSelect(WindowVar.P3_File_Path_Text_Field);
             DirButton(WindowVar.P3_File_Path_Button);
-            WindowVar.P3_FILE_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                           // inputs
+            WindowVar.P3_FILE_PATH = WindowVar.l.getText();
         } else if (e.getSource() == WindowVar.P3_Class_Name_Button) {
             WindowVar.Word_Split = WindowVar.P3_Class_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P3_Class_Name_Button);
@@ -122,8 +115,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         else if (e.getSource() == WindowVar.P4_File_Path_Button) {
             FileSelect(WindowVar.P4_File_Path_Text_Field);
             DirButton(WindowVar.P4_File_Path_Button);
-            WindowVar.P4_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                           // inputs
+            WindowVar.P4_File_Path = WindowVar.l.getText();
         } else if (e.getSource() == WindowVar.P4_Return_Type_Button) {
             WindowVar.Word_Split = WindowVar.P4_Return_Type_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Return_Type_Button);
@@ -140,8 +132,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         else if (e.getSource() == WindowVar.P5_File_Path_Button) {
             FileSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P5_File_Path_Button);
-            WindowVar.P5_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                           // inputs
+            WindowVar.P5_File_Path = WindowVar.l.getText();
         } else if (e.getSource() == WindowVar.P5_Method_Name_Button) {
             WindowVar.Word_Split = WindowVar.P5_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P5_Method_Name_Button);
