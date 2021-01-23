@@ -58,7 +58,7 @@ public class WindowVar {
     public static JLabel P2_File_Name_Label = new JLabel("Enter what you want to name your file: ");
     public static JTextField P2_File_Path_Text_Field = new JTextField(30);
     public static JTextField P2_File_Name_Text_Field = new JTextField(30);
-    public static JButton P2_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P2_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P2_File_Name_Button = new JButton("Enter File Name");
     public static JButton P2_Call_Method_Button = new JButton("Create file in location");
     //////////////////////////////////////////////////////////////////////////////////////////////////////

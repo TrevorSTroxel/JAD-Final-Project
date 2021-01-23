@@ -67,7 +67,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         if (r == JFileChooser.APPROVE_OPTION) {
             WindowVar.l.setText(j.getSelectedFile().getAbsolutePath());
         }
-        JTF.setText("Your directory is: " + WindowVar.l.getText());
+        JTF.setText("<html>Your directory is: <br/></html>" + WindowVar.l.getText());
     }
 
     /**
@@ -81,7 +81,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
             // set the label to the path of the selected directory
             WindowVar.l.setText(j.getSelectedFile().getAbsolutePath());
         }
-        JTF.setText("Your directory is: " + WindowVar.l.getText());
+        JTF.setText("<html>Your directory is: <br/></html>" + WindowVar.l.getText());
     }
 
     /**
@@ -93,12 +93,13 @@ public class SecondayWindows extends JFrame implements ActionListener {
             FolderSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P2_File_Path_Button);
             WindowVar.P2_FILR_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                         // inputs
+                                                           // inputs
         } else if (e.getSource() == WindowVar.P2_File_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P2_File_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P2_File_Name_Button);
-            WindowVar.P2_FILE_NAME = WindowVar.Word_Choice[0]; // this takes the name of the file directory that the user
-                                                              // inputs
+            WindowVar.P2_FILE_NAME = WindowVar.Word_Choice[0]; // this takes the name of the file directory that the
+                                                               // user
+                                                               // inputs
         } else if (e.getSource() == WindowVar.P2_Call_Method_Button) {
             CreationButton(WindowVar.P2_Call_Method_Button);
             Create.create_file(WindowVar.P2_FILR_PATH, WindowVar.P2_FILE_NAME); // creates a new file in this location
@@ -108,7 +109,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
             FileSelect(WindowVar.P3_File_Path_Text_Field);
             DirButton(WindowVar.P3_File_Path_Button);
             WindowVar.P3_FILE_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                              // inputs
+                                                           // inputs
         } else if (e.getSource() == WindowVar.P3_Class_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P3_Class_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P3_Class_Name_Button);
@@ -122,7 +123,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
             FileSelect(WindowVar.P4_File_Path_Text_Field);
             DirButton(WindowVar.P4_File_Path_Button);
             WindowVar.P4_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                              // inputs
+                                                           // inputs
         } else if (e.getSource() == WindowVar.P4_Return_Type_Button) {
             WindowVar.Word_Choice = WindowVar.P4_Return_Type_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Return_Type_Button);
@@ -140,7 +141,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
             FileSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P5_File_Path_Button);
             WindowVar.P5_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                             // inputs
+                                                           // inputs
         } else if (e.getSource() == WindowVar.P5_Method_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P5_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P5_Method_Name_Button);
