@@ -33,17 +33,16 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         // JTextFeild settings
         WindowVar.P1_Text_Field.setColumns(25); // sets how long the text box is
         WindowVar.P1_Text_Field.setSize(100, 100);// sets the size of the text box
-        WindowVar.P1_Text_Field.setEditable(true); // this makes it so that the user can edit what they put in the text
-                                                   // field
+        WindowVar.P1_Text_Field.setEditable(true);
 
         // ActionListener enabler
-        WindowVar.Enter.addActionListener(this);
-        WindowVar.Tutorial.addActionListener(this);
+        WindowVar.P1_Enter.addActionListener(this);
+        WindowVar.P1_Tutorial.addActionListener(this);
 
         // JPanel additions
         WindowVar.Panel1.add(WindowVar.P1_Text_Field);
-        WindowVar.Panel1.add(WindowVar.Enter);
-        WindowVar.Panel1.add(WindowVar.Tutorial);
+        WindowVar.Panel1.add(WindowVar.P1_Enter);
+        WindowVar.Panel1.add(WindowVar.P1_Tutorial);
         WindowVar.Panel1.setSize(100, 100);
         WindowVar.Panel1.setLayout(new GridLayout(3, 1));
         WindowVar.Panel1.setEnabled(true);
@@ -70,13 +69,13 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
         WindowVar.Instructions.setFont(f); // sets the style of the text
 
-        WindowVar.HelpPanel.add(WindowVar.Instructions);
-        WindowVar.HelpPanel.setEnabled(true);
+        WindowVar.Help_Panel.add(WindowVar.Instructions);
+        WindowVar.Help_Panel.setEnabled(true);
 
-        WindowVar.HelpWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        WindowVar.HelpWindow.setSize(700, 700);
-        WindowVar.HelpWindow.add(WindowVar.HelpPanel);
-        WindowVar.HelpWindow.setVisible(true);
+        WindowVar.Help_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        WindowVar.Help_Window.setSize(700, 700);
+        WindowVar.Help_Window.add(WindowVar.Help_Panel);
+        WindowVar.Help_Window.setVisible(true);
     }
 
     /**
@@ -89,10 +88,10 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         String INPUT = WindowVar.P1_Text_Field.getText();
         INPUT.toLowerCase(); // we do this for easier argument sake
         WindowVar.WordChoice = INPUT.split(" "); // will help decide where the program needs to go
-        if (e.getSource() == WindowVar.Enter && WindowVar.WordChoice[0].equals("close")
+        if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[0].equals("close")
                 || WindowVar.WordChoice[0].equals("end")) {
             System.exit(0);
-        } else if (e.getSource() == WindowVar.Enter && WindowVar.WordChoice[1].equals("file")) {
+        } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("file")) {
             SecondayWindows.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel2();
             WindowVar.P2_File_Path_Button.addActionListener(this);
@@ -101,7 +100,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             SecondayWindows.ContentWindow.getContentPane().validate();
             SecondayWindows.ContentWindow.getContentPane().repaint();
             WindowVar.Panel2.setVisible(true);
-        } else if (e.getSource() == WindowVar.Enter && WindowVar.WordChoice[1].equals("class")) {
+        } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("class")) {
             SecondayWindows.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel3();
             WindowVar.P3_File_Path_Button.addActionListener(this);
@@ -110,7 +109,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             SecondayWindows.ContentWindow.getContentPane().validate();
             SecondayWindows.ContentWindow.getContentPane().repaint();
             WindowVar.Panel3.setVisible(true);
-        } else if (e.getSource() == WindowVar.Enter && WindowVar.WordChoice[1].equals("method")) {
+        } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("method")) {
             SecondayWindows.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel4();
             WindowVar.P4_File_Path_Button.addActionListener(this);
@@ -120,7 +119,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             SecondayWindows.ContentWindow.getContentPane().validate();
             SecondayWindows.ContentWindow.getContentPane().repaint();
             WindowVar.Panel4.setVisible(true);
-        } else if (e.getSource() == WindowVar.Enter && WindowVar.WordChoice[1].equals("content")) {
+        } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("content")) {
             SecondayWindows.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel5();
             WindowVar.P5_File_Path_Button.addActionListener(this);
@@ -130,7 +129,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             SecondayWindows.ContentWindow.getContentPane().validate();
             SecondayWindows.ContentWindow.getContentPane().repaint();
             WindowVar.Panel5.setVisible(true);
-        } else if (e.getSource() == WindowVar.Tutorial) {
+        } else if (e.getSource() == WindowVar.P1_Tutorial) {
             Help();
         } else {
             NewWindows.actionPerformed(e);

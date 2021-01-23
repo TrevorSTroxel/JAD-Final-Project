@@ -23,13 +23,13 @@ public class WindowVar {
     public static JFrame MainWindow = new JFrame("Jave Program Creation");// main window
     public static JPanel Panel1 = new JPanel(); // Starting panel for people to see
     public static JTextField P1_Text_Field = new JTextField(); // Users first choice into what to do
-    public static JButton Enter = new JButton("Enter"); // for confermation and selection process
-    public static JButton Tutorial = new JButton("Help"); // tutorial button
+    public static JButton P1_Enter = new JButton("Enter"); // for confermation and selection process
+    public static JButton P1_Tutorial = new JButton("Help"); // tutorial button
     public static String[] WordChoice; // generic string array
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // These varables are special, they get their own space
-    public static JFrame HelpWindow = new JFrame("Tutorial");
-    public static JPanel HelpPanel = new JPanel();
+    public static JFrame Help_Window = new JFrame("Tutorial");
+    public static JPanel Help_Panel = new JPanel();
     public static JTextArea Instructions = new JTextArea(20, 20);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
