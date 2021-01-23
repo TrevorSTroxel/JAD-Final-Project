@@ -41,15 +41,27 @@ public class SecondayWindows extends JFrame implements ActionListener {
         JB.setText("<html> You have chosen your directory.<br/>Click again to change directories</html>");
     }
 
+    
+    /** 
+     * @param _JB
+     */
     public static void nm_Button(JButton _JB) {
         _JB.setText("<html>Name has been set.<br/>Change file name for new file and click again</html>");
     }
 
+    
+    /** 
+     * @param __JB
+     */
     public static void CreationButton(JButton __JB) {
         __JB.setText(
                 "<html>You have added to your project.<br/>Check your folder to make sure.<br/>Click again to add more to your project</html>");
     }
 
+    
+    /** 
+     * @param JTF
+     */
     // reference:
     // https://docs.oracle.com/javase/7/docs/api/javax/swing/JFileChooser.html
     public static void FolderSelect(JTextField JTF) {
@@ -62,6 +74,10 @@ public class SecondayWindows extends JFrame implements ActionListener {
         JTF.setText("Your directory is: " + WindowVar.l.getText());
     }
 
+    
+    /** 
+     * @param JTF
+     */
     public static void FileSelect(JTextField JTF) {
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
@@ -73,6 +89,10 @@ public class SecondayWindows extends JFrame implements ActionListener {
         JTF.setText("Your directory is: " + WindowVar.l.getText());
     }
 
+    
+    /** 
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == WindowVar.P2_File_Path_Button) {

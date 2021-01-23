@@ -103,6 +103,11 @@ public class Create {
 		}
 	}
 
+	
+	/** 
+	 * @param simple
+	 * @return String
+	 */
 	// Used for cleaning up words
 	public static String WordsOnly(String simple) {
 		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");

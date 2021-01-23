@@ -11,6 +11,10 @@ import java.awt.*;
  */
 
 public class Text_Field_Input {
+    
+    /** 
+     * @param JP
+     */
     // WIP
     // this functions will be called if there is an error in the users input
     public static void ERROR(JPanel JP) {
