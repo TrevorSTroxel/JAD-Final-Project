@@ -24,6 +24,7 @@ public class WindowVar {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // These varables are special, they get their own space
     // I wanted to almost all variables inside here for better organization
+    // Variables from: PrimaryWindow.java
     public static JFrame MainWindow = new JFrame("Jave Program Creation");// main window
     public static JPanel Panel1 = new JPanel(); // Starting panel for people to see
     public static JTextField P1_Text_Field = new JTextField(); // Users first choice into what to do
@@ -33,6 +34,21 @@ public class WindowVar {
     public static JFrame Help_Window = new JFrame("Tutorial");
     public static JPanel Help_Panel = new JPanel();
     public static JTextArea Instructions = new JTextArea(20, 20);
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Variables from: SecondayWindow.java
+    public static JFrame ContentWindow = new JFrame("Program execution");
+    public static String[] Word_Choice;
+    public static JLabel l = new JLabel();
+    public static String Panel2_NAME = new String();
+    public static String Panel2_DIR = new String();
+    public static String Panel3_FILEPATH = new String();
+    public static String Panel3_CLASSNAME = new String();
+    public static String Panel4_File_Dir = new String();
+    public static String Panel4_Return_Type = new String();
+    public static String Panel4_Mathed_Name = new String();
+    public static String Panel5_FileDir = new String();
+    public static String Panel5_MethodName = new String();
+    public static String Panel5_Contents = new String();
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
     public static JLabel P2_File_Path_Label = new JLabel("Click Button to select your directory.");

@@ -92,42 +92,42 @@ public class PrimaryWindow extends JFrame implements ActionListener {
                 || WindowVar.WordChoice[0].equals("end")) {
             System.exit(0);
         } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("file")) {
-            SecondayWindows.ContentWindow.getContentPane().removeAll();
+            WindowVar.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel2();
             WindowVar.P2_File_Path_Button.addActionListener(this);
             WindowVar.P2_File_Name_Button.addActionListener(this);
             WindowVar.P2_Call_Method_Button.addActionListener(this);
-            SecondayWindows.ContentWindow.getContentPane().validate();
-            SecondayWindows.ContentWindow.getContentPane().repaint();
+            WindowVar.ContentWindow.getContentPane().validate();
+            WindowVar.ContentWindow.getContentPane().repaint();
             WindowVar.Panel2.setVisible(true);
         } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("class")) {
-            SecondayWindows.ContentWindow.getContentPane().removeAll();
+            WindowVar.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel3();
             WindowVar.P3_File_Path_Button.addActionListener(this);
             WindowVar.P3_Class_Name_Button.addActionListener(this);
             WindowVar.P3_Call_Method_Button.addActionListener(this);
-            SecondayWindows.ContentWindow.getContentPane().validate();
-            SecondayWindows.ContentWindow.getContentPane().repaint();
+            WindowVar.ContentWindow.getContentPane().validate();
+            WindowVar.ContentWindow.getContentPane().repaint();
             WindowVar.Panel3.setVisible(true);
         } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("method")) {
-            SecondayWindows.ContentWindow.getContentPane().removeAll();
+            WindowVar.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel4();
             WindowVar.P4_File_Path_Button.addActionListener(this);
             WindowVar.P4_Return_Type_Button.addActionListener(this);
             WindowVar.P4_Method_Name_Button.addActionListener(this);
             WindowVar.P4_Call_Method_Button.addActionListener(this);
-            SecondayWindows.ContentWindow.getContentPane().validate();
-            SecondayWindows.ContentWindow.getContentPane().repaint();
+            WindowVar.ContentWindow.getContentPane().validate();
+            WindowVar.ContentWindow.getContentPane().repaint();
             WindowVar.Panel4.setVisible(true);
         } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("content")) {
-            SecondayWindows.ContentWindow.getContentPane().removeAll();
+            WindowVar.ContentWindow.getContentPane().removeAll();
             Text_Field_Input.addPanel5();
             WindowVar.P5_File_Path_Button.addActionListener(this);
             WindowVar.P5_Method_Name_Button.addActionListener(this);
             WindowVar.P5_Add_Contents_Button.addActionListener(this);
             WindowVar.P5_Call_Method_Button.addActionListener(this);
-            SecondayWindows.ContentWindow.getContentPane().validate();
-            SecondayWindows.ContentWindow.getContentPane().repaint();
+            WindowVar.ContentWindow.getContentPane().validate();
+            WindowVar.ContentWindow.getContentPane().repaint();
             WindowVar.Panel5.setVisible(true);
         } else if (e.getSource() == WindowVar.P1_Tutorial) {
             Help();
