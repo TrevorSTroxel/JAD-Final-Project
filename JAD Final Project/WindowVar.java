@@ -3,7 +3,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 //<html> <br/> </html>
 
@@ -19,7 +18,7 @@ import javax.swing.JTextField;
  */
 
 /**
- * How we organize our variable is by: JPanel, JLabel, JTextField, JButtons
+ * How we organize our variable is by: JPanel, JLabel, JTextArea, JButtons
  */
 
 public class WindowVar {
@@ -29,7 +28,7 @@ public class WindowVar {
     // Variables from: PrimaryWindow.java
     public static JFrame MainWindow = new JFrame("Jave Program Creation");// main window
     public static JPanel Panel1 = new JPanel(); // Starting panel for people to see
-    public static JTextField P1_Text_Field = new JTextField(); // Users first choice into what to do
+    public static JTextArea P1_Text_Field = new JTextArea(); // Users first choice into what to do
     public static JButton P1_Enter = new JButton("Enter"); // for confermation and selection process
     public static JButton P1_Tutorial = new JButton("Help"); // tutorial button
     public static String[] WordChoice; // generic string array
@@ -56,8 +55,8 @@ public class WindowVar {
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
     public static JLabel P2_File_Path_Label = new JLabel("<html>Click Button to <br/>select your directory.</html>");
     public static JLabel P2_File_Name_Label = new JLabel("Enter what you want to name your file: ");
-    public static JTextField P2_File_Path_Text_Field = new JTextField(30);
-    public static JTextField P2_File_Name_Text_Field = new JTextField(30);
+    public static JTextArea P2_File_Path_Text_Field = new JTextArea();
+    public static JTextArea P2_File_Name_Text_Field = new JTextArea();
     public static JButton P2_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P2_File_Name_Button = new JButton("Enter File Name");
     public static JButton P2_Call_Method_Button = new JButton("Create file in location");
@@ -66,8 +65,8 @@ public class WindowVar {
     public static JLabel P3_File_Path_Label = new JLabel(
             "<html>Click Button to <br/>select your directory and file.</html>");
     public static JLabel P3_Class_Name_Label = new JLabel("Enter what you want to name your class: ");
-    public static JTextField P3_File_Path_Text_Field = new JTextField(30);
-    public static JTextField P3_Class_Name_Text_Field = new JTextField(30);
+    public static JTextArea P3_File_Path_Text_Field = new JTextArea();
+    public static JTextArea P3_Class_Name_Text_Field = new JTextArea();
     public static JButton P3_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P3_Class_Name_Button = new JButton("Enter Name of class");
     public static JButton P3_Call_Method_Button = new JButton("Create class");
@@ -77,9 +76,9 @@ public class WindowVar {
             "<html>Click Button to <br/>select your directory and file.</html>");
     public static JLabel P4_Return_Type_Label = new JLabel("Enter what data type the method should return: ");
     public static JLabel P4_Method_Name_Label = new JLabel("Enter the name of your method: ");
-    public static JTextField P4_File_Path_Text_Field = new JTextField(30);
-    public static JTextField P4_Return_Type_Text_Field = new JTextField(30);
-    public static JTextField P4_Method_Name_Text_Field = new JTextField(30);
+    public static JTextArea P4_File_Path_Text_Field = new JTextArea();
+    public static JTextArea P4_Return_Type_Text_Field = new JTextArea();
+    public static JTextArea P4_Method_Name_Text_Field = new JTextArea();
     public static JButton P4_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P4_Return_Type_Button = new JButton("Enter Return Type.");
     public static JButton P4_Method_Name_Button = new JButton("Enter Method Name.");
@@ -90,9 +89,9 @@ public class WindowVar {
             "<html>Click Button to <br/>select your directory and file.</html>");
     public static JLabel P5_Method_Name_Label = new JLabel("Enter the name of your method: ");
     public static JLabel P5_Contents_To_Add_Label = new JLabel("Enter what you want to add to the method: ");
-    public static JTextField P5_File_Path_Text_Field = new JTextField(30);
-    public static JTextField P5_Method_Name_Text_Field = new JTextField(30);
-    public static JTextField P5_Contents_To_Add_Text_Field = new JTextField(30);
+    public static JTextArea P5_File_Path_Text_Field = new JTextArea();
+    public static JTextArea P5_Method_Name_Text_Field = new JTextArea();
+    public static JTextArea P5_Contents_To_Add_Text_Field = new JTextArea();
     public static JButton P5_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P5_Method_Name_Button = new JButton("Enter Method Name.");
     public static JButton P5_Add_Contents_Button = new JButton("Enter Contents.");

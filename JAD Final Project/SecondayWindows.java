@@ -1,7 +1,7 @@
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 import javax.swing.filechooser.FileSystemView;
 
 import java.awt.event.ActionEvent;
@@ -56,7 +56,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
      */
     // reference:
     // https://docs.oracle.com/javase/7/docs/api/javax/swing/JFileChooser.html
-    public static void FolderSelect(JTextField JTF) {
+    public static void FolderSelect(JTextArea JTF) {
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int r = j.showOpenDialog(null);
@@ -69,7 +69,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
     /**
      * @param JTF
      */
-    public static void FileSelect(JTextField JTF) {
+    public static void FileSelect(JTextArea JTF) {
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
         int r = j.showOpenDialog(null);

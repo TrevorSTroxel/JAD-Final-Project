@@ -1,5 +1,5 @@
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 import java.awt.*;
 
@@ -27,7 +27,7 @@ public class Text_Field_Input {
     /**
      * @param JTF
      */
-    public static void Text_Box_Settings(JTextField JTF) {
+    public static void Text_Box_Settings(JTextArea JTF) {
         JTF.setVisible(true);
         JTF.setEditable(true);
     }
