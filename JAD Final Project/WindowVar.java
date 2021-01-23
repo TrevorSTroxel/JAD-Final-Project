@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+//<html> <br/> </html>
+
 /**
  * This file is where we will hold new variables we will need to deal with. The
  * reason why we moved them here is that our other files were becoming to
@@ -52,7 +54,7 @@ public class WindowVar {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // Everything below this line should be orginally created in this file
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
-    public static JLabel P2_File_Path_Label = new JLabel("Click Button to select your directory.");
+    public static JLabel P2_File_Path_Label = new JLabel("<html>Click Button to <br/>select your directory.</html>");
     public static JLabel P2_File_Name_Label = new JLabel("Enter what you want to name your file: ");
     public static JTextField P2_File_Path_Text_Field = new JTextField(30);
     public static JTextField P2_File_Name_Text_Field = new JTextField(30);
@@ -61,7 +63,8 @@ public class WindowVar {
     public static JButton P2_Call_Method_Button = new JButton("Create file in location");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel3 = new JPanel(); // this panel will be used to create methods inside the desired file
-    public static JLabel P3_File_Path_Label = new JLabel("Click Button to select your directory and file.");
+    public static JLabel P3_File_Path_Label = new JLabel(
+            "<html>Click Button to <br/>select your directory and file.</html>");
     public static JLabel P3_Class_Name_Label = new JLabel("Enter what you want to name your class: ");
     public static JTextField P3_File_Path_Text_Field = new JTextField(30);
     public static JTextField P3_Class_Name_Text_Field = new JTextField(30);
@@ -70,7 +73,8 @@ public class WindowVar {
     public static JButton P3_Call_Method_Button = new JButton("Create class");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel4 = new JPanel(); // this will be used to create methods in files
-    public static JLabel P4_File_Path_Label = new JLabel("Click Button to select your directory and file.");
+    public static JLabel P4_File_Path_Label = new JLabel(
+            "<html>Click Button to <br/>select your directory and file.</html>");
     public static JLabel P4_Return_Type_Label = new JLabel("Enter what data type the method should return: ");
     public static JLabel P4_Method_Name_Label = new JLabel("Enter the name of your method: ");
     public static JTextField P4_File_Path_Text_Field = new JTextField(30);
@@ -82,7 +86,8 @@ public class WindowVar {
     public static JButton P4_Call_Method_Button = new JButton("Create Method.");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     public static JPanel Panel5 = new JPanel(); // this will be used to add content to panels
-    public static JLabel P5_File_Path_Label = new JLabel("Click Button to select your directory and file.");
+    public static JLabel P5_File_Path_Label = new JLabel(
+            "<html>Click Button to <br/>select your directory and file.</html>");
     public static JLabel P5_Method_Name_Label = new JLabel("Enter the name of your method: ");
     public static JLabel P5_Contents_To_Add_Label = new JLabel("Enter what you want to add to the method: ");
     public static JTextField P5_File_Path_Text_Field = new JTextField(30);

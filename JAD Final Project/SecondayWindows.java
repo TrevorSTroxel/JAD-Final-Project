@@ -24,8 +24,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
     public static void SecondSetUp() {
         WindowVar.ContentWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         WindowVar.ContentWindow.setSize(700, 700);
-        WindowVar.ContentWindow.setLocationRelativeTo(null); // this will make the wondow spawn in the middle of the
-                                                             // screen
+        WindowVar.ContentWindow.setLocationRelativeTo(null); // appears in the middle
         WindowVar.ContentWindow.setVisible(true);
     }
 
@@ -41,16 +40,14 @@ public class SecondayWindows extends JFrame implements ActionListener {
         JB.setText("<html> You have chosen your directory.<br/>Click again to change directories</html>");
     }
 
-    
-    /** 
+    /**
      * @param _JB
      */
     public static void nm_Button(JButton _JB) {
         _JB.setText("<html>Name has been set.<br/>Change file name for new file and click again</html>");
     }
 
-    
-    /** 
+    /**
      * @param __JB
      */
     public static void CreationButton(JButton __JB) {
@@ -58,8 +55,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
                 "<html>You have added to your project.<br/>Check your folder to make sure.<br/>Click again to add more to your project</html>");
     }
 
-    
-    /** 
+    /**
      * @param JTF
      */
     // reference:
@@ -74,8 +70,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         JTF.setText("Your directory is: " + WindowVar.l.getText());
     }
 
-    
-    /** 
+    /**
      * @param JTF
      */
     public static void FileSelect(JTextField JTF) {
@@ -89,8 +84,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         JTF.setText("Your directory is: " + WindowVar.l.getText());
     }
 
-    
-    /** 
+    /**
      * @param e
      */
     @Override
