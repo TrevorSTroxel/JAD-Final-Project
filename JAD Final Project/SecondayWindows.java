@@ -113,12 +113,11 @@ public class SecondayWindows extends JFrame implements ActionListener {
         if (e.getSource() == WindowVar.P2_File_Path_Button) {
             FolderSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P2_File_Path_Button);
-            WindowVar.P2_FILE_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
-                                                           // inputs
+            WindowVar.P2_FILE_PATH = WindowVar.l.getText(); // grabs file path as a string
         } else if (e.getSource() == WindowVar.P2_File_Name_Button) {
             WindowVar.Word_Split = WindowVar.P2_File_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P2_File_Name_Button);
-            WindowVar.P2_FILE_NAME = WindowVar.Word_Split[0];
+            WindowVar.P2_FILE_NAME = WindowVar.Word_Split[0]; // this makes it so it grabs something
         } else if (e.getSource() == WindowVar.P2_Call_Method_Button) {
             CreationButton(WindowVar.P2_Call_Method_Button);
             Create.create_file(WindowVar.P2_FILE_PATH, WindowVar.P2_FILE_NAME); // creates a new file in this location
