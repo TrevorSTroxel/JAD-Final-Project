@@ -21,8 +21,9 @@ public class Create {
 	 * @param file_name
 	 */
 	public static void create_file(String file_directory, String file_name) {
-		if (!file_name.contains(".")) {
-			file_name = file_name + ".txt";
+		if (!file_name.contains(".txt") || !file_name.contains(".java")) {
+			String[] FileFix = file_name.split(" ");
+			file_name = FileFix[0] + ".java";
 		}
 		try {
 			File new_file = new File(file_directory + "\\" + file_name);
