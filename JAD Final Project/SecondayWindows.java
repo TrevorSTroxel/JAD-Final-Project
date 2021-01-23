@@ -63,7 +63,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         if (r == JFileChooser.APPROVE_OPTION) {
             WindowVar.l.setText(j.getSelectedFile().getAbsolutePath());
         }
-        JTF.setText("Your directory is: " + WindowVar.l.getText());
+        JTF.setText("Your directory is: \n" + WindowVar.l.getText());
     }
 
     /**

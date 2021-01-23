@@ -31,7 +31,7 @@ public class Text_Field_Input {
         JTF.setVisible(true);
         JTF.setEditable(true);
         JTF.setLineWrap(true);
-        JTF.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+        JTF.setFont(new Font("Times New Roman", Font.BOLD, 18));
     }
 
     // creats a new file in the desired location

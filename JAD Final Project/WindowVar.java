@@ -4,8 +4,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-//<html> <br/> </html>
-
 /**
  * This file is where we will hold new variables we will need to deal with. The
  * reason why we moved them here is that our other files were becoming to

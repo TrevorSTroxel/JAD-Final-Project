@@ -31,9 +31,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
         WindowVar.MainWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         // JTextFeild settings
-        WindowVar.P1_Text_Field.setColumns(25); // sets how long the text box is
-        WindowVar.P1_Text_Field.setSize(100, 100);// sets the size of the text box
-        WindowVar.P1_Text_Field.setEditable(true);
+        Text_Field_Input.Text_Box_Settings(WindowVar.P1_Text_Field);
 
         // ActionListener enabler
         WindowVar.P1_Enter.addActionListener(this);
