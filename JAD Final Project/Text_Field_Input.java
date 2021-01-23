@@ -30,6 +30,8 @@ public class Text_Field_Input {
     public static void Text_Box_Settings(JTextArea JTF) {
         JTF.setVisible(true);
         JTF.setEditable(true);
+        JTF.setLineWrap(true);
+        JTF.setFont(new Font("Times New Roman", Font.PLAIN, 15));
     }
 
     // creats a new file in the desired location
