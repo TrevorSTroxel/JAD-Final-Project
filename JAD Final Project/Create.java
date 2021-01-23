@@ -22,7 +22,7 @@ public class Create {
 	 */
 	public static void create_file(String file_directory, String file_name) {
 		if (!file_name.contains(".")) {
-			file_name = file_name + ".java";
+			file_name = file_name + ".txt";
 		}
 		try {
 			File new_file = new File(file_directory + "\\" + file_name);
