@@ -3,13 +3,10 @@
  * @author Trevor Troxel & Abed Abualkheir
  * @version 1.0
  */
-import java.awt.Font;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import javax.swing.JFrame;
 
 public class PrimaryWindow extends JFrame implements ActionListener {
@@ -54,27 +51,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
      * This method will be called when the user clicks on the instructions buttons
      * and they will get a pop up telling how to do things
      */
-    public void Help() {
-        // reference: https://kodejava.org/how-do-i-read-text-file-into-jtextarea/
-        // Read some text from the resource file to display in the JTextArea.
-        try {
-            WindowVar.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        WindowVar.Instructions.setEditable(false); // the user can't edit the text
-        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
-        WindowVar.Instructions.setFont(f); // sets the style of the text
-
-        WindowVar.Help_Panel.add(WindowVar.Instructions);
-        WindowVar.Help_Panel.setEnabled(true);
-
-        WindowVar.Help_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        WindowVar.Help_Window.setSize(700, 700);
-        WindowVar.Help_Window.add(WindowVar.Help_Panel);
-        WindowVar.Help_Window.setVisible(true);
-    }
 
     /**
      * @param e
@@ -127,8 +103,6 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             WindowVar.Creation_Window.getContentPane().validate();
             WindowVar.Creation_Window.getContentPane().repaint();
             WindowVar.Panel5.setVisible(true);
-        } else if (e.getSource() == WindowVar.P1_Tutorial) {
-            Help();
         } else {
             NewWindows.actionPerformed(e);
         }

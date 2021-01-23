@@ -6,6 +6,9 @@ import javax.swing.filechooser.FileSystemView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.awt.Font;
 
 //this will be used for better organization purposes
 public class SecondayWindows extends JFrame implements ActionListener {
@@ -22,6 +25,28 @@ public class SecondayWindows extends JFrame implements ActionListener {
         WindowVar.Creation_Window.setSize(700, 700);
         WindowVar.Creation_Window.setLocationRelativeTo(null); // appears in the middle
         WindowVar.Creation_Window.setVisible(true);
+    }
+
+    public void Help() {
+        // reference: https://kodejava.org/how-do-i-read-text-file-into-jtextarea/
+        // Read some text from the resource file to display in the JTextArea.
+        try {
+            WindowVar.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        WindowVar.Instructions.setEditable(false); // the user can't edit the text
+        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
+        WindowVar.Instructions.setFont(f); // sets the style of the text
+
+        WindowVar.Help_Panel.add(WindowVar.Instructions);
+        WindowVar.Help_Panel.setEnabled(true);
+
+        WindowVar.Help_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        WindowVar.Help_Window.setSize(700, 700);
+        WindowVar.Help_Window.add(WindowVar.Help_Panel);
+        WindowVar.Help_Window.setVisible(true);
     }
 
     /**
@@ -145,7 +170,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
             CreationButton(WindowVar.P5_Call_Method_Button);
             Create.Add_To_Method(WindowVar.P5_File_Path, WindowVar.P5_Method_Name, WindowVar.P5_Add_Contents);
         } else {
-            System.out.println("Wrong command, try agian.");
+            Help();
         }
         /////////////////////////////////////////////////////////////////////////////////////
     }
