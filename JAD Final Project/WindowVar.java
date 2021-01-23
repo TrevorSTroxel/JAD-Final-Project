@@ -50,6 +50,7 @@ public class WindowVar {
     public static String Panel5_MethodName = new String();
     public static String Panel5_Contents = new String();
     //////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Everything below this line should be orginally created in this file
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
     public static JLabel P2_File_Path_Label = new JLabel("Click Button to select your directory.");
     public static JLabel P2_File_Name_Label = new JLabel("Enter what you want to name your file: ");
