@@ -92,66 +92,66 @@ public class SecondayWindows extends JFrame implements ActionListener {
         if (e.getSource() == WindowVar.P2_File_Path_Button) {
             FolderSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P2_File_Path_Button);
-            WindowVar.Panel2_DIR = WindowVar.l.getText();// this takes the name of the file directory that the user
+            WindowVar.P2_FILR_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                          // inputs
         } else if (e.getSource() == WindowVar.P2_File_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P2_File_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P2_File_Name_Button);
-            WindowVar.Panel2_NAME = WindowVar.Word_Choice[0]; // this takes the name of the file directory that the user
+            WindowVar.P2_FILE_NAME = WindowVar.Word_Choice[0]; // this takes the name of the file directory that the user
                                                               // inputs
         } else if (e.getSource() == WindowVar.P2_Call_Method_Button) {
             CreationButton(WindowVar.P2_Call_Method_Button);
-            Create.create_file(WindowVar.Panel2_DIR, WindowVar.Panel2_NAME); // creates a new file in this location
+            Create.create_file(WindowVar.P2_FILR_PATH, WindowVar.P2_FILE_NAME); // creates a new file in this location
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P3_File_Path_Button) {
             FileSelect(WindowVar.P3_File_Path_Text_Field);
             DirButton(WindowVar.P3_File_Path_Button);
-            WindowVar.Panel3_FILEPATH = WindowVar.l.getText();// this takes the name of the file directory that the user
+            WindowVar.P3_FILE_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                               // inputs
         } else if (e.getSource() == WindowVar.P3_Class_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P3_Class_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P3_Class_Name_Button);
-            WindowVar.Panel3_CLASSNAME = WindowVar.Word_Choice[0];
+            WindowVar.P3_CLASS_NAME = WindowVar.Word_Choice[0];
         } else if (e.getSource() == WindowVar.P3_Call_Method_Button) {
             CreationButton(WindowVar.P3_Call_Method_Button);
-            Create.creatr_class(WindowVar.Panel3_FILEPATH, WindowVar.Panel3_CLASSNAME);
+            Create.creatr_class(WindowVar.P3_FILE_PATH, WindowVar.P3_CLASS_NAME);
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P4_File_Path_Button) {
             FileSelect(WindowVar.P4_File_Path_Text_Field);
             DirButton(WindowVar.P4_File_Path_Button);
-            WindowVar.Panel4_File_Dir = WindowVar.l.getText();// this takes the name of the file directory that the user
+            WindowVar.P4_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                               // inputs
         } else if (e.getSource() == WindowVar.P4_Return_Type_Button) {
             WindowVar.Word_Choice = WindowVar.P4_Return_Type_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Return_Type_Button);
-            WindowVar.Panel4_Return_Type = WindowVar.Word_Choice[0];
+            WindowVar.P4_Return_Type = WindowVar.Word_Choice[0];
         } else if (e.getSource() == WindowVar.P4_Method_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P4_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Method_Name_Button);
-            WindowVar.Panel4_Mathed_Name = WindowVar.Word_Choice[0];
+            WindowVar.P4_Mathed_Name = WindowVar.Word_Choice[0];
         } else if (e.getSource() == WindowVar.P4_Call_Method_Button) {
             CreationButton(WindowVar.P4_Call_Method_Button);
-            Create.create_method(WindowVar.Panel4_File_Dir, WindowVar.Panel4_Return_Type, WindowVar.Panel4_Mathed_Name);
+            Create.create_method(WindowVar.P4_File_Path, WindowVar.P4_Return_Type, WindowVar.P4_Mathed_Name);
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P5_File_Path_Button) {
             FileSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P5_File_Path_Button);
-            WindowVar.Panel5_FileDir = WindowVar.l.getText();// this takes the name of the file directory that the user
+            WindowVar.P5_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                              // inputs
         } else if (e.getSource() == WindowVar.P5_Method_Name_Button) {
             WindowVar.Word_Choice = WindowVar.P5_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P5_Method_Name_Button);
-            WindowVar.Panel5_MethodName = WindowVar.Word_Choice[0];
+            WindowVar.P5_Method_Name = WindowVar.Word_Choice[0];
         } else if (e.getSource() == WindowVar.P5_Add_Contents_Button) {
             WindowVar.Word_Choice = WindowVar.P5_Contents_To_Add_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P5_Add_Contents_Button);
-            WindowVar.Panel5_Contents = WindowVar.Word_Choice[0];
+            WindowVar.P5_Add_Contents = WindowVar.Word_Choice[0];
         } else if (e.getSource() == WindowVar.P5_Call_Method_Button) {
             CreationButton(WindowVar.P5_Call_Method_Button);
-            Create.Add_To_Method(WindowVar.Panel5_FileDir, WindowVar.Panel5_MethodName, WindowVar.Panel5_Contents);
+            Create.Add_To_Method(WindowVar.P5_File_Path, WindowVar.P5_Method_Name, WindowVar.P5_Add_Contents);
         } else {
             System.out.println("Wrong command, try agian.");
         }

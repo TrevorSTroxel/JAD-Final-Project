@@ -41,16 +41,16 @@ public class WindowVar {
     public static JFrame ContentWindow = new JFrame("Program execution");
     public static String[] Word_Choice;
     public static JLabel l = new JLabel();
-    public static String Panel2_NAME = new String();
-    public static String Panel2_DIR = new String();
-    public static String Panel3_FILEPATH = new String();
-    public static String Panel3_CLASSNAME = new String();
-    public static String Panel4_File_Dir = new String();
-    public static String Panel4_Return_Type = new String();
-    public static String Panel4_Mathed_Name = new String();
-    public static String Panel5_FileDir = new String();
-    public static String Panel5_MethodName = new String();
-    public static String Panel5_Contents = new String();
+    public static String P2_FILE_NAME = new String();
+    public static String P2_FILR_PATH = new String();
+    public static String P3_FILE_PATH = new String();
+    public static String P3_CLASS_NAME = new String();
+    public static String P4_File_Path = new String();
+    public static String P4_Return_Type = new String();
+    public static String P4_Mathed_Name = new String();
+    public static String P5_File_Path = new String();
+    public static String P5_Method_Name = new String();
+    public static String P5_Add_Contents = new String();
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // Everything below this line should be orginally created in this file
     public static JPanel Panel2 = new JPanel(); // this panel is being used for creating files in folders
@@ -68,7 +68,7 @@ public class WindowVar {
     public static JLabel P3_Class_Name_Label = new JLabel("Enter what you want to name your class: ");
     public static JTextField P3_File_Path_Text_Field = new JTextField(30);
     public static JTextField P3_Class_Name_Text_Field = new JTextField(30);
-    public static JButton P3_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P3_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P3_Class_Name_Button = new JButton("Enter Name of class");
     public static JButton P3_Call_Method_Button = new JButton("Create class");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -80,7 +80,7 @@ public class WindowVar {
     public static JTextField P4_File_Path_Text_Field = new JTextField(30);
     public static JTextField P4_Return_Type_Text_Field = new JTextField(30);
     public static JTextField P4_Method_Name_Text_Field = new JTextField(30);
-    public static JButton P4_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P4_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P4_Return_Type_Button = new JButton("Enter Return Type.");
     public static JButton P4_Method_Name_Button = new JButton("Enter Method Name.");
     public static JButton P4_Call_Method_Button = new JButton("Create Method.");
@@ -93,7 +93,7 @@ public class WindowVar {
     public static JTextField P5_File_Path_Text_Field = new JTextField(30);
     public static JTextField P5_Method_Name_Text_Field = new JTextField(30);
     public static JTextField P5_Contents_To_Add_Text_Field = new JTextField(30);
-    public static JButton P5_File_Path_Button = new JButton("Click Button to select your directory.");
+    public static JButton P5_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     public static JButton P5_Method_Name_Button = new JButton("Enter Method Name.");
     public static JButton P5_Add_Contents_Button = new JButton("Enter Contents.");
     public static JButton P5_Call_Method_Button = new JButton("Add Contents To Methods.");
