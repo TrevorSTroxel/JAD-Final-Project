@@ -52,7 +52,7 @@ public class Text_Field_Input {
         WindowVar.Panel2.setVisible(true);
 
         SecondayWindows.SecondSetUp();
-        WindowVar.ContentWindow.add(WindowVar.Panel2);
+        WindowVar.Creation_Window.add(WindowVar.Panel2);
     }
 
     // adds method to selected file
@@ -75,7 +75,7 @@ public class Text_Field_Input {
         WindowVar.Panel3.setVisible(true);
 
         SecondayWindows.SecondSetUp();
-        WindowVar.ContentWindow.add(WindowVar.Panel3);
+        WindowVar.Creation_Window.add(WindowVar.Panel3);
     }
 
     // Allows the user to make a class inside the file they made
@@ -103,7 +103,7 @@ public class Text_Field_Input {
         WindowVar.Panel4.setVisible(true);
 
         SecondayWindows.SecondSetUp();
-        WindowVar.ContentWindow.add(WindowVar.Panel4);
+        WindowVar.Creation_Window.add(WindowVar.Panel4);
     }
 
     // allows the user to add contents to methods they have created
@@ -130,7 +130,7 @@ public class Text_Field_Input {
         WindowVar.Panel5.setVisible(true);
 
         SecondayWindows.SecondSetUp();
-        WindowVar.ContentWindow.add(WindowVar.Panel5);
+        WindowVar.Creation_Window.add(WindowVar.Panel5);
     }
 
 }

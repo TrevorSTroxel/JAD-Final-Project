@@ -38,13 +38,13 @@ public class WindowVar {
     public static JTextArea Instructions = new JTextArea(20, 20);
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // Variables from: SecondayWindow.java
-    public static JFrame ContentWindow = new JFrame("Program execution");
-    public static String[] Word_Choice;
+    public static JFrame Creation_Window = new JFrame("Program execution");
+    public static String[] Word_Split;
     public static JLabel l = new JLabel();
     public static String P2_FILE_NAME = new String();
-    public static String P2_FILR_PATH = new String();
-    public static String P3_FILE_PATH = new String();
+    public static String P2_FILE_PATH = new String();
     public static String P3_CLASS_NAME = new String();
+    public static String P3_FILE_PATH = new String();
     public static String P4_File_Path = new String();
     public static String P4_Return_Type = new String();
     public static String P4_Mathed_Name = new String();

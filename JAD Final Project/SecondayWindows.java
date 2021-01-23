@@ -22,10 +22,10 @@ public class SecondayWindows extends JFrame implements ActionListener {
      * operational for the user to use
      */
     public static void SecondSetUp() {
-        WindowVar.ContentWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        WindowVar.ContentWindow.setSize(700, 700);
-        WindowVar.ContentWindow.setLocationRelativeTo(null); // appears in the middle
-        WindowVar.ContentWindow.setVisible(true);
+        WindowVar.Creation_Window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        WindowVar.Creation_Window.setSize(700, 700);
+        WindowVar.Creation_Window.setLocationRelativeTo(null); // appears in the middle
+        WindowVar.Creation_Window.setVisible(true);
     }
 
     /**
@@ -92,17 +92,17 @@ public class SecondayWindows extends JFrame implements ActionListener {
         if (e.getSource() == WindowVar.P2_File_Path_Button) {
             FolderSelect(WindowVar.P2_File_Path_Text_Field);
             DirButton(WindowVar.P2_File_Path_Button);
-            WindowVar.P2_FILR_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
+            WindowVar.P2_FILE_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                            // inputs
         } else if (e.getSource() == WindowVar.P2_File_Name_Button) {
-            WindowVar.Word_Choice = WindowVar.P2_File_Name_Text_Field.getText().split(" ");
+            WindowVar.Word_Split = WindowVar.P2_File_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P2_File_Name_Button);
-            WindowVar.P2_FILE_NAME = WindowVar.Word_Choice[0]; // this takes the name of the file directory that the
+            WindowVar.P2_FILE_NAME = WindowVar.Word_Split[0]; // this takes the name of the file directory that the
                                                                // user
                                                                // inputs
         } else if (e.getSource() == WindowVar.P2_Call_Method_Button) {
             CreationButton(WindowVar.P2_Call_Method_Button);
-            Create.create_file(WindowVar.P2_FILR_PATH, WindowVar.P2_FILE_NAME); // creates a new file in this location
+            Create.create_file(WindowVar.P2_FILE_PATH, WindowVar.P2_FILE_NAME); // creates a new file in this location
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P3_File_Path_Button) {
@@ -111,9 +111,9 @@ public class SecondayWindows extends JFrame implements ActionListener {
             WindowVar.P3_FILE_PATH = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                            // inputs
         } else if (e.getSource() == WindowVar.P3_Class_Name_Button) {
-            WindowVar.Word_Choice = WindowVar.P3_Class_Name_Text_Field.getText().split(" ");
+            WindowVar.Word_Split = WindowVar.P3_Class_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P3_Class_Name_Button);
-            WindowVar.P3_CLASS_NAME = WindowVar.Word_Choice[0];
+            WindowVar.P3_CLASS_NAME = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P3_Call_Method_Button) {
             CreationButton(WindowVar.P3_Call_Method_Button);
             Create.creatr_class(WindowVar.P3_FILE_PATH, WindowVar.P3_CLASS_NAME);
@@ -125,13 +125,13 @@ public class SecondayWindows extends JFrame implements ActionListener {
             WindowVar.P4_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                            // inputs
         } else if (e.getSource() == WindowVar.P4_Return_Type_Button) {
-            WindowVar.Word_Choice = WindowVar.P4_Return_Type_Text_Field.getText().split(" ");
+            WindowVar.Word_Split = WindowVar.P4_Return_Type_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Return_Type_Button);
-            WindowVar.P4_Return_Type = WindowVar.Word_Choice[0];
+            WindowVar.P4_Return_Type = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P4_Method_Name_Button) {
-            WindowVar.Word_Choice = WindowVar.P4_Method_Name_Text_Field.getText().split(" ");
+            WindowVar.Word_Split = WindowVar.P4_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Method_Name_Button);
-            WindowVar.P4_Mathed_Name = WindowVar.Word_Choice[0];
+            WindowVar.P4_Mathed_Name = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P4_Call_Method_Button) {
             CreationButton(WindowVar.P4_Call_Method_Button);
             Create.create_method(WindowVar.P4_File_Path, WindowVar.P4_Return_Type, WindowVar.P4_Mathed_Name);
@@ -143,13 +143,13 @@ public class SecondayWindows extends JFrame implements ActionListener {
             WindowVar.P5_File_Path = WindowVar.l.getText();// this takes the name of the file directory that the user
                                                            // inputs
         } else if (e.getSource() == WindowVar.P5_Method_Name_Button) {
-            WindowVar.Word_Choice = WindowVar.P5_Method_Name_Text_Field.getText().split(" ");
+            WindowVar.Word_Split = WindowVar.P5_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P5_Method_Name_Button);
-            WindowVar.P5_Method_Name = WindowVar.Word_Choice[0];
+            WindowVar.P5_Method_Name = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P5_Add_Contents_Button) {
-            WindowVar.Word_Choice = WindowVar.P5_Contents_To_Add_Text_Field.getText().split(" ");
+            WindowVar.Word_Split = WindowVar.P5_Contents_To_Add_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P5_Add_Contents_Button);
-            WindowVar.P5_Add_Contents = WindowVar.Word_Choice[0];
+            WindowVar.P5_Add_Contents = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P5_Call_Method_Button) {
             CreationButton(WindowVar.P5_Call_Method_Button);
             Create.Add_To_Method(WindowVar.P5_File_Path, WindowVar.P5_Method_Name, WindowVar.P5_Add_Contents);
