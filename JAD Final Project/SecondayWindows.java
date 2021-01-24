@@ -149,10 +149,10 @@ public class SecondayWindows extends JFrame implements ActionListener {
         } else if (e.getSource() == WindowVar.P4_Method_Name_Button) {
             WindowVar.Word_Split = WindowVar.P4_Method_Name_Text_Field.getText().split(" ");
             nm_Button(WindowVar.P4_Method_Name_Button);
-            WindowVar.P4_Mathed_Name = WindowVar.Word_Split[0];
+            WindowVar.P4_Method_Name = WindowVar.Word_Split[0];
         } else if (e.getSource() == WindowVar.P4_Call_Method_Button) {
             CreationButton(WindowVar.P4_Call_Method_Button);
-            Create.create_method(WindowVar.P4_File_Path, WindowVar.P4_Return_Type, WindowVar.P4_Mathed_Name);
+            Create.create_method(WindowVar.P4_File_Path, WindowVar.P4_Return_Type, WindowVar.P4_Method_Name);
         }
         /////////////////////////////////////////////////////////////////////////////////////
         else if (e.getSource() == WindowVar.P5_File_Path_Button) {
