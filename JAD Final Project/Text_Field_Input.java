@@ -13,6 +13,8 @@ import java.awt.*;
 public class Text_Field_Input {
 
     /**
+     * display error messages in case of typos
+     * 
      * @param JP
      */
     // WIP
@@ -25,6 +27,8 @@ public class Text_Field_Input {
     }
 
     /**
+     * change the settings of a JTextArea variable for formating purposes
+     * 
      * @param JTF
      */
     public static void Text_Box_Settings(JTextArea JTF) {
@@ -35,6 +39,9 @@ public class Text_Field_Input {
     }
 
     // creats a new file in the desired location
+    /**
+     * adds the second panel
+     */
     public static void addPanel2() {
         WindowVar.Panel2.setLayout(new GridLayout(3, 3));
 

@@ -154,128 +154,128 @@ public class WindowVar {
      */
     public static JPanel Panel3 = new JPanel(); // this panel will be used to create methods inside the desired file
     /**
-     * 
+     * label to store text for button
      */
     public static JLabel P3_File_Path_Label = new JLabel( "<html>Click Button to <br/>select your directory and file.</html>");
     /**
-     * 
+     * label to store text for class name
      */
     public static JLabel P3_Class_Name_Label = new JLabel("Enter what you want to name your class: ");
     /**
-     * 
+     * text input area for file path
      */
     public static JTextArea P3_File_Path_Text_Field = new JTextArea();
     /**
-     * 
+     * text input area for class name
      */
     public static JTextArea P3_Class_Name_Text_Field = new JTextArea();
     /**
-     * 
+     * button to enter the file path
      */
     public static JButton P3_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     /**
-     * 
+     * button to enter the class name
      */
     public static JButton P3_Class_Name_Button = new JButton("Enter Name of class");
     /**
-     * 
+     * button to call the create method function
      */
     public static JButton P3_Call_Method_Button = new JButton("Create class");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * 
+     * panel container
      */
     public static JPanel Panel4 = new JPanel(); // this will be used to create methods in files
     /**
-     * 
+     * label to store the text for button
      */
     public static JLabel P4_File_Path_Label = new JLabel("<html>Click Button to <br/>select your directory and file.</html>");
     /**
-     * 
+     * label to store text to prompt the user to enter the return type of the method
      */
     public static JLabel P4_Return_Type_Label = new JLabel("Enter what data type the method should return: ");
     /**
-     * 
+     * label to store text to prompt the user to enter the method name
      */
     public static JLabel P4_Method_Name_Label = new JLabel("Enter the name of your method: ");
     /**
-     * 
+     * text input area for file path
      */
     public static JTextArea P4_File_Path_Text_Field = new JTextArea();
     /**
-     * 
+     * text input area for method return type
      */
     public static JTextArea P4_Return_Type_Text_Field = new JTextArea();
     /**
-     * 
+     * text input area for method name
      */
     public static JTextArea P4_Method_Name_Text_Field = new JTextArea();
     /**
-     * 
+     * button to enter file path
      */
     public static JButton P4_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     /**
-     * 
+     * button to enter the method return type
      */
     public static JButton P4_Return_Type_Button = new JButton("Enter Return Type.");
     /**
-     * 
+     * button to enter method name
      */
     public static JButton P4_Method_Name_Button = new JButton("Enter Method Name.");
     /**
-     * 
+     * button to call the method create function
      */
     public static JButton P4_Call_Method_Button = new JButton("Create Method.");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * 
+     * panel container
      */
     public static JPanel Panel5 = new JPanel(); // this will be used to add content to panels
     /**
-     * 
+     * lable to store text for button
      */
     public static JLabel P5_File_Path_Label = new JLabel("<html>Click Button to <br/>select your directory and file.</html>");
     /**
-     * 
+     * label to store the text promptin the user to enter a name for their method
      */
     public static JLabel P5_Method_Name_Label = new JLabel("Enter the name of your method: ");
     /**
-     * 
+     * label to store the text promptin the user to enter the contents they want to add to the method
      */
     public static JLabel P5_Contents_To_Add_Label = new JLabel("Enter what you want to add to the method: ");
     /**
-     * 
+     * text input area to take in the file directory
      */
     public static JTextArea P5_File_Path_Text_Field = new JTextArea();
     /**
-     * 
+     * text input area to take in the method name
      */
     public static JTextArea P5_Method_Name_Text_Field = new JTextArea();
     /**
-     * 
+     * text input area tp take in the contents needed to be added 
      */
     public static JTextArea P5_Contents_To_Add_Text_Field = new JTextArea();
     /**
-     * 
+     * button to enter the directory
      */
     public static JButton P5_File_Path_Button = new JButton("<html>Click Button to <br/>select your directory.</html>");
     /**
-     * 
+     * button to enter the method name
      */
     public static JButton P5_Method_Name_Button = new JButton("Enter Method Name.");
     /**
-     * 
+     * button to add content
      */
     public static JButton P5_Add_Contents_Button = new JButton("Enter Contents.");
     /**
-     * 
+     * button to call the method
      */
     public static JButton P5_Call_Method_Button = new JButton("Add Contents To Methods.");
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // We kept our naming convention simple to help avoid confusion on what they do
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * 
+     * text area to display error messages
      */
     public static JTextArea errorTextArea = new JTextArea(20, 20); // this will display an error message
     //////////////////////////////////////////////////////////////////////////////////////////////////////
