@@ -41,7 +41,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
         Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
         WindowVar.Instructions.setFont(f); // sets the style of the text
         JScrollPane iscrollPane = new JScrollPane(WindowVar.Instructions);
-        iscrollPane.setPreferredSize(new Dimension(450,110));
+        iscrollPane.setPreferredSize(new Dimension(650,500));
         WindowVar.Help_Panel.add(iscrollPane);
         WindowVar.Help_Panel.setEnabled(true);
 

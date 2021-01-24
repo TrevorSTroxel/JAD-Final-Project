@@ -1,6 +1,18 @@
 These are some instructions and tips on how to use this program.
 
-Keep in mind that the order in which you put words are important, so keep that in mind!
+IMPORTANT NOTES
+* Spelling errors: Typos can wreck this program. so be very cautious of typos. 
+* Keep in mind that the order in which you put words are important, so keep that in mind!
+
+If you do not know anything about coding and want to know what programs use to code,
+we reccomend using VSCode, as this is the most user friendly to new users.
+
+If you already have VSCode and want to know what extensions are helpful for programming java,
+Look into this extentions called: Java Extension Pack.
+It comes with several other extions that will help in your programming experience with java.
+
+After you have finish making your first program, 
+try opening up the file with VSCode and running the program to make sure that it works
 
 Here are some Keywords to try with this program:
 
@@ -12,7 +24,6 @@ Here are some Keywords to try with this program:
         C. method : this will create a method inside the seleced folder
 
     2. add : this will add things to your classes or methods
-
         A. content : add variables to your method to make it work
         
 Here is an example of how to create a file using this program:
@@ -75,7 +86,7 @@ Here are instructions on how to create a method/function using this program:
       We reccomend opening up your file and making sure that the method was created correctly.
 
 Here are instructions on how to add content you your methods
-    * try typing in the first window: add content
+    * Try typing in the first window: add content
     - A new window will appear with four buttons on it and 2 areas where you can type things.
       Click on the first button to bring up a file explorer, 
       in this you will be able to selecet the file you want to add to.
@@ -127,14 +138,14 @@ Return Type: is the data type which the function will return when called/invoked
           and booleans(true or false values. usually represented by 1 for true and 0 for false).
 
 Content to add to a method: This part is for thoses who are less familier with coding with java 
-Examples of what to add to a method:
-  System.out.println("Hello World");
-
-
- 
- 
-IMPORTANT NOTES
-* Spelling errors: Typos can wreck this program. so be very cautious of typos. 
+Examples of what to add to a method: also, if you wish to copy this into the program, we reccomend copying everything before the two //
+  System.out.println("Hello World"); // This will make your termainal say Hello World in it.
+  int i = 0; // This creats a variable (integer/number) called i, and you made it so i is set to 0.
+  (Variable) test = new (Variable)(); // This will what is know an initaializing a variable, which means that the program has reconized it and will be able to use it.
+    Examples of what to replace (Variable) with: String (text) , float (Large numbers), char (A single charater).
+  
+  These are simple examples of what you can put into your program. 
+  There are more complicated things you can add, but thoses are only reccomanded for people who have a better understanding oj java
 
 
 
