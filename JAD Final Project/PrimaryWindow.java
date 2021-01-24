@@ -16,7 +16,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
      * Object creations so that if a button press is called that is not enter, 
      * it will transfer over the input into a different file so it can handle that.
      */
-    SecondayWindows NewWindows = new SecondayWindows(); 
+    SecondaryWindows NewWindows = new SecondaryWindows(); 
 
     /**
      * This method is generic and mostly used to call the other methods to have the window settings set up correctly
@@ -90,9 +90,9 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             WindowVar.P2_File_Path_Button.addActionListener(this);
             WindowVar.P2_File_Name_Button.addActionListener(this);
             WindowVar.P2_Call_Method_Button.addActionListener(this);
-            WindowVar.Creation_Window.getContentPane().validate();
-            WindowVar.Creation_Window.getContentPane().repaint();
-            WindowVar.Panel2.setVisible(true);
+            WindowVar.Creation_Window.getContentPane().validate(); //this is for when we remove all the contents of the wondow, it makes sure that it is still reuseable
+            WindowVar.Creation_Window.getContentPane().repaint(); //this is that the window is refreshed and it has the new content in it
+            WindowVar.Panel2.setVisible(true); //this is used for making sure that the user can see the panel
         } else if (e.getSource() == WindowVar.P1_Enter && WindowVar.WordChoice[1].equals("class")) {
             WindowVar.Creation_Window.getContentPane().removeAll();
             Text_Field_Input.addPanel3();
@@ -122,7 +122,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
             WindowVar.Creation_Window.getContentPane().validate();
             WindowVar.Creation_Window.getContentPane().repaint();
             WindowVar.Panel5.setVisible(true);
-        } else {
+        } else { //this is used for if any other button is pushed, it carries that input into a different file to be handled
             NewWindows.actionPerformed(e);
         }
 

@@ -13,12 +13,12 @@ import javax.swing.JTextArea;
  * Our naming conventions goes like this: 
  * First part : what panel it belongs to
  * end part : what tpye of variable is it
- */
-
-/**
+ *
  * How we organize our variable is by: JPanel, JLabel, JTextArea, JButtons
+ *
+ * @author Trevor Troxel & Abed Abualkheir
+ * @version 1.0
  */
-
 public class WindowVar {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     // These varables are special, they get their own space

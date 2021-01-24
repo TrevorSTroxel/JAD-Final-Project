@@ -14,11 +14,9 @@ public class Text_Field_Input {
 
     /**
      * display error messages in case of typos
-     * 
+     * WIP, does not currently work
      * @param JP
      */
-    // WIP
-    // this functions will be called if there is an error in the users input
     public static void ERROR(JPanel JP) {
         WindowVar.errorTextArea.setEditable(false);
         WindowVar.errorTextArea.setText("You mistyped something in the text area, try again.");
@@ -38,9 +36,10 @@ public class Text_Field_Input {
         JTF.setFont(new Font("Times New Roman", Font.BOLD, 18));
     }
 
-    // creats a new file in the desired location
+
     /**
-     * adds the second panel
+     * creats a new file in the desired location
+     * Handles Panel2 settings
      */
     public static void addPanel2() {
         WindowVar.Panel2.setLayout(new GridLayout(3, 3));
@@ -60,11 +59,15 @@ public class Text_Field_Input {
 
         WindowVar.Panel2.setVisible(true);
 
-        SecondayWindows.SecondSetUp();
+        SecondaryWindows.SecondSetUp();
         WindowVar.Creation_Window.add(WindowVar.Panel2);
     }
 
-    // adds method to selected file
+
+    /**
+     * adds method to selected file
+     * Handles Panel3 settings
+     */
     public static void addPanel3() {
         WindowVar.Panel3.setLayout(new GridLayout(3, 3));
 
@@ -83,11 +86,15 @@ public class Text_Field_Input {
 
         WindowVar.Panel3.setVisible(true);
 
-        SecondayWindows.SecondSetUp();
+        SecondaryWindows.SecondSetUp();
         WindowVar.Creation_Window.add(WindowVar.Panel3);
     }
 
-    // Allows the user to make a class inside the file they made
+
+    /**
+     * Allows the user to make a class inside the file they made
+     * Handles Panel4 settigns
+     */
     public static void addPanel4() {
         WindowVar.Panel4.setLayout(new GridLayout(4, 3));
 
@@ -111,11 +118,15 @@ public class Text_Field_Input {
 
         WindowVar.Panel4.setVisible(true);
 
-        SecondayWindows.SecondSetUp();
+        SecondaryWindows.SecondSetUp();
         WindowVar.Creation_Window.add(WindowVar.Panel4);
     }
 
-    // allows the user to add contents to methods they have created
+
+    /**
+     * allows the user to add contents to methods they have created
+     * Handles Panel5 settings
+     */
     public static void addPanel5() {
         WindowVar.Panel5.setLayout(new GridLayout(4, 3));
         WindowVar.Panel5.add(WindowVar.P5_File_Path_Button);
@@ -138,7 +149,7 @@ public class Text_Field_Input {
 
         WindowVar.Panel5.setVisible(true);
 
-        SecondayWindows.SecondSetUp();
+        SecondaryWindows.SecondSetUp();
         WindowVar.Creation_Window.add(WindowVar.Panel5);
     }
 
