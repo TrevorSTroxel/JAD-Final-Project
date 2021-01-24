@@ -3,11 +3,12 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileSystemView;
-
+import javax.swing.JScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.awt.Dimension;
 import java.awt.Font;
 
 //this will be used for better organization purposes
@@ -21,7 +22,7 @@ public class SecondayWindows extends JFrame implements ActionListener {
      * help with with file bloating, as some of these files were becoming very large
      */
     public static void SecondSetUp() {
-        WindowVar.Creation_Window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        WindowVar.Creation_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         WindowVar.Creation_Window.setSize(700, 700);
         WindowVar.Creation_Window.setLocationRelativeTo(null); // appears in the middle
         WindowVar.Creation_Window.setVisible(true);
@@ -39,8 +40,9 @@ public class SecondayWindows extends JFrame implements ActionListener {
         WindowVar.Instructions.setEditable(false); // the user can't edit the text
         Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
         WindowVar.Instructions.setFont(f); // sets the style of the text
-
-        WindowVar.Help_Panel.add(WindowVar.Instructions);
+        JScrollPane iscrollPane = new JScrollPane(WindowVar.Instructions);
+        iscrollPane.setPreferredSize(new Dimension(450,110));
+        WindowVar.Help_Panel.add(iscrollPane);
         WindowVar.Help_Panel.setEnabled(true);
 
         WindowVar.Help_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

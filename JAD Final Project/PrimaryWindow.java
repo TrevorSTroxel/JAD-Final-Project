@@ -25,7 +25,7 @@ public class PrimaryWindow extends JFrame implements ActionListener {
      * This will add most of the content to the main window function
      */
     private void addContents() {
-        WindowVar.MainWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        WindowVar.MainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // JTextFeild settings
         Text_Field_Input.Text_Box_Settings(WindowVar.P1_Text_Field);
