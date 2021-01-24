@@ -33,7 +33,7 @@ Here is an example of how to create a file using this program:
       Check in the file to make sure that the file has been created, otherwise click this button again.
       
 Here are instructions on how to create a class using this program:
-    * try typing in the first window: create file
+    * Try typing in the first window: create file
     - A second window will appear that will have three buttons, 
       and you will be asked to select a file path, give the name of your class, 
       and to actually write this information to the file
@@ -51,7 +51,7 @@ Here are instructions on how to create a class using this program:
       file to check that the information was properly put in there.
 
 Here are instructions on how to create a method/function using this program:
-    * try typing in the first window: create method
+    * Try typing in the first window: create method
     * Important: If you try to create a method without first making a class, 
       the program will not write anything to your file. Go to previous instructions 
       if you have not made a class first
@@ -92,7 +92,8 @@ Here are instructions on how to add content you your methods
       We reccomend going to our terminology section of this help document and 
       looking at some examples of what to put inside a method.
 
-    - 
+    - Clicking the last button will add the contents that you have specified into the desired method
+      It is reccomended to open the file and check the contents to see if they were added proporly.
       
 IMPORTANT TERMINOLOGY
 Directory: Your computer puts files and other things in what are called paths 
@@ -125,7 +126,10 @@ Return Type: is the data type which the function will return when called/invoked
           my function will return an integer. same goes with other types like Strings(Text), floats(decimal number)
           and booleans(true or false values. usually represented by 1 for true and 0 for false).
 
-Content to add to a method:
+Content to add to a method: This part is for thoses who are less familier with coding with java 
+Examples of what to add to a method:
+  System.out.println("Hello World");
+
 
  
  
