@@ -2,13 +2,6 @@ These are some instructions and tips on how to use this program.
 
 Keep in mind that the order in which you put words are important, so keep that in mind!
 
-The program is set up so that you can not close the program on accident.
-    If you wish to close the program, then type in : close or end to stop the program.
-
-Here is an example of how to use this program:
-    Try typing this into the textbox: create file.
-
-This command will create a file in a folder that you will choose.
 Here are some Keywords to try with this program:
 
     1. create : this will generate new things for the user
@@ -21,8 +14,43 @@ Here are some Keywords to try with this program:
     2. add : this will add things to your classes or methods
 
         A. content : add variables to your method to make it work
-IMPORTANT TERMINOLOGY
+        
+Here is an example of how to create a file using this program:
+    * Try typing this into the text box: create file.
+    - A new window will show up wih three buttons, one for choosing the directory, 
+      one for entering the file name and one for creating the file.
 
+    - If you click on the first button that asks for a directory, 
+      you will be taken you a file explorer where you will be able to find and 
+      select a file wher you would like top create documents.
+
+    - The next panel will ask you to enter a name for witch to name the file. 
+      You many also enter a file extention, but if you do not know what that is, 
+      the the program will` create a file with a basic extention for you to use
+    
+    - Then once both of these fields have been filled, 
+      then click on the last putton in the window, and a new file will have been created.
+      Check in the file to make sure that the file has been created, otherwise click this button again.
+      
+Here are instructions on how to create a class using this program:
+    * try typing in the first window: create file
+    - A second window will appear that will have three buttons, 
+      and you will be asked to select a file path, give the name of your class, 
+      and to actually write this information to the file
+
+    - If you click on the first button, you will be taken to a file explorer 
+      where you can select what file you want to create a class in. 
+      Important: you will only be able to write to approved file types such as 
+      text and java files, any others will not work any may harm your computer.
+
+    - In the next area you will be able to type the name of what you want to set the class to. 
+      Only give the name, no other variables are needed
+    
+Here are instructions on how to create a method/function using this program:
+      * try typing in the first window: create method
+      
+      
+IMPORTANT TERMINOLOGY
 Directory: Your computer puts files and other things in what are called paths 
            so that your computer can have better organization.
            Every folder/file on your computer has a unique path,
@@ -33,12 +61,7 @@ Directory: Your computer puts files and other things in what are called paths
 IMPORTANT NOTES
 * Spelling errors: Typos can wreck this program. so be very cautious of typos. 
 
-* Complete File path: When asked for a "Complete file path" that means that the
-    program is asking for all the information possible about where the file is.
-    That is so the program knows exactly where to find/create your file.
-    It is the entire sequence of files/ drives that you go through, to get to
-    get the desired destination.
-    Example for a complete path : C:\Users\<your_user_name>\Desktop\test.
+
 
 
     
