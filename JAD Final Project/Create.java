@@ -45,7 +45,8 @@ public class Create {
 		try {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			fileContents.add(0, "public class " + class_name + "(){\n\n}");
+			fileContents.add(0,
+					"public class " + class_name + "(){\n public static void main(String[] args) {\n\n} \n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
